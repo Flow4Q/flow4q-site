@@ -4,98 +4,139 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacyverklaring | Flow4Q</title>
-<meta name="description" content="Privacyverklaring van Flow4Q BV: welke persoonsgegevens we verwerken, waarom, hoe lang we ze bewaren en welke rechten u heeft.">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Privacyverklaring van Flow4Q BV: welke persoonsgegevens worden verwerkt, waarom, hoe lang ze bewaard worden en welke rechten u heeft.">
 <link rel="canonical" href="https://www.flow4q.com/privacy.html">
-<meta name="robots" content="index, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Lora:ital@0;1&display=swap" rel="stylesheet">
 <style>
-/* ---- KLEUREN: pas deze 5 waarden aan zodat ze exact matchen met index.html ---- */
-:root{
-  --ink:#15233B;        /* donkerblauw, titels en tekst */
-  --blue:#2563A8;       /* accentblauw, links en lijnen */
-  --paper:#FFFFFF;
-  --soft:#F5F7FA;       /* achtergrond header/footer */
-  --muted:#5B6776;      /* grijze tekst */
-  --line:#E2E7EC;
-  --maxw:740px;
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{
-  margin:0;background:var(--paper);color:var(--ink);
-  font-family:'Outfit',system-ui,-apple-system,sans-serif;
-  font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;
-}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  :root {
+    --c900: #1B283D; --c800: #243550; --c700: #2E4A72; --c600: #3A6095;
+    --c500: #5080B8; --c400: #7AAAD4; --c300: #A8C8E8; --c200: #CCDFF3;
+    --c100: #E4EFF8; --c50: #F2F7FC; --white: #FFFFFF;
+    --text: #1B283D; --muted: #56697D; --border: #D0E0EF; --radius: 14px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body { font-family: "Outfit", sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; line-height: 1.7; }
 
-/* header */
-.topbar{background:var(--soft);border-bottom:1px solid var(--line)}
-.topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding:18px 24px}
-.brand{font-weight:700;font-size:20px;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
-.back{font-size:15px;color:var(--blue);text-decoration:none}
-.back:hover{text-decoration:underline}
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 6vw; height: 66px;
+    background: rgba(27,40,61,0.97); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-logo { display: flex; align-items: center; }
+  .nav-right { display: flex; align-items: center; gap: 1.8rem; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta { background: var(--c500) !important; color: var(--white) !important; padding: 0.42rem 1.15rem; border-radius: 6px; font-weight: 600 !important; }
+  .nav-cta:hover { background: var(--c600) !important; }
+  .nav-divider { width: 1px; height: 22px; background: rgba(255,255,255,0.15); }
+  .nav-slogan { font-family: "Lora", serif; font-style: italic; font-size: 0.88rem; color: var(--c300); }
 
-/* hero */
-.hero{padding:56px 0 28px;border-bottom:1px solid var(--line)}
-.eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-weight:600;margin:0 0 10px}
-h1{font-family:'Lora',Georgia,serif;font-weight:500;font-size:38px;line-height:1.2;margin:0 0 12px;letter-spacing:-.01em}
-.lead{color:var(--muted);font-size:18px;margin:0}
-.updated{color:var(--muted);font-size:14px;margin-top:18px}
+  /* HEADER */
+  .page-head { background: var(--c50); border-bottom: 1px solid var(--border); padding: 8rem 6vw 3rem; }
+  .page-head-inner { max-width: 780px; margin: 0 auto; }
+  .eyebrow { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--c600); font-weight: 600; margin-bottom: 0.9rem; }
+  h1 { font-family: "Lora", serif; font-weight: 400; font-size: clamp(2rem, 4.5vw, 2.9rem); line-height: 1.18; letter-spacing: -0.5px; }
+  h1 em { font-style: italic; color: var(--c600); }
+  .lead { color: var(--muted); font-size: 1.05rem; margin-top: 0.9rem; max-width: 62ch; }
+  .updated { font-size: 0.83rem; color: var(--muted); margin-top: 1.4rem; padding-top: 1.2rem; border-top: 1px solid var(--border); }
 
-/* body */
-main{padding:8px 0 56px}
-h2{font-family:'Lora',Georgia,serif;font-weight:500;font-size:25px;line-height:1.3;margin:44px 0 10px}
-h3{font-size:17px;font-weight:600;margin:26px 0 6px}
-p{margin:0 0 14px}
-ul{margin:0 0 14px;padding-left:20px}
-li{margin-bottom:7px}
-a{color:var(--blue)}
-strong{font-weight:600}
-table{width:100%;border-collapse:collapse;margin:8px 0 18px;font-size:15.5px}
-th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
-th{background:var(--soft);font-weight:600;font-size:14px;letter-spacing:.02em}
-.box{background:var(--soft);border-left:3px solid var(--blue);padding:16px 18px;margin:20px 0;border-radius:0 6px 6px 0}
-.box p:last-child{margin-bottom:0}
+  /* CONTENT */
+  main { max-width: 780px; margin: 0 auto; padding: 3rem 6vw 4.5rem; }
+  h2 { font-family: "Lora", serif; font-weight: 400; font-size: 1.5rem; line-height: 1.3; margin: 2.8rem 0 0.7rem; letter-spacing: -0.3px; }
+  main > h2:first-child { margin-top: 0; }
+  h3 { font-size: 1rem; font-weight: 600; margin: 1.6rem 0 0.4rem; }
+  p { margin-bottom: 0.9rem; }
+  ul { margin: 0 0 1rem 1.15rem; }
+  li { margin-bottom: 0.4rem; }
+  a { color: var(--c600); }
+  strong { font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; margin: 0.6rem 0 1.4rem; font-size: 0.93rem; }
+  th, td { text-align: left; vertical-align: top; padding: 0.7rem 0.8rem; border-bottom: 1px solid var(--border); }
+  th { background: var(--c50); font-weight: 600; font-size: 0.85rem; }
+  .callout { background: var(--c50); border-left: 3px solid var(--c500); border-radius: 0 var(--radius) var(--radius) 0; padding: 1.1rem 1.3rem; margin: 1.4rem 0; }
+  .callout p:last-child { margin-bottom: 0; }
+  .toc { background: var(--c50); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem 1.4rem; margin-bottom: 2.5rem; font-size: 0.92rem; }
+  .toc ul { columns: 2; column-gap: 2rem; margin: 0.5rem 0 0 1.1rem; }
+  .toc a { text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .backlink { display: inline-block; margin-top: 2.5rem; font-size: 0.9rem; text-decoration: none; }
 
-/* footer */
-footer{background:var(--soft);border-top:1px solid var(--line);padding:28px 0;font-size:14.5px;color:var(--muted)}
-footer a{color:var(--muted)}
+  /* FOOTER */
+  footer { background: var(--c900); color: rgba(255,255,255,0.5); padding: 2.5rem 6vw; font-size: 0.82rem; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem; }
+  .footer-brand { display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-tagline { font-family: "Lora", serif; font-style: italic; font-size: 0.82rem; color: var(--c300); }
+  .footer-info { display: flex; flex-direction: column; gap: 0.35rem; text-align: right; }
+  .footer-copy { width: 100%; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.3rem; font-size: 0.76rem; color: rgba(255,255,255,0.35); }
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  footer a:hover { color: var(--white); }
 
-@media (max-width:600px){
-  h1{font-size:30px}
-  h2{font-size:22px}
-  body{font-size:16px}
-  table{font-size:14.5px}
-  th,td{padding:8px 9px}
-}
+  @media (max-width: 860px) { .nav-links { gap: 1.1rem; } .nav-divider, .nav-slogan { display: none; } }
+  @media (max-width: 640px) {
+    .nav-links li:not(:last-child) { display: none; }
+    .page-head { padding-top: 6.5rem; }
+    .toc ul { columns: 1; }
+    .footer-info { text-align: left; }
+    table, th, td { font-size: 0.87rem; }
+    th, td { padding: 0.55rem 0.5rem; }
+  }
 </style>
 </head>
 <body>
 
-<div class="topbar">
-  <div class="wrap">
-    <a class="brand" href="/">Flow4Q</a>
-    <a class="back" href="/">&larr; Terug naar de site</a>
+<nav>
+  <a class="nav-logo" href="/"><svg height="38" viewBox="0 0 190 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="navGrad" x1="0" y1="32" x2="34" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#A8C8E8" stop-opacity="0.5"/>
+          <stop offset="50%" stop-color="#7AAAD4"/>
+          <stop offset="100%" stop-color="white"/>
+        </linearGradient>
+      </defs>
+      <circle cx="7" cy="30" r="4" fill="#7AAAD4" opacity="0.45"/>
+      <circle cx="19" cy="19" r="5.5" fill="#7AAAD4"/>
+      <circle cx="33" cy="7" r="7" fill="white"/>
+      <path d="M7 30 C11 25 15 23 19 19 C23 15 27 11 33 7" stroke="url(#navGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M28 3 L33 7 L38 3" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="48" y1="4" x2="48" y2="34" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <text x="56" y="26" font-family="Outfit, sans-serif" font-weight="600" font-size="22" fill="white" letter-spacing="-0.5">Flow</text>
+      <text x="104" y="26" font-family="Outfit, sans-serif" font-weight="300" font-size="22" fill="#7AAAD4" letter-spacing="-0.5">4Q</text>
+    </svg></a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="/#diensten">Diensten</a></li>
+      <li><a href="/#cases">Cases</a></li>
+      <li><a href="/#over">Over mij</a></li>
+      <li><a href="/#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <span class="nav-divider"></span>
+    <span class="nav-slogan">Kwaliteit begint bij een goed proces.</span>
   </div>
-</div>
+</nav>
 
-<header class="hero">
-  <div class="wrap">
-    <p class="eyebrow">Privacy</p>
-    <h1>Privacyverklaring</h1>
+<header class="page-head">
+  <div class="page-head-inner">
+    <div class="eyebrow">Privacy</div>
+    <h1>Privacy<em>verklaring</em></h1>
     <p class="lead">Wat er met uw gegevens gebeurt wanneer u contact opneemt of met Flow4Q samenwerkt. Kort en zonder juridisch geschuifel.</p>
     <p class="updated">Laatst bijgewerkt op 20 augustus 2026</p>
   </div>
 </header>
 
-<main class="wrap">
+<main>
 
   <h2>1. Wie verwerkt uw gegevens</h2>
-  <p>Flow4Q BV, met zetel te Lokeren, ingeschreven onder ondernemingsnummer BE 1011.753.847, is verwerkingsverantwoordelijke voor de gegevens die via deze website en in het kader van haar dienstverlening worden verzameld.</p>
+  <p>Flow4Q BV, met maatschappelijke zetel te 9160 Lokeren, ondernemingsnummer BE 1011.753.847, is verwerkingsverantwoordelijke voor de gegevens die via deze website en in het kader van haar dienstverlening worden verzameld.</p>
   <ul>
-    <li>E-mail: info@flow4q.com</li>
+    <li>E-mail: <a href="mailto:info@flow4q.com">info@flow4q.com</a></li>
     <li>Telefoon: +32 474 62 71 87</li>
   </ul>
   <p>Flow4Q heeft geen functionaris voor gegevensbescherming (DPO) aangesteld. Dat is voor een onderneming van deze omvang en aard niet verplicht. U kan met al uw vragen rechtstreeks terecht op bovenstaand adres.</p>
@@ -104,12 +145,12 @@ footer a{color:var(--muted)}
   <table>
     <tr><th>Gegevens</th><th>Waarvoor</th><th>Rechtsgrond</th></tr>
     <tr>
-      <td>Naam, bedrijf, e-mailadres, telefoonnummer en de inhoud van uw bericht (contactformulier, e-mail, telefoon, LinkedIn)</td>
+      <td>Naam, bedrijf, e-mailadres, telefoonnummer en de inhoud van uw bericht, via het contactformulier, e-mail, telefoon of LinkedIn</td>
       <td>Uw vraag beantwoorden en een eventuele samenwerking voorbereiden</td>
-      <td>Maatregelen vóór het sluiten van een overeenkomst (art. 6.1.b AVG)</td>
+      <td>Maatregelen v&oacute;&oacute;r het sluiten van een overeenkomst (art. 6.1.b AVG)</td>
     </tr>
     <tr>
-      <td>Contactgegevens van contactpersonen bij klanten en leveranciers, facturatiegegevens</td>
+      <td>Contactgegevens van contactpersonen bij klanten en leveranciers, en facturatiegegevens</td>
       <td>Opdrachten uitvoeren, communiceren, factureren en betalingen opvolgen</td>
       <td>Uitvoering van de overeenkomst (art. 6.1.b AVG)</td>
     </tr>
@@ -119,7 +160,7 @@ footer a{color:var(--muted)}
       <td>Wettelijke verplichting (art. 6.1.c AVG)</td>
     </tr>
     <tr>
-      <td>Beperkte opvolging van prospecten en projectdossiers</td>
+      <td>Beperkte opvolging van offertes, prospecten en projectdossiers</td>
       <td>De opvolging van lopende en afgeronde projecten</td>
       <td>Gerechtvaardigd belang van een normale bedrijfsvoering (art. 6.1.f AVG)</td>
     </tr>
@@ -127,51 +168,75 @@ footer a{color:var(--muted)}
   <p>Flow4Q verzamelt geen gevoelige gegevens, doet niet aan profilering en neemt geen geautomatiseerde beslissingen over personen. Uw gegevens worden nooit verkocht of doorgegeven voor marketingdoeleinden van derden.</p>
 
   <h2>3. Gegevens van uw medewerkers en klanten in projecten</h2>
-  <p>Wanneer Flow4Q voor u een toepassing bouwt of onderhoudt (Power Apps, Power BI, Power Automate, Excel of VBA), kan zij toegang krijgen tot gegevens in uw eigen omgeving. Voor die gegevens is Flow4Q <strong>geen verwerkingsverantwoordelijke maar verwerker</strong>: uw organisatie bepaalt het doel, Flow4Q handelt uitsluitend in uw opdracht.</p>
-  <div class="box">
-    <p>Daarvoor sluit Flow4Q met elke klant een verwerkersovereenkomst. Daarin staat welke gegevens ze mag benaderen, wat ze ermee mag doen, hoe lang ze toegang behoudt en wat er bij het einde van de opdracht gebeurt. Vraag ernaar bij de opstart van een project.</p>
+  <p>Wanneer Flow4Q voor u een toepassing bouwt of onderhoudt in Power Apps, Power BI, Power Automate, Excel of VBA, kan zij toegang krijgen tot gegevens in uw eigen omgeving. Voor die gegevens is Flow4Q <strong>geen verwerkingsverantwoordelijke maar verwerker</strong>: uw organisatie bepaalt het doel, Flow4Q handelt uitsluitend in uw opdracht en volgens uw instructies.</p>
+  <div class="callout">
+    <p>Daarvoor sluit Flow4Q met elke klant een gegevensverwerkingsovereenkomst. Daarin staat welke gegevens ze mag benaderen, wat ze ermee mag doen, hoe lang ze toegang behoudt en wat er bij het einde van de opdracht met die gegevens gebeurt. Vraag ernaar bij de opstart van een project, of mail naar info@flow4q.com voor een exemplaar.</p>
   </div>
-  <p>Uitgangspunten bij elk project: enkel toegang tot wat nodig is voor de opdracht, bij voorkeur werken in uw omgeving in plaats van gegevens te kopiëren, testen met geanonimiseerde of fictieve gegevens waar dat kan, en geen productiegegevens langer bijhouden dan de opdracht duurt.</p>
+  <p>Vaste uitgangspunten bij elk project: enkel toegang tot wat de opdracht vereist, bij voorkeur werken binnen uw eigen omgeving in plaats van gegevens te kopi&euml;ren, testen met fictieve of geanonimiseerde gegevens waar dat kan, en geen productiegegevens langer bijhouden dan de opdracht duurt.</p>
 
   <h2>4. Hoe lang worden ze bewaard</h2>
   <ul>
     <li><strong>Contactaanvragen zonder gevolg:</strong> maximaal 2 jaar na het laatste contact.</li>
     <li><strong>Klant- en leveranciersgegevens:</strong> zolang de samenwerking loopt en daarna zolang er nog rechten of verplichtingen uit voortvloeien.</li>
     <li><strong>Facturen en boekhouding:</strong> 7 jaar, zoals de Belgische boekhoudwetgeving voorschrijft.</li>
-    <li><strong>Projectdocumentatie en toegang tot klantomgevingen:</strong> volgens de afspraken in de verwerkersovereenkomst, standaard verwijderd of teruggegeven bij het einde van de opdracht.</li>
+    <li><strong>Projectdocumentatie en toegang tot klantomgevingen:</strong> volgens de afspraken in de gegevensverwerkingsovereenkomst, standaard verwijderd of teruggegeven bij het einde van de opdracht.</li>
   </ul>
 
   <h2>5. Wie krijgt uw gegevens te zien</h2>
-  <p>Enkel Sabine Beke werkt binnen Flow4Q met deze gegevens. Daarnaast zijn er dienstverleners die noodzakelijk zijn om te kunnen werken, en die zelf als verwerker optreden:</p>
+  <p>Binnen Flow4Q werkt enkel Sabine Beke met deze gegevens. Daarnaast zijn er dienstverleners die nodig zijn om te kunnen werken en die zelf als verwerker optreden:</p>
   <ul>
-    <li><strong>Netlify</strong> voor de hosting van deze website en de verwerking van het contactformulier</li>
+    <li><strong>Netlify</strong> voor de hosting van deze website en de afhandeling van het contactformulier</li>
     <li><strong>Microsoft</strong> voor e-mail, documentopslag en de Microsoft 365-omgeving</li>
-    <li>het <strong>boekhoudkantoor en boekhoudpakket</strong> voor facturatie en boekhouding</li>
+    <li><strong>Billit</strong> voor facturatie, <strong>Yuki</strong> voor de boekhoudkundige verwerking en <strong>boekhoudkantoor HSF</strong> als boekhouder</li>
   </ul>
-  <p>Met deze partijen gelden hun standaard verwerkersvoorwaarden. Waar gegevens buiten de Europese Economische Ruimte terechtkomen, gebeurt dat op basis van de standaardcontractbepalingen van de Europese Commissie of een geldig adequaatheidsbesluit. Verder worden gegevens enkel gedeeld als de wet dat verplicht.</p>
+  <p>Met deze partijen gelden hun standaard verwerkersvoorwaarden. Waar gegevens buiten de Europese Economische Ruimte terechtkomen, gebeurt dat op basis van de standaardcontractbepalingen van de Europese Commissie of een geldig adequaatheidsbesluit. Verder worden gegevens enkel gedeeld wanneer de wet dat verplicht.</p>
 
   <h2>6. Beveiliging</h2>
-  <p>Flow4Q neemt redelijke technische en organisatorische maatregelen: toegang met meervoudige authenticatie, versleutelde toestellen, actuele software, wachtwoordbeheer via een kluis, en toegang tot klantomgevingen enkel met de rechten die de opdracht vereist. Merkt u toch iets verdachts, laat het dan weten via info@flow4q.com.</p>
+  <p>Flow4Q neemt passende technische en organisatorische maatregelen: aanmelden met meervoudige authenticatie, versleutelde toestellen, actuele software, wachtwoordbeheer via een kluis, en toegang tot klantomgevingen enkel met de rechten die de opdracht vereist. Merkt u toch iets verdachts, laat het dan meteen weten via info@flow4q.com.</p>
 
   <h2>7. Cookies</h2>
   <p>Deze website gebruikt geen tracking- of marketingcookies en plaatst geen advertentiecookies. Er is dus ook geen cookiebanner nodig.</p>
-  <p>Wel worden lettertypes geladen via Google Fonts en wordt het contactformulier afgehandeld door Netlify. Daarbij wordt uw IP-adres technisch verwerkt om de pagina te kunnen tonen en om misbruik van het formulier tegen te gaan. Dat is functioneel en niet gericht op het volgen van bezoekers.</p>
+  <p>Wel worden de lettertypes geladen via Google Fonts en wordt het contactformulier afgehandeld door Netlify. Daarbij wordt uw IP-adres technisch verwerkt om de pagina te kunnen tonen en om misbruik van het formulier tegen te gaan. Dat is functioneel en niet gericht op het volgen van bezoekers.</p>
 
   <h2>8. Uw rechten</h2>
-  <p>U heeft het recht op inzage, verbetering, verwijdering en beperking van uw gegevens, het recht op overdraagbaarheid, en het recht om bezwaar te maken tegen verwerking op basis van gerechtvaardigd belang. Een mail naar info@flow4q.com volstaat. U krijgt antwoord binnen 30 dagen. Om zeker te zijn dat het verzoek van u komt, kan om een bijkomende identificatie worden gevraagd.</p>
+  <p>U heeft het recht op inzage, verbetering, verwijdering en beperking van uw gegevens, het recht op overdraagbaarheid, en het recht om bezwaar te maken tegen verwerking op basis van gerechtvaardigd belang. Een mail naar info@flow4q.com volstaat. U krijgt antwoord binnen 30 dagen. Om zeker te zijn dat het verzoek van u komt, kan om bijkomende identificatie gevraagd worden.</p>
   <p>Gaat het over gegevens die Flow4Q in opdracht van een klant verwerkt, dan wordt uw verzoek doorgestuurd naar die klant. Die is in dat geval de verwerkingsverantwoordelijke.</p>
   <p>Bent u niet tevreden over de afhandeling, dan kan u klacht indienen bij de Gegevensbeschermingsautoriteit, Drukpersstraat 35, 1000 Brussel, contact@apd-gba.be, <a href="https://www.gegevensbeschermingsautoriteit.be" target="_blank" rel="noopener">gegevensbeschermingsautoriteit.be</a>.</p>
 
   <h2>9. Wijzigingen</h2>
-  <p>Verandert de manier van werken, dan wordt deze verklaring aangepast. De datum bovenaan geeft de laatste versie aan.</p>
+  <p>Verandert de manier van werken, dan wordt deze verklaring aangepast. De datum bovenaan geeft de meest recente versie aan.</p>
 
+  <a class="backlink" href="/">&larr; Terug naar de website</a>
 </main>
 
 <footer>
-  <div class="wrap">
-    Flow4Q BV &middot; Lokeren &middot; BTW BE 1011.753.847 &middot; info@flow4q.com<br>
-    &copy; 2026 Flow4Q BV &middot; <a href="/">Terug naar de website</a>
+  <div class="footer-brand">
+    <svg height="34" viewBox="0 0 190 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="footGrad" x1="0" y1="32" x2="34" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#A8C8E8" stop-opacity="0.5"/>
+          <stop offset="50%" stop-color="#7AAAD4"/>
+          <stop offset="100%" stop-color="white"/>
+        </linearGradient>
+      </defs>
+      <circle cx="7" cy="30" r="4" fill="#7AAAD4" opacity="0.45"/>
+      <circle cx="19" cy="19" r="5.5" fill="#7AAAD4"/>
+      <circle cx="33" cy="7" r="7" fill="white"/>
+      <path d="M7 30 C11 25 15 23 19 19 C23 15 27 11 33 7" stroke="url(#footGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M28 3 L33 7 L38 3" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="48" y1="4" x2="48" y2="34" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <text x="56" y="26" font-family="Outfit, sans-serif" font-weight="600" font-size="22" fill="white" letter-spacing="-0.5">Flow</text>
+      <text x="104" y="26" font-family="Outfit, sans-serif" font-weight="300" font-size="22" fill="#7AAAD4" letter-spacing="-0.5">4Q</text>
+    </svg>
+    <span class="footer-tagline">Kwaliteit begint bij een goed proces.</span>
   </div>
+  <div class="footer-info">
+    <span>Flow4Q BV &middot; Lokeren</span>
+    <span>BTW BE 1011.753.847</span>
+    <span><a href="mailto:info@flow4q.com">info@flow4q.com</a></span>
+    <span><a href="/privacy.html">Privacyverklaring</a> &middot; <a href="/voorwaarden.html">Algemene voorwaarden</a></span>
+  </div>
+  <div class="footer-copy">&copy; 2026 Flow4Q BV &middot; Alle rechten voorbehouden</div>
 </footer>
 
 </body>

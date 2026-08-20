@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Algemene voorwaarden | Flow4Q</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="De algemene voorwaarden van Flow4Q BV: offertes, meerwerk, oplevering, licenties, facturatie, intellectuele eigendom en aansprakelijkheid.">
+<link rel="canonical" href="https://www.flow4q.com/voorwaarden.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --c900: #1B283D; --c800: #243550; --c700: #2E4A72; --c600: #3A6095;
+    --c500: #5080B8; --c400: #7AAAD4; --c300: #A8C8E8; --c200: #CCDFF3;
+    --c100: #E4EFF8; --c50: #F2F7FC; --white: #FFFFFF;
+    --text: #1B283D; --muted: #56697D; --border: #D0E0EF; --radius: 14px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body { font-family: "Outfit", sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; line-height: 1.7; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 6vw; height: 66px;
+    background: rgba(27,40,61,0.97); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-logo { display: flex; align-items: center; }
+  .nav-right { display: flex; align-items: center; gap: 1.8rem; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta { background: var(--c500) !important; color: var(--white) !important; padding: 0.42rem 1.15rem; border-radius: 6px; font-weight: 600 !important; }
+  .nav-cta:hover { background: var(--c600) !important; }
+  .nav-divider { width: 1px; height: 22px; background: rgba(255,255,255,0.15); }
+  .nav-slogan { font-family: "Lora", serif; font-style: italic; font-size: 0.88rem; color: var(--c300); }
+
+  /* HEADER */
+  .page-head { background: var(--c50); border-bottom: 1px solid var(--border); padding: 8rem 6vw 3rem; }
+  .page-head-inner { max-width: 780px; margin: 0 auto; }
+  .eyebrow { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--c600); font-weight: 600; margin-bottom: 0.9rem; }
+  h1 { font-family: "Lora", serif; font-weight: 400; font-size: clamp(2rem, 4.5vw, 2.9rem); line-height: 1.18; letter-spacing: -0.5px; }
+  h1 em { font-style: italic; color: var(--c600); }
+  .lead { color: var(--muted); font-size: 1.05rem; margin-top: 0.9rem; max-width: 62ch; }
+  .updated { font-size: 0.83rem; color: var(--muted); margin-top: 1.4rem; padding-top: 1.2rem; border-top: 1px solid var(--border); }
+
+  /* CONTENT */
+  main { max-width: 780px; margin: 0 auto; padding: 3rem 6vw 4.5rem; }
+  h2 { font-family: "Lora", serif; font-weight: 400; font-size: 1.5rem; line-height: 1.3; margin: 2.8rem 0 0.7rem; letter-spacing: -0.3px; }
+  main > h2:first-child { margin-top: 0; }
+  h3 { font-size: 1rem; font-weight: 600; margin: 1.6rem 0 0.4rem; }
+  p { margin-bottom: 0.9rem; }
+  ul { margin: 0 0 1rem 1.15rem; }
+  li { margin-bottom: 0.4rem; }
+  a { color: var(--c600); }
+  strong { font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; margin: 0.6rem 0 1.4rem; font-size: 0.93rem; }
+  th, td { text-align: left; vertical-align: top; padding: 0.7rem 0.8rem; border-bottom: 1px solid var(--border); }
+  th { background: var(--c50); font-weight: 600; font-size: 0.85rem; }
+  .callout { background: var(--c50); border-left: 3px solid var(--c500); border-radius: 0 var(--radius) var(--radius) 0; padding: 1.1rem 1.3rem; margin: 1.4rem 0; }
+  .callout p:last-child { margin-bottom: 0; }
+  .toc { background: var(--c50); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem 1.4rem; margin-bottom: 2.5rem; font-size: 0.92rem; }
+  .toc ul { columns: 2; column-gap: 2rem; margin: 0.5rem 0 0 1.1rem; }
+  .toc a { text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .backlink { display: inline-block; margin-top: 2.5rem; font-size: 0.9rem; text-decoration: none; }
+
+  /* FOOTER */
+  footer { background: var(--c900); color: rgba(255,255,255,0.5); padding: 2.5rem 6vw; font-size: 0.82rem; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem; }
+  .footer-brand { display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-tagline { font-family: "Lora", serif; font-style: italic; font-size: 0.82rem; color: var(--c300); }
+  .footer-info { display: flex; flex-direction: column; gap: 0.35rem; text-align: right; }
+  .footer-copy { width: 100%; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.3rem; font-size: 0.76rem; color: rgba(255,255,255,0.35); }
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  footer a:hover { color: var(--white); }
+
+  @media (max-width: 860px) { .nav-links { gap: 1.1rem; } .nav-divider, .nav-slogan { display: none; } }
+  @media (max-width: 640px) {
+    .nav-links li:not(:last-child) { display: none; }
+    .page-head { padding-top: 6.5rem; }
+    .toc ul { columns: 1; }
+    .footer-info { text-align: left; }
+    table, th, td { font-size: 0.87rem; }
+    th, td { padding: 0.55rem 0.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/"><svg height="38" viewBox="0 0 190 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="navGrad" x1="0" y1="32" x2="34" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#A8C8E8" stop-opacity="0.5"/>
+          <stop offset="50%" stop-color="#7AAAD4"/>
+          <stop offset="100%" stop-color="white"/>
+        </linearGradient>
+      </defs>
+      <circle cx="7" cy="30" r="4" fill="#7AAAD4" opacity="0.45"/>
+      <circle cx="19" cy="19" r="5.5" fill="#7AAAD4"/>
+      <circle cx="33" cy="7" r="7" fill="white"/>
+      <path d="M7 30 C11 25 15 23 19 19 C23 15 27 11 33 7" stroke="url(#navGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M28 3 L33 7 L38 3" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="48" y1="4" x2="48" y2="34" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <text x="56" y="26" font-family="Outfit, sans-serif" font-weight="600" font-size="22" fill="white" letter-spacing="-0.5">Flow</text>
+      <text x="104" y="26" font-family="Outfit, sans-serif" font-weight="300" font-size="22" fill="#7AAAD4" letter-spacing="-0.5">4Q</text>
+    </svg></a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="/#diensten">Diensten</a></li>
+      <li><a href="/#cases">Cases</a></li>
+      <li><a href="/#over">Over mij</a></li>
+      <li><a href="/#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <span class="nav-divider"></span>
+    <span class="nav-slogan">Kwaliteit begint bij een goed proces.</span>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="page-head-inner">
+    <div class="eyebrow">Juridisch</div>
+    <h1>Algemene <em>voorwaarden</em></h1>
+    <p class="lead">Deze voorwaarden gelden voor elke offerte en opdracht van Flow4Q BV, tenzij schriftelijk anders overeengekomen.</p>
+    <p class="updated">Laatst bijgewerkt op 20 augustus 2026</p>
+  </div>
+</header>
+
+<main>
+
+  <div class="toc">
+    <strong>Overzicht</strong>
+    <ul>
+      <li><a href="#a1">1. Definities</a></li>
+      <li><a href="#a2">2. Toepasselijkheid</a></li>
+      <li><a href="#a3">3. Offertes en meerwerk</a></li>
+      <li><a href="#a4">4. Intellectuele eigendom en referenties</a></li>
+      <li><a href="#a5">5. Totstandkoming</a></li>
+      <li><a href="#a6">6. Annulering en be&euml;indiging</a></li>
+      <li><a href="#a7">7. Inspanningsverplichting</a></li>
+      <li><a href="#a8">8. Verantwoordelijkheden opdrachtgever</a></li>
+      <li><a href="#a9">9. Voorschotten</a></li>
+      <li><a href="#a10">10. Facturatie en betaling</a></li>
+      <li><a href="#a11">11. Uitvoeringstermijnen</a></li>
+      <li><a href="#a12">12. Overmacht en hardship</a></li>
+      <li><a href="#a13">13. Aansprakelijkheid</a></li>
+      <li><a href="#a14">14. Klachten</a></li>
+      <li><a href="#a15">15. Vertrouwelijkheid</a></li>
+      <li><a href="#a16">16. Wijziging toestand opdrachtgever</a></li>
+      <li><a href="#a17">17. Persoonsgegevens</a></li>
+      <li><a href="#a18">18. Oplevering en aanvaarding</a></li>
+      <li><a href="#a19">19. Licenties en diensten van derden</a></li>
+      <li><a href="#a20">20. Toepasselijk recht</a></li>
+      <li><a href="#a21">21. Scheidbaarheid</a></li>
+    </ul>
+  </div>
+
+  <h2 id="a1">Artikel 1 &ndash; Definities</h2>
+  <p>In deze algemene voorwaarden wordt begrepen onder:</p>
+  <ul>
+    <li><strong>Opdrachtnemer:</strong> de besloten vennootschap Flow4Q BV, met maatschappelijke zetel te 9160 Lokeren, Van Duysestraat 4, ondernemingsnummer 1011.753.847.</li>
+    <li><strong>Opdrachtgever:</strong> de natuurlijke persoon of rechtspersoon die aan de opdrachtnemer een opdracht geeft voor de uitvoering van diensten en/of levering van producten.</li>
+  </ul>
+
+  <h2 id="a2">Artikel 2 &ndash; Toepasselijkheid</h2>
+  <p>Behalve bijzondere voorwaarden, vermeld op de voorzijde van de offerte of bestelbon en ondertekend voor akkoord door beide partijen, zijn enkel en bij uitsluiting van alle andere de voorwaarden van toepassing dewelke hieronder zijn vermeld. De toepasselijkheid van eventuele algemene voorwaarden van de opdrachtgever wordt uitdrukkelijk uitgesloten. Deze algemene voorwaarden worden integraal deel van iedere overeenkomst zodra deze door de opdrachtgever schriftelijk of elektronisch zijn aanvaard.</p>
+
+  <h2 id="a3">Artikel 3 &ndash; Offertes en meerwerk</h2>
+  <p>Tenzij anders bepaald zijn de offertes slechts geldig tijdens een periode van 30 kalenderdagen. Wijzigingen aangebracht aan de offertes zijn slechts geldig indien zij door de opdrachtnemer schriftelijk werden aanvaard. De offerte is beperkt tot hetgeen daarin uitdrukkelijk is opgenomen.</p>
+  <p>Wijzigingen of uitbreidingen van de opdracht die niet in de offerte zijn opgenomen, worden pas uitgevoerd nadat de opdrachtnemer een raming van de bijkomende tijd en kosten heeft bezorgd en de opdrachtgever hiermee akkoord is gegaan. Een akkoord per e-mail geldt als schriftelijk akkoord. Bij gebrek aan voorafgaand akkoord worden reeds uitgevoerde bijkomende prestaties aangerekend tegen het overeengekomen uurtarief.</p>
+  <p>Aanvaard meerwerk kan aanleiding geven tot een aanpassing van de overeengekomen uitvoeringstermijnen, overeenkomstig artikel 11.</p>
+
+  <h2 id="a4">Artikel 4 &ndash; Intellectuele eigendom en referenties</h2>
+  <p><strong>4.1.</strong> Alle intellectuele eigendomsrechten op de producten van de geest die de opdrachtnemer bij de uitvoering van de opdracht ontwikkelt of gebruikt, zoals werkwijzen, systemen, bron- en objectcode, ontwerpen, datamodellen, sjablonen, code snippets en scripts, behoren uitsluitend toe aan de opdrachtnemer, voor zover deze niet reeds aan derden toekomen, zoals de standaardfunctionaliteiten van Microsoft.</p>
+  <p><strong>4.2.</strong> Op de specifieke oplossingen die de opdrachtnemer voor de opdrachtgever ontwikkelt binnen diens eigen omgeving, waaronder Power Apps-applicaties, Power Automate-stromen, Power BI-rapporten, Excel-bestanden en de daarin verwerkte configuraties, verkrijgt de opdrachtgever na volledige betaling een niet-exclusief, onbeperkt in de tijd en wereldwijd gebruiksrecht voor de eigen bedrijfsactiviteiten en die van de vennootschappen van zijn groep.</p>
+  <p><strong>4.3.</strong> Dit gebruiksrecht omvat het recht om de oplossingen zelf of via een derde aan te passen, uit te breiden en te onderhouden. Vanaf het ogenblik dat de opdrachtgever of een door hem aangestelde derde wijzigingen aanbrengt buiten de opdracht van de opdrachtnemer om, vervalt elke aansprakelijkheid en elke garantie van de opdrachtnemer voor de gewijzigde oplossing.</p>
+  <p><strong>4.4.</strong> Het is de opdrachtgever niet toegestaan de oplossingen geheel of gedeeltelijk te verkopen, te verhuren, in licentie te geven of anderszins ter beschikking te stellen aan derden buiten zijn groep, noch de generieke componenten van de opdrachtnemer afzonderlijk te exploiteren. De opdrachtgever verbindt zich ertoe geen intellectueel beschermingsrecht aan te vragen op de in artikel 4.1 bedoelde producten van de geest.</p>
+  <p><strong>4.5.</strong> De opdrachtnemer behoudt het recht om de onderliggende algemene kennis, methodes en herbruikbare componenten, zoals sjablonen, code snippets en scripts, te hergebruiken voor andere projecten.</p>
+  <p><strong>4.6.</strong> De opdrachtnemer mag de naam en het logo van de opdrachtgever, samen met een algemene omschrijving van de opdracht, vermelden als referentie op haar website, in offertes en in commerci&euml;le communicatie. Daarbij wordt nooit vertrouwelijke informatie gedeeld. De opdrachtgever kan hiertegen op elk moment schriftelijk bezwaar maken, waarna de vermelding binnen een redelijke termijn wordt verwijderd.</p>
+  <p><strong>4.7.</strong> Als de opdrachtgever informatie aanlevert die door de opdrachtnemer verwerkt moet worden in de opdracht, zoals een databank, verklaart hij daarvan de eigenaar te zijn dan wel de toestemming te hebben verkregen voor dergelijk gebruik. De opdrachtnemer wijst daaromtrent iedere verantwoordelijkheid af en de opdrachtgever zal de opdrachtnemer integraal vrijwaren voor enig nadelig gevolg of vorderingen van derden wegens een inbreuk op deze bepaling.</p>
+
+  <h2 id="a5">Artikel 5 &ndash; Totstandkoming van de overeenkomst</h2>
+  <p>De overeenkomst komt tot stand op het moment van de schriftelijke acceptatie van het aanbod door de opdrachtgever en het voldoen aan de daarbij gestelde voorwaarden.</p>
+
+  <h2 id="a6">Artikel 6 &ndash; Annulering en be&euml;indiging</h2>
+  <p>Indien de opdrachtgever de overeengekomen opdracht annuleert, is hij gehouden tot een volledige vergoeding van het reeds gepresteerde, alsook de betaling van de eventueel aangeschafte materialen. In geval van annulering is de opdrachtgever eveneens een vergoeding verschuldigd aan de opdrachtnemer, ter vergoeding van de winstderving in hoofde van de opdrachtnemer. Indien er een vaste prijs overeengekomen is, bedraagt deze vergoeding 15 % van de overeengekomen waarde van de overeenkomst. Indien de overeengekomen vergoedingsbasis een uurtarief betreft, bedraagt deze vergoeding, in geval van een voltijdse samenwerking van 40 uur per week, 20 gewerkte dagen a rato van 8 gewerkte uren aan het overeengekomen uurtarief. Deze vergoeding wordt geprorateerd in functie van het overeengekomen werkschema.</p>
+  <p>Ook de opdrachtnemer kan de overeenkomst be&euml;indigen, mits schriftelijke kennisgeving en met inachtneming van een opzegtermijn van 20 werkdagen, geprorateerd in functie van het overeengekomen werkschema. Tijdens die termijn spant de opdrachtnemer zich in om de lopende werkzaamheden in een bruikbare staat over te dragen en de nodige documentatie te bezorgen. In dat geval is de opdrachtgever enkel de werkelijk geleverde prestaties verschuldigd en is geen vergoeding wegens winstderving verschuldigd. Deze opzegtermijn geldt niet in de gevallen bedoeld in de artikelen 12 en 16.</p>
+
+  <h2 id="a7">Artikel 7 &ndash; Inspanningsverplichting</h2>
+  <p>De opdrachtnemer zal de grootst mogelijke zorgvuldigheid in acht nemen bij het in ontvangst nemen en bij de uitvoering van de opdracht. De overeenkomst zal naar best vermogen en te goeder trouw worden uitgevoerd. De opdrachtnemer heeft geen resultaatsverbintenis doch enkel een middelenverbintenis. De geleverde diensten vormen geen verklaring, waarborg of garantie dat de gebeurtenissen zich zullen voordoen in overeenstemming met het advies van de opdrachtnemer. De opdrachtnemer staat niet in voor de kosten en/of de schade die gepaard gaat met het uitvoeren van het advies door een derde partij.</p>
+
+  <h2 id="a8">Artikel 8 &ndash; Verantwoordelijkheden opdrachtgever</h2>
+  <p>Met het oog op de uitvoering van de verleende opdracht verbindt de opdrachtgever er zich toe tijdig alle nodige informatie en gegevens te verstrekken. De opdrachtgever is eveneens verantwoordelijk voor het tijdig en correct voorzien van de benodigde toegang tot IT-systemen, applicaties en omgevingen, zoals Microsoft-tenants of externe softwarepakketten, die essentieel zijn voor de uitvoering van de opdracht. Vertragingen in de planning als gevolg van het niet of niet tijdig verlenen van deze toegang vallen onder de verantwoordelijkheid van de opdrachtgever.</p>
+  <p>De opdrachtnemer kan ook niet verantwoordelijk gesteld worden voor eventuele economische of andere schade bij de opdrachtgever die het gevolg is van vertragingen of belemmeringen in hoofde van de organisatie van de opdrachtgever, bijvoorbeeld maar niet beperkt tot geen of laattijdige testing, onvoldoende opvolging, gebrekkige en/of foutieve informatie.</p>
+
+  <h2 id="a9">Artikel 9 &ndash; Voorschotten</h2>
+  <p>De opdrachtnemer is gerechtigd om bij het aangaan van de overeenkomst eventueel een voorschot te vragen. Eventuele overeengekomen uitvoeringstermijnen vatten slechts aan nadat het voorschot integraal en zonder voorbehoud betaald is.</p>
+  <p>De facturatie gebeurt onmiddellijk, volgens de vordering van de opdracht of op het einde van de opdracht, al naargelang de diensten en/of producten voorzien in de offerte.</p>
+
+  <h2 id="a10">Artikel 10 &ndash; Facturatie en betaling</h2>
+  <p>De opdrachtnemer rekent voor zijn diensten een uurtarief aan, zoals vermeld in de overeenkomst of offerte. Het uurtarief geldt voor alle werkelijk gewerkte uren, inclusief voorbereiding en opvolging, tenzij uitdrukkelijk anders overeengekomen.</p>
+  <p>De tijd die de opdrachtnemer besteedt aan verplaatsingen tussen zijn woonplaats en de locatie van de opdrachtgever wordt aangerekend tegen hetzelfde overeengekomen uurtarief. Eventuele bijkomende reiskosten, bijvoorbeeld openbaar vervoer, tol of parking, kunnen afzonderlijk worden gefactureerd indien overeengekomen.</p>
+  <p>Elke factuur moet, tenzij anders overeengekomen, binnen de vijftien kalenderdagen na de factuurdatum betaald worden. Indien de betaling niet binnen de gestelde termijn is ontvangen, is van rechtswege en zonder ingebrekestelling een nalatigheidsinterest verschuldigd tegen een rentevoet conform de Wet van 2 augustus 2002 betreffende betalingsachterstand in handelstransacties. De opdrachtnemer is tevens gerechtigd om buiten de hoofdsom en rente om te voorzien in een prijsverhoging van 10 % ten titel van schadevergoeding, met een minimum van 125,00 euro. Bij gebrek aan betaling is de opdrachtnemer eveneens gerechtigd om zonder voorafgaande ingebrekestelling de uitvoering van de opdracht te schorsen.</p>
+  <p>Bij niet-tijdige betaling van een factuur zullen alle andere nog niet vervallen schuldvorderingen op de opdrachtgever van rechtswege en zonder voorafgaande ingebrekestelling opeisbaar worden.</p>
+  <p>De partijen komen uitdrukkelijk overeen dat tussen al hun wederzijdse vaststaande vorderingen die uit de overeenkomst voortvloeien, ongeacht het tijdstip waarop de betrokken schuldvorderingen opeisbaar zijn, op eenvoudig verzoek daartoe van de opdrachtnemer op elk ogenblik schuldvergelijking kan worden toegepast, conform de bepalingen van artikel 14 van de Wet Financi&euml;le Zekerheden van 15 december 2004.</p>
+  <p>Het overeengekomen tarief wordt jaarlijks aangepast via twee cumulatieve mechanismen, die samen de volledige tariefaanpassing vormen.</p>
+  <p><strong>a) Indexatie.</strong> De opdrachtnemer is gerechtigd om op 1 januari van ieder jaar de overeengekomen prijzen automatisch te indexeren volgens de totale procentuele stijging van de Agoria referteloonkost Digital, volgens volgende formule:</p>
+  <p><strong>P1 = P0 &times; (0,2 + 0,8 &times; (S1 / S0))</strong></p>
+  <ul>
+    <li>P1 = tarief van kracht na indexatie</li>
+    <li>P0 = tarief van het basisjaar</li>
+    <li>S1 = Agoria referteloonkost Digital van kracht in de maand voorafgaand aan de aanpassing</li>
+    <li>S0 = Agoria referteloonkost Digital van kracht in de maand van deze overeenkomst</li>
+  </ul>
+  <p><strong>b) Tariefevolutie.</strong> Daarbovenop wordt het uurtarief op iedere verjaardag van de overeenkomst verhoogd met 2 %, berekend op het meest actuele uurtarief. Deze verhoging staat los van de indexatie onder a) en weerspiegelt de evolutie van de ervaring en expertise van de opdrachtnemer. De opdrachtnemer licht de opdrachtgever hierover uiterlijk twee weken voor de verjaardag van de overeenkomst schriftelijk in.</p>
+  <p>Indien de opdrachtgever de verhoging onder b) niet aanvaardt, kan hij de overeenkomst be&euml;indigen mits schriftelijke kennisgeving binnen de twee weken na de inwerkingtreding van het nieuwe tarief, met inachtneming van een opzegtermijn van &eacute;&eacute;n maand tijdens dewelke het voorgaande tarief van toepassing blijft. De reeds geleverde prestaties blijven verschuldigd. De uitdrukkelijke of stilzwijgende niet-uitoefening van deze verhoging door de opdrachtnemer impliceert geenszins een afstand van recht.</p>
+
+  <h2 id="a11">Artikel 11 &ndash; Uitvoeringstermijnen</h2>
+  <p>De eventueel overeengekomen uitvoeringstermijnen zijn indicatief en cre&euml;ren geen resultaatsverbintenis tot het behalen van deze termijnen, tenzij uitdrukkelijk anders is overeengekomen. Partijen streven steeds naar de vooropgestelde termijnen, maar vertraging in uitvoering kan nooit aanleiding geven tot boete, schadevergoeding of ontbinding van de overeenkomst. De volgende omstandigheden kunnen aanleiding geven tot een wijziging van deze termijnen, waarmee de opdrachtgever zich akkoord verklaart:</p>
+  <ul>
+    <li>niet of niet tijdige betaling van overeengekomen voorschotten zoals bedoeld in artikel 9;</li>
+    <li>verzoeken tot wijzigingen, uitbreidingen of inperkingen van de opdracht door de opdrachtgever, voor zover de opdrachtnemer deze aanvaardt;</li>
+    <li>tekortschietende medewerking van de opdrachtgever zoals bedoeld in artikel 8, zoals de niet of niet tijdige aanlevering van de nodige informatie en gegevens, of het niet of niet tijdig geven van feedback;</li>
+    <li>situaties van tijdelijke overmacht.</li>
+  </ul>
+
+  <h2 id="a12">Artikel 12 &ndash; Overmacht en hardship</h2>
+  <p>Elke gebeurtenis of omstandigheid buiten de redelijke controle en zonder fout van de opdrachtnemer, die de opdrachtnemer tijdelijk of blijvend verhindert om haar contractuele verplichtingen na te komen, wordt beschouwd als overmacht. Indien de opdrachtnemer door overmacht van blijvende aard wordt verhinderd de opdracht verder uit te voeren, is de opdrachtnemer gerechtigd zonder enige verplichting tot schadevergoeding de overeenkomst door middel van een schriftelijke kennisgeving zonder rechterlijke tussenkomst geheel of gedeeltelijk te be&euml;indigen.</p>
+  <p>Alle omstandigheden die bij het indienen van de offerte redelijkerwijze onvoorzienbaar waren en onvermijdbaar zijn, en die de uitvoering van de overeenkomst financieel of anderszins zwaarder of moeilijker zouden maken dan normaal voorzien is, zullen worden beschouwd als gevallen van hardship. Zij geven de opdrachtnemer het recht om de herziening van het contract aan te vragen, en partijen zullen te goeder trouw onderhandelen om een oplossing te vinden. Lukt dit niet binnen een redelijke termijn, dan zal de overeenkomst van rechtswege en zonder recht op schadevergoeding voor de opdrachtgever eindigen.</p>
+
+  <h2 id="a13">Artikel 13 &ndash; Aansprakelijkheid</h2>
+  <p>De opdrachtnemer is niet aansprakelijk voor de kosten, schade en interesten die ontstaan als direct of indirect gevolg van overmacht of hardship, daden of nalatigheden van de opdrachtgever, zijn ondergeschikten of andere personen die door of vanwege hem zijn tewerkgesteld, of enige andere van buiten afkomende oorzaak.</p>
+  <p>Indien een fout wordt gemaakt doordat de opdrachtgever aan de opdrachtnemer onjuiste of onvolledige informatie heeft verstrekt, is de opdrachtnemer niet aansprakelijk voor de daardoor ontstane schade.</p>
+  <p>De opdrachtnemer is niet aansprakelijk voor enige hinder of schade door het gebruik van internet, voor defect van een systeem, voor outsiders of virussen, noch voor eventueel door derden hierop geplaatste of verwerkte informatie of fraudegevallen vanwege derden. De opdrachtnemer is tevens niet verantwoordelijk voor fouten of schade veroorzaakt door gegevens of systemen van derden, zoals connectoren of API's van Microsoft of externe softwarepakketten.</p>
+  <p>De opdrachtnemer is niet gehouden tot vergoeding van immateri&euml;le, indirecte of gevolgschade, zoals doch niet beperkt tot omzet- of winstderving, personeelskosten, verlies van een kans, klachten van derden en advocatenkosten.</p>
+  <p>De opdrachtnemer is slechts aansprakelijk voor de door haar begane grove of opzettelijke fout. Zij is derhalve niet aansprakelijk voor gewone of lichte fout. Voor zover de opdrachtnemer afhankelijk is van de medewerking, diensten en prestaties van derden, kan zij op geen enkele wijze aansprakelijk worden gesteld voor welke schade ook voortvloeiend uit hun fout, daarin begrepen grove fout of opzet.</p>
+  <p>De opdrachtnemer heeft een beroepsaansprakelijkheidsverzekering afgesloten. Voor de gevallen waarin de opdrachtnemer aansprakelijk is, is haar aansprakelijkheid beperkt tot het bedrag dat door haar verzekeraar in het betrokken geval effectief wordt uitgekeerd. Indien de verzekeraar niet tussenkomt, is de aansprakelijkheid beperkt tot het totaal van de bedragen die in het kader van de betrokken opdracht werden gefactureerd in de twaalf maanden voorafgaand aan het schadegeval.</p>
+  <p>De beperkingen en uitsluitingen in dit artikel gelden niet in geval van opzet of bedrog van de opdrachtnemer, noch in de gevallen waarin de wet dwingend anders bepaalt.</p>
+
+  <h2 id="a14">Artikel 14 &ndash; Klachten</h2>
+  <p>Elk probleem of klacht betreffende een zichtbaar gebrek of tekortkoming dient binnen een termijn van 8 kalenderdagen te rekenen vanaf de uitvoering of de factuurdatum schriftelijk en gemotiveerd te worden gemeld aan de opdrachtnemer. Gebreken die redelijkerwijze niet binnen die termijn konden worden vastgesteld, dienen gemeld te worden binnen de 8 kalenderdagen na de ontdekking ervan, en uiterlijk binnen de zes maanden na de aanvaarding overeenkomstig artikel 18. Een melding per e-mail geldt als schriftelijke melding. Het bewijs van tijdig protest is ten laste van de opdrachtgever.</p>
+  <p>Klachten schorten de betalingsverplichting van de opdrachtgever niet op en geven geen recht op terugbetaling zolang het protest niet door de opdrachtnemer als gegrond wordt bevonden.</p>
+
+  <h2 id="a15">Artikel 15 &ndash; Vertrouwelijkheid</h2>
+  <p>Alle informatie, adviezen en aanbevelingen in rapporten, presentaties, functionele en technische ontwerpen, of andere mededelingen die de opdrachtnemer verstrekt, worden beschouwd als strikt vertrouwelijke informatie en zijn uitsluitend bestemd voor intern gebruik van de opdrachtgever. Het is de opdrachtgever niet toegestaan om de inhoud ervan, geheel, gedeeltelijk of samengevat, openbaar te maken of te distribueren, behoudens andersluidend schriftelijk akkoord.</p>
+  <p>De opdrachtnemer behandelt op haar beurt alle informatie van de opdrachtgever die zij in het kader van de opdracht verneemt als vertrouwelijk en deelt deze niet met derden, behoudens voorafgaand schriftelijk akkoord. De vermelding van de opdrachtgever als referentie overeenkomstig artikel 4.6 wordt niet als een inbreuk beschouwd.</p>
+  <p>Deze verplichting geldt voor beide partijen en blijft gelden na afloop van de overeenkomst, tenzij de bekendmaking noodzakelijk is op grond van een dagvaarding of een wettelijk of rechterlijk bevel.</p>
+  <p>De rechten op de opgeleverde oplossingen en op de onderliggende componenten worden geregeld in artikel 4.</p>
+
+  <h2 id="a16">Artikel 16 &ndash; Wijziging toestand opdrachtgever</h2>
+  <p>Enige verandering in de toestand van de opdrachtgever, zoals faillissement, vereffening, ontbinding of de overname van de meerderheid van de aandelen van de opdrachtgever door een derde, brengt van rechtswege de ontbinding mee van de overeenkomst, tenzij de opdrachtnemer daar uitdrukkelijk afstand van doet en de nakoming van de overeenkomst nastreeft.</p>
+  <p>De overeenkomst zal zonder de voorafgaandelijke tussenkomst van de rechter door de opdrachtnemer eigenmachtig kunnen ontbonden worden ingeval van een ernstige contractuele tekortkoming door de opdrachtgever die niet door de opdrachtgever wordt rechtgezet binnen de 15 dagen nadat deze door de opdrachtnemer schriftelijk in gebreke is gesteld, zoals maar niet beperkt tot de niet tijdige betaling overeenkomstig artikel 10 of het niet of onvoldoende verlenen van de nodige medewerking overeenkomstig artikel 8.</p>
+
+  <h2 id="a17">Artikel 17 &ndash; Persoonsgegevens</h2>
+  <p>De verwerking en het gebruik van persoonsgegevens gebeurt conform alle nationale, internationale en Europese wetgeving en richtlijnen ter bescherming van de persoonlijke levenssfeer. Hoe de opdrachtnemer omgaat met persoonsgegevens waarvoor zij zelf verwerkingsverantwoordelijke is, staat beschreven in de <a href="/privacy.html">privacyverklaring</a>.</p>
+  <p>Verwerkt de opdrachtnemer in het kader van de opdracht persoonsgegevens namens de opdrachtgever, dan treedt zij op als verwerker. Partijen sluiten daarvoor een afzonderlijke gegevensverwerkingsovereenkomst conform artikel 28 AVG. Die overeenkomst heeft voorrang op dit artikel voor alles wat de verwerking van persoonsgegevens betreft.</p>
+
+  <h2 id="a18">Artikel 18 &ndash; Oplevering en aanvaarding</h2>
+  <p><strong>18.1.</strong> De opdrachtnemer brengt de opdrachtgever schriftelijk of per e-mail op de hoogte wanneer een deellevering of de volledige opdracht klaar is voor aanvaarding.</p>
+  <p><strong>18.2.</strong> De opdrachtgever beschikt over 10 werkdagen om de oplevering te testen en eventuele gebreken schriftelijk en gemotiveerd te melden. Bij gebrek aan gemotiveerde opmerkingen binnen deze termijn wordt de oplevering geacht aanvaard te zijn. Het in productie nemen of het effectief gebruiken van de oplevering geldt eveneens als aanvaarding.</p>
+  <p><strong>18.3.</strong> Gebreken die de werking van de oplossing niet wezenlijk verhinderen, staan de aanvaarding niet in de weg. Zij worden door de opdrachtnemer binnen een redelijke termijn verholpen.</p>
+  <p><strong>18.4.</strong> Verzoeken die na de aanvaarding worden geformuleerd en die verder gaan dan het herstellen van gemelde gebreken, worden beschouwd als meerwerk in de zin van artikel 3.</p>
+
+  <h2 id="a19">Artikel 19 &ndash; Licenties en diensten van derden</h2>
+  <p><strong>19.1.</strong> De opgeleverde oplossingen draaien op platformen en diensten van derden, waaronder Microsoft 365 en het Microsoft Power Platform. De aanschaf, de verlenging en de kosten van de daarvoor benodigde licenties, waaronder Power Apps per app- of per user-licenties, Power BI-licenties, premium connectoren en capaciteit, vallen integraal ten laste van de opdrachtgever.</p>
+  <p><strong>19.2.</strong> De opdrachtnemer informeert de opdrachtgever bij de offerte naar best vermogen over de licenties die de voorgestelde oplossing vereist. Deze informatie is indicatief en gebaseerd op de op dat ogenblik geldende voorwaarden en tarieven van de betrokken leverancier.</p>
+  <p><strong>19.3.</strong> De opdrachtnemer is niet aansprakelijk voor wijzigingen in de prijzen, de licentievoorwaarden, de functionaliteiten of de beschikbaarheid van diensten van derden, noch voor storingen, gegevensverlies of beperkingen die daaruit voortvloeien. Indien een wijziging bij een derde aanpassingen aan de oplossing noodzakelijk maakt, worden deze beschouwd als meerwerk in de zin van artikel 3.</p>
+  <p><strong>19.4.</strong> De opdrachtgever staat in voor een geldige licentie gedurende de volledige duur van het gebruik van de oplossing. De opdrachtnemer is niet aansprakelijk voor de gevolgen van het ontbreken of het vervallen van een licentie.</p>
+
+  <h2 id="a20">Artikel 20 &ndash; Toepasselijk recht en geschillen</h2>
+  <p>Alle geschillen die mochten rijzen betreffende het ontstaan, de uitvoering en/of de interpretatie van deze overeenkomst behoren tot de uitsluitende bevoegdheid van de rechtbanken van het gerechtelijk arrondissement waar de opdrachtnemer zijn zetel heeft, onverminderd het recht van de opdrachtnemer om te dagvaarden voor de rechtbanken van de woonplaats van de verweerder. Deze rechtbanken worden door de partijen als de enig bevoegde jurisdicties erkend en aanvaard. Uitsluitend het Belgische recht zal van toepassing zijn.</p>
+
+  <h2 id="a21">Artikel 21 &ndash; Scheidbaarheid</h2>
+  <p>De nietigheid, ongeldigheid of onafdwingbaarheid van om het even welke bepaling van deze algemene voorwaarden zal niettemin haar maximaal toegelaten gevolg behouden en dit zal bovendien geen enkele invloed hebben op de geldigheid of afdwingbaarheid van de overige bepalingen van deze algemene voorwaarden.</p>
+
+  <a class="backlink" href="/">&larr; Terug naar de website</a>
+</main>
+
+<footer>
+  <div class="footer-brand">
+    <svg height="34" viewBox="0 0 190 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="footGrad" x1="0" y1="32" x2="34" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#A8C8E8" stop-opacity="0.5"/>
+          <stop offset="50%" stop-color="#7AAAD4"/>
+          <stop offset="100%" stop-color="white"/>
+        </linearGradient>
+      </defs>
+      <circle cx="7" cy="30" r="4" fill="#7AAAD4" opacity="0.45"/>
+      <circle cx="19" cy="19" r="5.5" fill="#7AAAD4"/>
+      <circle cx="33" cy="7" r="7" fill="white"/>
+      <path d="M7 30 C11 25 15 23 19 19 C23 15 27 11 33 7" stroke="url(#footGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M28 3 L33 7 L38 3" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="48" y1="4" x2="48" y2="34" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <text x="56" y="26" font-family="Outfit, sans-serif" font-weight="600" font-size="22" fill="white" letter-spacing="-0.5">Flow</text>
+      <text x="104" y="26" font-family="Outfit, sans-serif" font-weight="300" font-size="22" fill="#7AAAD4" letter-spacing="-0.5">4Q</text>
+    </svg>
+    <span class="footer-tagline">Kwaliteit begint bij een goed proces.</span>
+  </div>
+  <div class="footer-info">
+    <span>Flow4Q BV &middot; Lokeren</span>
+    <span>BTW BE 1011.753.847</span>
+    <span><a href="mailto:info@flow4q.com">info@flow4q.com</a></span>
+    <span><a href="/privacy.html">Privacyverklaring</a> &middot; <a href="/voorwaarden.html">Algemene voorwaarden</a></span>
+  </div>
+  <div class="footer-copy">&copy; 2026 Flow4Q BV &middot; Alle rechten voorbehouden</div>
+</footer>
+
+</body>
+</html>
