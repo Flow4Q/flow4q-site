@@ -117,14 +117,17 @@
   /* HOE WERKT HET */
   #aanpak { background: var(--white); padding: 90px 6vw; border-top: 1px solid var(--border); }
   .aanpak-wrap { max-width: 1100px; margin: 0 auto; }
-  .stappen { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
-  .stap { position: relative; background: var(--c50); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem 1.5rem 1.5rem; }
+  .stappen { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.2rem; margin-top: 2.5rem; }
+  @media (max-width: 1100px) { .stappen { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 800px) { .stappen { grid-template-columns: 1fr 1fr; } }
+  .stap { position: relative; background: var(--c50); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem 1.2rem 1.3rem; display: flex; flex-direction: column; }
+  .stap .stap-duur { margin-top: auto; padding-top: 0.9rem; }
   .stap-nr { font-family: Georgia, serif; font-size: 2.6rem; line-height: 1; color: var(--c300); font-style: italic; margin-bottom: 0.6rem; }
   .stap h3 { font-size: 1.02rem; font-weight: 600; color: var(--c900); margin-bottom: 0.45rem; }
-  .stap p { font-size: 0.92rem; line-height: 1.65; color: var(--muted); }
+  .stap p { font-size: 0.86rem; line-height: 1.65; color: var(--muted); }
   .stap p strong { color: var(--c900); font-weight: 600; }
   .stap-duur { display: inline-block; margin-top: 0.9rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c500); }
-  @media (max-width: 860px) { .stappen { grid-template-columns: 1fr; } }
+  @media (max-width: 600px) { .stappen { grid-template-columns: 1fr; } }
 
   /* FAQ */
   #faq { background: var(--c50); padding: 90px 6vw; border-top: 1px solid var(--border); }
@@ -259,7 +262,9 @@
   .case-label { font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c600); display: flex; align-items: center; gap: 0.45rem; }
   .case-label::before { content: ""; display: inline-block; width: 14px; height: 2px; background: var(--c500); border-radius: 2px; flex-shrink: 0; }
   .case-block p { font-size: 0.87rem; color: var(--muted); line-height: 1.67; }
-  .case-result-row { background: var(--c50); border-left: 3px solid var(--c500); border-radius: 0 8px 8px 0; padding: 0.75rem 1rem; margin-top: auto; font-size: 0.84rem; font-weight: 600; color: var(--c800); }
+  .case-body .case-block:first-child p { min-height: calc(4 * 1.67em); }
+  @media (max-width: 900px) { .case-body .case-block:first-child p { min-height: 0; } }
+  .case-result-row { background: var(--c50); border-left: 3px solid var(--c500); border-radius: 0 8px 8px 0; padding: 0.75rem 1rem; margin-top: auto; min-height: calc(2 * 1.5em + 1.5rem); box-sizing: border-box; display: flex; align-items: center; line-height: 1.5; font-size: 0.84rem; font-weight: 600; color: var(--c800); }
 
   /* OVER */
   #over { background: linear-gradient(150deg, var(--c900), var(--c800)); }
@@ -409,7 +414,7 @@
     <h1 class="hero-title">Het kan efficiënter.<br><em>Samen zoeken we waar.</em></h1>
     <p class="hero-sub">Het begint met een gevoel: dit moet vlotter kunnen. Ik praat met de mensen die het werk doen en leg het proces bloot: <strong>waar loopt het mis, waar gaat kwaliteit verloren, waar ontbreekt communicatie</strong>. Pas dan bouwen we de oplossing, vaak een <strong>ondersteunende digitale tool</strong> in de Microsoft-omgeving die u al hebt. Het werk loopt vlotter en aangenamer, met <strong>minder fouten, betere kwaliteit en scherper inzicht</strong> als resultaat.</p>
     <div class="hero-btns">
-      <a href="#contact" class="btn-primary">Gratis processcan</a>
+      <a href="#contact" class="btn-primary">Gratis intake</a>
       <a href="#cases" class="btn-outline">Bekijk cases &rarr;</a>
     </div>
   </div>
@@ -542,25 +547,37 @@
 <section id="aanpak">
   <div class="aanpak-wrap">
     <p class="s-tag">Hoe werkt het</p>
-    <h2 class="s-title">Drie stappen,<br><em>geen verrassingen</em></h2>
+    <h2 class="s-title">Vijf stappen,<br><em>geen verrassingen</em></h2>
     <div class="stappen">
       <div class="stap reveal">
         <div class="stap-nr">1</div>
-        <h3>Processcan</h3>
-        <p>Een gesprek van 30 minuten, bij u of online. U vertelt waar het wringt, ik luister en stel vragen. We bekijken samen <strong>waar de grootste winst zit</strong> en of digitaliseren daar het antwoord op is.</p>
+        <h3>Intake</h3>
+        <p>Een gesprek van 30 minuten, bij u of online. U vertelt waar het wringt, ik luister en stel vragen. We bekijken samen <strong>of digitaliseren hier het antwoord is</strong> en waar de grootste winst zit.</p>
         <span class="stap-duur">30 minuten, gratis</span>
       </div>
       <div class="stap reveal">
         <div class="stap-nr">2</div>
-        <h3>Werkende eerste versie</h3>
-        <p>Geen lastenboek van veertig pagina's. Ik bouw een <strong>proof of concept die u meteen kan uitproberen</strong> met uw eigen gegevens. U ziet of het klopt voor u verder investeert, en ik krijg feedback uit de praktijk in plaats van uit een vergaderzaal.</p>
-        <span class="stap-duur">vanaf 3 dagen, richtprijs vooraf</span>
+        <h3>Verdieping met het team</h3>
+        <p>Eén tot vier uur met de mensen die het werk doen. Ik laat me <strong>het proces van begin tot eind uitleggen</strong>, stel de vragen die niemand meer stelt en lijst op waar we kunnen optimaliseren.</p>
+        <span class="stap-duur">1 tot 4 uur, aan uurtarief</span>
       </div>
       <div class="stap reveal">
         <div class="stap-nr">3</div>
-        <h3>Uitrol en overdracht</h3>
-        <p>We bouwen verder op wat werkt, in korte rondes met de mensen die er dagelijks mee werken. Waar het zinvol is, bouw ik de tool zo dat <strong>uw team zelf velden en keuzelijsten kan aanpassen</strong>. Maatwerk staat in uw eigen Microsoft-omgeving.</p>
-        <span class="stap-duur">in afspraak, per ronde</span>
+        <h3>Analyse en proof of concept</h3>
+        <p>Ik werk de analyse uit en zoek een uitwerking die het doel écht dient, niet enkel de vraag. Het resultaat is <strong>een werkende eerste versie die u meteen kan uitproberen</strong>. Daarna stemmen we af met het projectteam en verfijnen we.</p>
+        <span class="stap-duur">vanaf 3 dagen, aan uurtarief, richtprijs vooraf</span>
+      </div>
+      <div class="stap reveal">
+        <div class="stap-nr">4</div>
+        <h3>Testen en bijsturen</h3>
+        <p>De gebruikers testen in hun echte werk. Wat niet klopt, pas ik aan. <strong>Opleiding en handleiding als dat nodig is</strong>, zodat iedereen weet hoe het werkt voor we live gaan.</p>
+        <span class="stap-duur">aan uurtarief</span>
+      </div>
+      <div class="stap reveal">
+        <div class="stap-nr">5</div>
+        <h3>Go-live en opvolging</h3>
+        <p>De tool gaat in gebruik, en ik blijf <strong>nog even in de buurt tot alles vlot draait</strong>. Maatwerk staat in uw eigen Microsoft-omgeving.</p>
+        <span class="stap-duur">aan uurtarief</span>
       </div>
     </div>
   </div>
@@ -762,11 +779,11 @@
     <div class="faq-list">
       <details>
         <summary>Wat kost zoiets?</summary>
-        <p>Een eenvoudige opdracht, zoals een basisopzet van Power BI of een standaardformulier met een tiental velden in SharePoint, start rond <strong>3.000 euro</strong>. Zodra het flexibel moet zijn, met meerdere schermen, meerdere tools of beveiliging per rol, zit u <strong>snel boven 5.000 euro</strong>. Na de gratis processcan krijgt u <strong>een richtprijs voor de eerste werkende versie</strong>, zodat u weet waar u aan toe bent voor we starten.</p>
+        <p>Een eenvoudige opdracht, zoals een basisopzet van Power BI of een standaardformulier met een tiental velden in SharePoint, start rond <strong>3.000 euro</strong>. Zodra het flexibel moet zijn, met meerdere schermen, meerdere tools of beveiliging per rol, zit u <strong>snel boven 5.000 euro</strong>. Ik werk <strong>aan uurtarief</strong>. Na de gratis intake krijgt u <strong>een richtprijs voor de eerste werkende versie</strong>, een inschatting van de uren, zodat u weet waar u aan toe bent voor we starten.</p>
       </details>
       <details>
         <summary>Moet ik extra software of licenties kopen?</summary>
-        <p>Meestal niet. Power Apps, Power Automate en SharePoint zitten in <strong>de meeste Microsoft 365-abonnementen</strong> die bedrijven al hebben. Power BI vraagt soms een extra licentie per gebruiker. Ik check dit in de processcan, zodat u vooraf weet waar u aan toe bent.</p>
+        <p>Meestal niet. Power Apps, Power Automate en SharePoint zitten in <strong>de meeste Microsoft 365-abonnementen</strong> die bedrijven al hebben. Power BI vraagt soms een extra licentie per gebruiker. Ik check dit tijdens de intake, zodat u vooraf weet waar u aan toe bent.</p>
       </details>
       <details>
         <summary>Wat als we er later mee stoppen of u niet meer beschikbaar bent?</summary>
@@ -778,7 +795,7 @@
       </details>
       <details>
         <summary>Hoeveel tijd vraagt dit van ons team?</summary>
-        <p>De processcan: 30 minuten. Bij het bouwen van de eerste versie: een paar korte gesprekken met de mensen die het werk doen, en nadien <strong>wat tijd om de versie uit te proberen</strong> en feedback te geven, afhankelijk van de grootte van de tool. Ik vraag geen ellenlange workshops.</p>
+        <p>De intake: 30 minuten. Bij het bouwen van de eerste versie: een paar korte gesprekken met de mensen die het werk doen, en nadien <strong>wat tijd om de versie uit te proberen</strong> en feedback te geven, afhankelijk van de grootte van de tool. Ik vraag geen ellenlange workshops.</p>
       </details>
       <details>
         <summary>Werkt u ook voor kleine bedrijven?</summary>
@@ -793,7 +810,7 @@
     <div class="contact-info">
       <p class="s-tag">Samenwerken</p>
       <h2>Benieuwd wat er mogelijk is?</h2>
-      <p>Start met een gratis processcan van 30 minuten. Samen kijken we waar de grootste winst zit, volledig vrijblijvend. Wilt u daarna verder, dan bouw ik een proof of concept vanaf drie dagen werk. U kent de richtprijs vooraf en beslist pas nadien of we verder gaan.</p>
+      <p>Start met een gratis intake van 30 minuten. Samen kijken we waar de grootste winst zit, volledig vrijblijvend. Wilt u daarna verder, dan bouw ik een proof of concept vanaf drie dagen werk. U kent de richtprijs vooraf en beslist pas nadien of we verder gaan.</p>
       <div class="contact-items">
         <a href="tel:+32474627187" class="contact-item">
           <div class="c-icon">&#128222;</div>
