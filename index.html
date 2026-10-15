@@ -107,11 +107,8 @@
   .logo-slot img { max-height: 44px; max-width: 150px; width: auto; display: block; }
 
   /* BEELD IN DIENST-KAART */
-  .dienst-wide { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(260px, 1fr) minmax(300px, 1.3fr); gap: 2rem; align-items: center; }
-  .dienst-wide .dienst-visual { margin: 0; }
-  @media (max-width: 720px) { .dienst-wide { grid-template-columns: 1fr; gap: 1rem; } }
-  .dienst-visual { margin: 0.9rem 0 1rem; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--c50); position: relative; }
-  .dienst-visual img { width: 100%; height: auto; display: block; }
+  .dienst-visual { margin: 1rem 0 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--c50); position: relative; }
+  .dienst-visual img { width: 100%; max-width: 100%; height: auto; display: block; }
   .dienst-visual figcaption { position: absolute; left: 0; right: 0; bottom: 0; font-size: 0.7rem; padding: 0.35rem 0.7rem; color: var(--white); background: rgba(27,40,61,0.78); }
   .dienst-visual.empty img, .dienst-visual.empty figcaption { display: none; }
   .dienst-visual.empty::after { content: "beeld volgt"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 0.74rem; color: var(--c400); }
@@ -141,20 +138,17 @@
   .faq-list details p { padding: 0 0 1.2rem; font-size: 0.95rem; line-height: 1.7; color: var(--muted); max-width: 720px; }
   .faq-list details p strong { color: var(--c900); font-weight: 600; }
 
-  .case-top { min-height: 96px; }
+  .case-top h3 { min-height: 2.6em; }
   /* VOOR / NA IN CASES */
   .case-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); border-bottom: 1px solid var(--border); }
-  .case-visual figure { position: relative; margin: 0; background: var(--c50); display: flex; flex-direction: column; overflow: hidden; }
-  .case-visual img { width: 100%; height: 230px; object-fit: cover; object-position: top left; display: block; transition: transform 0.4s; }
-  @media (max-width: 900px) { .case-visual img { height: 150px; } }
-  .case-visual.split-40 { grid-template-columns: 2fr 3fr; }
-  .case-visual.full img { height: auto; }
+  .case-visual figure { position: relative; margin: 0; min-width: 0; background: var(--white); display: flex; flex-direction: column; overflow: hidden; }
+  .case-visual img { width: 100%; aspect-ratio: 16/9; height: auto; max-width: 100%; object-fit: contain; display: block; transition: transform 0.4s; }
   .case-card:hover .case-visual img { transform: scale(1.03); }
   .case-visual figcaption { order: -1; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.45rem 0.9rem; color: var(--c700); background: var(--white); border-bottom: 1px solid var(--border); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .case-visual.single { grid-template-columns: 1fr; }
   .case-visual.single .voor, .case-visual.single figcaption { display: none; }
   .case-visual figure.empty img { display: none; }
-  .case-visual figure.empty::after { content: "beeld volgt"; height: 230px; display: flex; align-items: center; justify-content: center; font-size: 0.74rem; color: var(--c400); }
+  .case-visual figure.empty::after { content: "beeld volgt"; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; font-size: 0.74rem; color: var(--c400); }
 
   /* SCROLL REVEAL */
   .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -217,7 +211,10 @@
   /* DIENSTEN */
   #diensten { background: var(--c50); }
   .diensten-hdr { margin-bottom: 3.5rem; }
-  .diensten-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+  .diensten-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
+  .dienst-card { flex: 1 1 240px; max-width: calc(25% - 1.2rem); min-width: 0; }
+  @media (max-width: 1000px) { .dienst-card { max-width: calc(50% - 0.75rem); } }
+  @media (max-width: 560px) { .dienst-card { max-width: 100%; } }
   .dienst-card {
     background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
     padding: 2rem; position: relative; overflow: hidden;
@@ -521,8 +518,7 @@
         <li>Workflows starten op basis van events of tijdstip</li>
       </ul>
     </div>
-    <div class="dienst-card dienst-wide reveal">
-      <div class="dienst-wide-text">
+    <div class="dienst-card reveal">
       <div class="d-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#3A6095" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></div>
       <span class="dienst-tag">Meegroeien</span>
       <h3>Uw tool past zich aan, ook later nog</h3>
@@ -532,7 +528,6 @@
         <li>Foto&apos;s toevoegen aan keuzelijsten, zodat iedereen ziet wat bedoeld wordt</li>
         <li>Alles in uw eigen Microsoft-omgeving, u blijft eigenaar</li>
       </ul>
-      </div>
       <!-- Beeld: img/cases/meegroeien.webp (beheerscherm waar de klant zelf velden aanmaakt) -->
       <figure class="dienst-visual"><img src="img/cases/meegroeien.webp" alt="Beheerscherm waar u zelf velden, keuzelijsten en tabs aanpast" loading="lazy" onerror="this.parentNode.classList.add('empty')"><figcaption>U beheert zelf velden en keuzelijsten</figcaption></figure>
     </div>
@@ -564,7 +559,7 @@
       <div class="stap reveal">
         <div class="stap-nr">3</div>
         <h3>Uitrol en overdracht</h3>
-        <p>We bouwen verder op wat werkt, in korte rondes met de mensen die er dagelijks mee werken. Waar het zinvol is, bouw ik de tool zo dat <strong>uw team zelf velden en keuzelijsten kan aanpassen</strong>. Alles staat in uw eigen Microsoft-omgeving, u blijft eigenaar.</p>
+        <p>We bouwen verder op wat werkt, in korte rondes met de mensen die er dagelijks mee werken. Waar het zinvol is, bouw ik de tool zo dat <strong>uw team zelf velden en keuzelijsten kan aanpassen</strong>. Maatwerk staat in uw eigen Microsoft-omgeving.</p>
         <span class="stap-duur">in afspraak, per ronde</span>
       </div>
     </div>
@@ -585,7 +580,7 @@
         <div><h3>Centrale projectdatabank voor een internationale industri&euml;le groep</h3><div class="case-sector">Industrie</div></div>
       </div>
       <!-- Voor/na: zet projectdatabank-voor.webp en projectdatabank-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
-      <div class="case-visual split-40">
+      <div class="case-visual">
         <figure class="voor"><img src="img/cases/projectdatabank-voor.webp" alt="Projectenlijst met filters op impact, resources en programma" loading="lazy" onerror="cvMissing(this)"><figcaption>Projectenlijst</figcaption></figure>
         <figure class="na"><img src="img/cases/projectdatabank-na.webp" alt="Dashboard met signalen per KPI en planning per project" loading="lazy" onerror="cvMissing(this)"><figcaption>Dashboard</figcaption></figure>
       </div>
@@ -699,8 +694,8 @@
 
 <section id="reacties">
   <div class="reacties-wrap">
-    <p class="s-tag" style="text-align:center;">Wat opdrachtgevers zeggen</p>
-    <h2 class="s-title" style="text-align:center;">Reacties uit<br><em>de praktijk</em></h2>
+    <p class="s-tag">Wat opdrachtgevers zeggen</p>
+    <h2 class="s-title">Reacties uit<br><em>de praktijk</em></h2>
     <div class="reacties-grid">
       <div class="quote-card reveal">
         <div class="quote-mark">&ldquo;</div>
@@ -762,8 +757,8 @@
 
 <section id="faq">
   <div class="faq-wrap">
-    <p class="s-tag" style="text-align:center;">Veelgestelde vragen</p>
-    <h2 class="s-title" style="text-align:center;">Wat u zich waarschijnlijk<br><em>al afvraagt</em></h2>
+    <p class="s-tag">Veelgestelde vragen</p>
+    <h2 class="s-title">Wat u zich waarschijnlijk<br><em>al afvraagt</em></h2>
     <div class="faq-list">
       <details>
         <summary>Wat kost zoiets?</summary>
@@ -775,7 +770,7 @@
       </details>
       <details>
         <summary>Wat als we er later mee stoppen of u niet meer beschikbaar bent?</summary>
-        <p>Alles wat ik bouw staat <strong>in uw eigen Microsoft-omgeving</strong>, op uw naam. Niets draait op mijn servers. U kan er altijd zelf verder mee, of een andere partij erbij halen. Ik documenteer wat ik bouw, zodat een volgende partij er zonder mij mee verder kan.</p>
+        <p>Dat hangt af van wat we afspreken. <strong>Maatwerk voor u staat in uw eigen Microsoft-omgeving</strong>, op uw naam: u kan er altijd zelf mee verder of een andere partij erbij halen, en ik documenteer wat ik bouw. Werkt u met een tool die ik al eerder ontwikkelde, dan <strong>blijf ik daar eigenaar van</strong> en leggen we vooraf vast hoe u ze blijft gebruiken.</p>
       </details>
       <details>
         <summary>Onze processen zitten in Excel en in hoofden. Is dat een probleem?</summary>
@@ -783,7 +778,7 @@
       </details>
       <details>
         <summary>Hoeveel tijd vraagt dit van ons team?</summary>
-        <p>De processcan: 30 minuten. Bij het bouwen van de eerste versie: een paar korte gesprekken met de mensen die het werk doen, en nadien <strong>een uurtje om de versie uit te proberen</strong> en feedback te geven. Ik vraag geen ellenlange workshops.</p>
+        <p>De processcan: 30 minuten. Bij het bouwen van de eerste versie: een paar korte gesprekken met de mensen die het werk doen, en nadien <strong>wat tijd om de versie uit te proberen</strong> en feedback te geven, afhankelijk van de grootte van de tool. Ik vraag geen ellenlange workshops.</p>
       </details>
       <details>
         <summary>Werkt u ook voor kleine bedrijven?</summary>
