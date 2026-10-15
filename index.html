@@ -110,16 +110,19 @@
   .dienst-wide { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(260px, 1fr) minmax(300px, 1.3fr); gap: 2rem; align-items: center; }
   .dienst-wide .dienst-visual { margin: 0; }
   @media (max-width: 720px) { .dienst-wide { grid-template-columns: 1fr; gap: 1rem; } }
-  .dienst-visual { margin: 0.9rem 0 1rem; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--c50); aspect-ratio: 4/3; position: relative; }
-  .dienst-visual img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; }
+  .dienst-visual { margin: 0.9rem 0 1rem; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--c50); position: relative; }
+  .dienst-visual img { width: 100%; height: auto; display: block; }
   .dienst-visual figcaption { position: absolute; left: 0; right: 0; bottom: 0; font-size: 0.7rem; padding: 0.35rem 0.7rem; color: var(--white); background: rgba(27,40,61,0.78); }
   .dienst-visual.empty img, .dienst-visual.empty figcaption { display: none; }
   .dienst-visual.empty::after { content: "beeld volgt"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 0.74rem; color: var(--c400); }
 
   /* VOOR / NA IN CASES */
   .case-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); border-bottom: 1px solid var(--border); }
-  .case-visual figure { position: relative; margin: 0; background: var(--c50); aspect-ratio: 4/3; overflow: hidden; }
-  .case-visual img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; transition: transform 0.4s; }
+  .case-visual figure { position: relative; margin: 0; background: var(--c50); aspect-ratio: 16/10; overflow: hidden; }
+  .case-visual.tall figure { aspect-ratio: 4/5; }
+  .case-visual img { width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; transition: transform 0.4s; }
+  .case-visual.single figure { aspect-ratio: auto; }
+  .case-visual.single img { height: auto; }
   .case-card:hover .case-visual img { transform: scale(1.03); }
   .case-visual figcaption { position: absolute; top: 0.6rem; left: 0.6rem; font-size: 0.64rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.22rem 0.6rem; border-radius: 100px; color: var(--white); background: rgba(27,40,61,0.78); backdrop-filter: blur(4px); }
   .case-visual .na figcaption { background: var(--c500); }
@@ -377,8 +380,8 @@
 <section class="hero">
   <div class="hero-inner">
   <div class="hero-text">
-    <h1>Uw proces bepaalt de tool,<br><em>en niet omgekeerd.</em></h1>
-    <p class="hero-sub">Ik bekijk eerst <strong>hoe uw team vandaag echt werkt</strong> en bouw daar de digitale oplossing rond. Geen pakket waar u zich aan aanpast, maar een <strong>tool die meegroeit</strong>. Het werk loopt vlotter en aangenamer, met <strong>minder fouten, betere kwaliteit en scherper inzicht</strong> als resultaat.</p>
+    <h1 class="hero-title">Het kan efficiënter.<br><em>Samen zoeken we waar.</em></h1>
+    <p class="hero-sub">Het begint met een gevoel: dit moet vlotter kunnen. Ik praat met de mensen die het werk doen en leg het proces bloot: <strong>waar loopt het mis, waar gaat kwaliteit verloren, waar ontbreekt communicatie</strong>. Pas dan bouwen we de oplossing, vaak een <strong>ondersteunende digitale tool</strong> in de Microsoft-omgeving die u al hebt. Het werk loopt vlotter en aangenamer, met <strong>minder fouten, betere kwaliteit en scherper inzicht</strong> als resultaat.</p>
     <div class="hero-btns">
       <a href="#contact" class="btn-primary">Gratis processcan</a>
       <a href="#cases" class="btn-outline">Bekijk cases &rarr;</a>
@@ -416,9 +419,9 @@
       <li class="reveal"><span class="ref-sector">Vleesverwerking</span><strong>Onderhoudstool</strong> voor de opvolging van machineonderhoud bij een Belgisch vleesverwerkend bedrijf.</li>
     </ul>
     <div class="logos-row">
-      <div class="logo-slot"><img src="img/logos/stika.png" alt="Stika" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
-      <div class="logo-slot"><img src="img/logos/exceleroo.png" alt="Exceleroo" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
-      <div class="logo-slot"><img src="img/logos/chateau-le-vert.png" alt="Château Le Vert" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+      <a class="logo-slot" href="https://www.stikalabels.be/" target="_blank" rel="noopener"><img src="img/logos/stika.png" alt="Stika" loading="lazy" onerror="this.parentNode.style.display='none'"></a>
+      <a class="logo-slot" href="https://www.exceleroo.be/" target="_blank" rel="noopener"><img src="img/logos/exceleroo.png" alt="Exceleroo" loading="lazy" onerror="this.parentNode.style.display='none'"></a>
+      <a class="logo-slot" href="https://chateaulevert.com/" target="_blank" rel="noopener"><img src="img/logos/chateau-le-vert.png" alt="Château Le Vert" loading="lazy" onerror="this.parentNode.style.display='none'"></a>
     </div>
   </div>
 </section>
@@ -428,8 +431,8 @@
     <div class="herkent-grid">
       <div>
         <p class="s-tag">Herkent u dit?</p>
-        <h2 class="s-title">De duurste processen zijn<br><em>die waar niemand over klaagt</em></h2> 
-        <p class="s-sub" style="margin-top: 0.5rem;">Een proces dat misloopt, valt op. <strong>Een proces dat gewoon traag is, valt niet op.</strong> Mensen passen zich aan, houden een eigen bestandje bij, sturen er een mail achteraan. Zo blijft alles draaien, en <strong>net daarom kijkt niemand er nog naar</strong>.</p>
+        <h2 class="s-title">Het begint meestal<br><em>met een frustratie</em></h2> 
+        <p class="s-sub" style="margin-top: 0.5rem;">Iemand die elke week hetzelfde overtypt. Een planning die niemand vertrouwt. Een factuur die weer eens te laat vertrok. <strong>Daar begint het bijna altijd.</strong> En vaak zit er meer achter: een proces dat gewoon traag is, valt niet op. Mensen passen zich aan, houden een eigen bestandje bij, sturen er een mail achteraan. <strong>De frustratie is het signaal, het proces erachter is wat we aanpakken.</strong></p>
       </div>
       <div class="herkent-items">
         <div class="herkent-item reveal"><span class="herkent-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#3A6095" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg></span><p>Informatie verspreid over mails, Excel en hoofden</p></div>
@@ -526,9 +529,9 @@
         <div><h3>Centrale projectdatabank voor een internationale industri&euml;le groep</h3><div class="case-sector">Industrie</div></div>
       </div>
       <!-- Voor/na: zet projectdatabank-voor.webp en projectdatabank-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
-      <div class="case-visual">
-        <figure class="voor"><img src="img/cases/projectdatabank-voor.webp" alt="Projectinfo verspreid over mails en Excel-versies" loading="lazy" onerror="cvMissing(this)"><figcaption>Voor</figcaption></figure>
-        <figure class="na"><img src="img/cases/projectdatabank-na.webp" alt="Centrale projectenlijst met filters en dashboard" loading="lazy" onerror="cvMissing(this)"><figcaption>Na</figcaption></figure>
+      <div class="case-visual tall">
+        <figure class="voor"><img src="img/cases/projectdatabank-voor.webp" alt="Projectenlijst met filters op impact, resources en programma" loading="lazy" onerror="cvMissing(this)"><figcaption>Projectenlijst</figcaption></figure>
+        <figure class="na"><img src="img/cases/projectdatabank-na.webp" alt="Dashboard met signalen per KPI en planning per project" loading="lazy" onerror="cvMissing(this)"><figcaption>Dashboard</figcaption></figure>
       </div>
       <div class="case-body">
         <div class="case-block">
@@ -573,8 +576,8 @@
       </div>
       <!-- Voor/na: zet labelplanning-voor.webp en labelplanning-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
       <div class="case-visual">
-        <figure class="voor"><img src="img/cases/labelplanning-voor.webp" alt="Losse planning in Excel zonder koppeling met productie" loading="lazy" onerror="cvMissing(this)"><figcaption>Voor</figcaption></figure>
-        <figure class="na"><img src="img/cases/labelplanning-na.webp" alt="Labelplanning live gekoppeld aan de productieplanning" loading="lazy" onerror="cvMissing(this)"><figcaption>Na</figcaption></figure>
+        <figure class="voor"><img src="img/cases/labelplanning-voor.webp" alt="Labelplanning per PO, gekleurd per status, gesorteerd op productiedatum (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Planning</figcaption></figure>
+        <figure class="na"><img src="img/cases/labelplanning-na.webp" alt="Labelfiche met ingrediënten, THT, klantstatus en controles (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Labelfiche</figcaption></figure>
       </div>
       <div class="case-body">
         <div class="case-block">
