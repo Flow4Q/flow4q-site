@@ -118,9 +118,10 @@
 
   /* VOOR / NA IN CASES */
   .case-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); border-bottom: 1px solid var(--border); }
-  .case-visual figure { position: relative; margin: 0; background: var(--c50); aspect-ratio: 16/10; overflow: hidden; }
-  .case-visual.tall figure { aspect-ratio: 4/5; }
-  .case-visual img { width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; transition: transform 0.4s; }
+  .case-visual figure { position: relative; margin: 0; background: var(--c50); aspect-ratio: 16/9; overflow: hidden; }
+  .case-visual.r43 figure { aspect-ratio: 4/3; }
+  .case-visual.r1610 figure { aspect-ratio: 16/10; }
+  .case-visual img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; transition: transform 0.4s; }
   .case-visual.single figure { aspect-ratio: auto; }
   .case-visual.single img { height: auto; }
   .case-card:hover .case-visual img { transform: scale(1.03); }
@@ -224,6 +225,8 @@
   #cases { background: var(--white); }
   .cases-hdr { margin-bottom: 3.5rem; }
   .cases-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .cases-grid > .case-card:last-child:nth-child(odd) { grid-column: 1 / -1; width: calc(50% - 1rem); justify-self: center; }
+  @media (max-width: 900px) { .cases-grid > .case-card:last-child:nth-child(odd) { width: 100%; } }
   .case-card { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; }
   .case-card:hover { transform: translateY(-4px); box-shadow: 0 16px 50px rgba(27,40,61,0.1); }
   .case-top { background: linear-gradient(135deg, var(--c900), var(--c700)); padding: 1.5rem 1.8rem; display: flex; align-items: flex-start; gap: 0.9rem; }
@@ -516,10 +519,10 @@
 </section>
 
 <section id="cases">
-  <div class="cases-hdr">
+  <div class="cases-hdr" style="text-align:center;">
     <p class="s-tag">Resultaten in de praktijk</p>
     <h2 class="s-title">Zo ziet het eruit<br><em>in de echte wereld</em></h2>
-    <p class="s-sub">Vijf concrete projecten. Telkens dezelfde aanpak: doelgericht op zoek naar een <strong>gebruiksvriendelijke oplossing die het werk echt lichter maakt</strong>. Links hoe het was, rechts hoe het nu loopt.</p>
+    <p class="s-sub" style="margin: 0 auto;">Vijf concrete projecten. Telkens dezelfde aanpak: doelgericht op zoek naar een <strong>gebruiksvriendelijke oplossing die het werk echt lichter maakt</strong>. Met telkens een blik op het scherm zelf.</p>
   </div>
   <div class="cases-grid">
 
@@ -529,7 +532,7 @@
         <div><h3>Centrale projectdatabank voor een internationale industri&euml;le groep</h3><div class="case-sector">Industrie</div></div>
       </div>
       <!-- Voor/na: zet projectdatabank-voor.webp en projectdatabank-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
-      <div class="case-visual tall">
+      <div class="case-visual r43">
         <figure class="voor"><img src="img/cases/projectdatabank-voor.webp" alt="Projectenlijst met filters op impact, resources en programma" loading="lazy" onerror="cvMissing(this)"><figcaption>Projectenlijst</figcaption></figure>
         <figure class="na"><img src="img/cases/projectdatabank-na.webp" alt="Dashboard met signalen per KPI en planning per project" loading="lazy" onerror="cvMissing(this)"><figcaption>Dashboard</figcaption></figure>
       </div>
@@ -552,8 +555,8 @@
         <div><h3>Mystery shopper rapporteert live vanuit de winkel</h3><div class="case-sector">Retail</div></div>
       </div>
       <!-- Voor/na: zet mystery-shopper-voor.webp en mystery-shopper-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
-      <div class="case-visual">
-        <figure class="voor"><img src="img/cases/mystery-shopper-voor.webp" alt="Mystery shopper vult de checklist in op zijn gsm, met foto's per vraag" loading="lazy" onerror="cvMissing(this)"><figcaption>In de winkel</figcaption></figure>
+      <div class="case-visual r1610">
+        <figure class="voor"><img src="img/cases/mystery-shopper-voor.webp" alt="Mystery shopper vult de checklist in op zijn gsm, met foto's per vraag" loading="lazy" onerror="cvMissing(this)"><figcaption>App in de winkel</figcaption></figure>
         <figure class="na"><img src="img/cases/mystery-shopper-na.webp" alt="Automatisch rapport met score, groen/rood per vraag en foto's" loading="lazy" onerror="cvMissing(this)"><figcaption>Rapport, automatisch</figcaption></figure>
       </div>
       <div class="case-body">
@@ -575,7 +578,7 @@
         <div><h3>Labelplanning in sync met productie bij voedingsbedrijf</h3><div class="case-sector">Food &amp; Quality</div></div>
       </div>
       <!-- Voor/na: zet labelplanning-voor.webp en labelplanning-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
-      <div class="case-visual">
+      <div class="case-visual r43">
         <figure class="voor"><img src="img/cases/labelplanning-voor.webp" alt="Labelplanning per PO, gekleurd per status, gesorteerd op productiedatum (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Planning</figcaption></figure>
         <figure class="na"><img src="img/cases/labelplanning-na.webp" alt="Labelfiche met ingrediënten, THT, klantstatus en controles (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Labelfiche</figcaption></figure>
       </div>
