@@ -87,6 +87,52 @@
   .hero h1 em { font-style: italic; font-family: "Lora", serif; font-weight: 400; color: var(--c300); }
   .hero-slagzin { font-family: "Lora", serif; font-style: italic; font-size: 1.15rem; color: var(--c300); margin-bottom: 1rem; font-weight: 400; }
   .hero-sub { color: rgba(255,255,255,0.6); font-size: 1rem; line-height: 1.75; max-width: 460px; margin-bottom: 2.5rem; font-weight: 300; }
+  .hero-sub strong { color: var(--white); font-weight: 500; }
+
+  /* KERNWOORDEN */
+  .s-sub strong, .case-block p strong, .dienst-card p strong, .herkent-item p strong { color: var(--c900); font-weight: 600; }
+
+  /* LOGO'S KLANTEN */
+  .logos { background: var(--white); padding: 2.6rem 6vw 2.2rem; border-bottom: 1px solid var(--border); }
+  .logos-wrap { max-width: 1100px; margin: 0 auto; text-align: center; }
+  .logos-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.4rem; }
+  .ref-list { list-style: none; margin: 0 auto 1.8rem; padding: 0; max-width: 820px; text-align: left; display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem 2rem; }
+  .ref-list li { font-size: 0.9rem; line-height: 1.6; color: var(--muted); padding-left: 1rem; border-left: 2px solid var(--c300); }
+  .ref-list li strong { color: var(--c900); font-weight: 600; }
+  .ref-sector { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c500); margin-bottom: 0.2rem; }
+  @media (max-width: 720px) { .ref-list { grid-template-columns: 1fr; } }
+  .logos-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1rem 3rem; }
+  .logo-slot { height: 44px; display: flex; align-items: center; justify-content: center; filter: grayscale(1); opacity: 0.55; transition: filter 0.25s, opacity 0.25s; }
+  .logo-slot:hover { filter: none; opacity: 1; }
+  .logo-slot img { max-height: 44px; max-width: 150px; width: auto; display: block; }
+
+  /* BEELD IN DIENST-KAART */
+  .dienst-wide { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(260px, 1fr) minmax(300px, 1.3fr); gap: 2rem; align-items: center; }
+  .dienst-wide .dienst-visual { margin: 0; }
+  @media (max-width: 720px) { .dienst-wide { grid-template-columns: 1fr; gap: 1rem; } }
+  .dienst-visual { margin: 0.9rem 0 1rem; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--c50); aspect-ratio: 4/3; position: relative; }
+  .dienst-visual img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; }
+  .dienst-visual figcaption { position: absolute; left: 0; right: 0; bottom: 0; font-size: 0.7rem; padding: 0.35rem 0.7rem; color: var(--white); background: rgba(27,40,61,0.78); }
+  .dienst-visual.empty img, .dienst-visual.empty figcaption { display: none; }
+  .dienst-visual.empty::after { content: "beeld volgt"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 0.74rem; color: var(--c400); }
+
+  /* VOOR / NA IN CASES */
+  .case-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); border-bottom: 1px solid var(--border); }
+  .case-visual figure { position: relative; margin: 0; background: var(--c50); aspect-ratio: 4/3; overflow: hidden; }
+  .case-visual img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; transition: transform 0.4s; }
+  .case-card:hover .case-visual img { transform: scale(1.03); }
+  .case-visual figcaption { position: absolute; top: 0.6rem; left: 0.6rem; font-size: 0.64rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.22rem 0.6rem; border-radius: 100px; color: var(--white); background: rgba(27,40,61,0.78); backdrop-filter: blur(4px); }
+  .case-visual .na figcaption { background: var(--c500); }
+  .case-visual.single { grid-template-columns: 1fr; }
+  .case-visual.single .voor, .case-visual.single figcaption { display: none; }
+  .case-visual figure.empty img { display: none; }
+  .case-visual figure.empty::after { content: "beeld volgt"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 0.74rem; color: var(--c400); }
+
+  /* SCROLL REVEAL */
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  .reveal:nth-child(2) { transition-delay: 0.08s; } .reveal:nth-child(3) { transition-delay: 0.16s; } .reveal:nth-child(4) { transition-delay: 0.24s; } .reveal:nth-child(5) { transition-delay: 0.32s; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
   .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
   .btn-primary {
     background: var(--c500); color: var(--white);
@@ -286,6 +332,12 @@
     .herkent-grid { grid-template-columns: 1fr; gap: 2rem; }
   }
 </style>
+<script>
+  // Case-beelden: ontbreekt het voor-beeld, dan vult het na-beeld de volle breedte; ontbreken beide, dan verdwijnt het blok.
+  function cvMissing(img){var f=img.parentNode,v=f.parentNode;f.classList.add('empty');
+    if(v.querySelectorAll('figure.empty').length===2){v.style.display='none';}
+    else if(f.classList.contains('voor')){v.classList.add('single');}}
+</script>
 </head>
 <body>
 
@@ -326,7 +378,7 @@
   <div class="hero-inner">
   <div class="hero-text">
     <h1>Uw proces bepaalt de tool,<br><em>en niet omgekeerd.</em></h1>
-    <p class="hero-sub">Ik bekijk eerst hoe uw team vandaag echt werkt en bouw daar de digitale oplossing rond. Geen pakket waar u zich aan aanpast, maar een tool die meegroeit. Het werk loopt vlotter en aangenamer, met minder fouten, betere kwaliteit en scherper inzicht als resultaat.</p>
+    <p class="hero-sub">Ik bekijk eerst <strong>hoe uw team vandaag echt werkt</strong> en bouw daar de digitale oplossing rond. Geen pakket waar u zich aan aanpast, maar een <strong>tool die meegroeit</strong>. Het werk loopt vlotter en aangenamer, met <strong>minder fouten, betere kwaliteit en scherper inzicht</strong> als resultaat.</p>
     <div class="hero-btns">
       <a href="#contact" class="btn-primary">Gratis processcan</a>
       <a href="#cases" class="btn-outline">Bekijk cases &rarr;</a>
@@ -351,21 +403,41 @@
   <div class="stat"><span class="stat-n">3 dagen</span><span class="stat-l">Vanaf drie dagen tot een eerste werkende versie</span></div>
 </div>
 
+<!-- OPDRACHTGEVERS: de meeste klanten delen hun logo niet, daarom omschrijvingen. 
+     Logo's met toestemming: Stika, Exceleroo, Château Le Vert. Bestanden in /img/logos/ (stika.png, exceleroo.png, chateau-le-vert.png) (png of svg, max 150px breed).
+     Ontbreekt een bestand, dan verdwijnt de slot vanzelf. -->
+<section class="logos" aria-label="Opdrachtgevers">
+  <div class="logos-wrap">
+    <p class="logos-title">Voor wie ik al werkte</p>
+    <ul class="ref-list">
+      <li class="reveal"><span class="ref-sector">Recyclage &amp; afvalverwerking</span>Ondersteuning van de <strong>Power BI-migratie</strong> (van OBI naar Power BI) voor een Belgisch bedrijf met een vooraanstaande rol in recyclage en afvalverwerking in de regio Antwerpen.</li>
+      <li class="reveal"><span class="ref-sector">Industrie, internationaal</span><strong>Centrale projectdatabank</strong> en documentflows voor een internationale industri&euml;le groep.</li>
+      <li class="reveal"><span class="ref-sector">Vastgoed</span><strong>Projectopvolging</strong> met budget, offertes en facturen voor een Belgische vastgoedontwikkelaar.</li>
+      <li class="reveal"><span class="ref-sector">Vleesverwerking</span><strong>Onderhoudstool</strong> voor de opvolging van machineonderhoud bij een Belgisch vleesverwerkend bedrijf.</li>
+    </ul>
+    <div class="logos-row">
+      <div class="logo-slot"><img src="img/logos/stika.png" alt="Stika" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+      <div class="logo-slot"><img src="img/logos/exceleroo.png" alt="Exceleroo" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+      <div class="logo-slot"><img src="img/logos/chateau-le-vert.png" alt="Château Le Vert" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+    </div>
+  </div>
+</section>
+
 <section id="herkent">
   <div class="herkent-wrap">
     <div class="herkent-grid">
       <div>
         <p class="s-tag">Herkent u dit?</p>
         <h2 class="s-title">De duurste processen zijn<br><em>die waar niemand over klaagt</em></h2> 
-        <p class="s-sub" style="margin-top: 0.5rem;">Een proces dat misloopt, valt op. Een proces dat gewoon traag is, valt niet op. Mensen passen zich aan, houden een eigen bestandje bij, sturen er een mail achteraan. Zo blijft alles draaien, en net daarom kijkt niemand er nog naar.</p>
+        <p class="s-sub" style="margin-top: 0.5rem;">Een proces dat misloopt, valt op. <strong>Een proces dat gewoon traag is, valt niet op.</strong> Mensen passen zich aan, houden een eigen bestandje bij, sturen er een mail achteraan. Zo blijft alles draaien, en <strong>net daarom kijkt niemand er nog naar</strong>.</p>
       </div>
       <div class="herkent-items">
-        <div class="herkent-item"><span class="herkent-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#3A6095" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg></span><p>Informatie verspreid over mails, Excel en hoofden</p></div>
-        <div class="herkent-item"><span class="herkent-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#3A6095" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span><p>Twee keer ingeven wat al ergens bestaat</p></div>
-        <div class="herkent-item"><span class="herkent-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#3A6095" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><polyline points="12 9 12 13 15 15"/><line x1="9" y1="2" x2="15" y2="2"/></svg></span><p>Tijd verliezen aan werk dat zichzelf kan doen</p></div>
-        <div class="herkent-item"><span class="herkent-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#3A6095" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><line x1="12" y1="16.5" x2="12" y2="16.5"/></svg></span><p>Fouten die pas veel later opvallen</p></div>
-        <div class="herkent-item"><span class="herkent-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#3A6095" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 16s1.5-2 4-2 4 2 4 2"/><line x1="9" y1="9.5" x2="9.5" y2="9.5"/><line x1="14.5" y1="9.5" x2="15" y2="9.5"/></svg></span><p>Software die niet doet wat u nodig hebt</p></div>
-        <div class="herkent-item"><span class="herkent-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#3A6095" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg></span><p>Medewerkers die omwegen verzinnen rond het systeem</p></div>
+        <div class="herkent-item reveal"><span class="herkent-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#3A6095" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg></span><p>Informatie verspreid over mails, Excel en hoofden</p></div>
+        <div class="herkent-item reveal"><span class="herkent-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#3A6095" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span><p>Twee keer ingeven wat al ergens bestaat</p></div>
+        <div class="herkent-item reveal"><span class="herkent-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#3A6095" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><polyline points="12 9 12 13 15 15"/><line x1="9" y1="2" x2="15" y2="2"/></svg></span><p>Tijd verliezen aan werk dat zichzelf kan doen</p></div>
+        <div class="herkent-item reveal"><span class="herkent-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#3A6095" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><line x1="12" y1="16.5" x2="12" y2="16.5"/></svg></span><p>Fouten die pas veel later opvallen</p></div>
+        <div class="herkent-item reveal"><span class="herkent-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#3A6095" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 16s1.5-2 4-2 4 2 4 2"/><line x1="9" y1="9.5" x2="9.5" y2="9.5"/><line x1="14.5" y1="9.5" x2="15" y2="9.5"/></svg></span><p>Software die niet doet wat u nodig hebt</p></div>
+        <div class="herkent-item reveal"><span class="herkent-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#3A6095" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg></span><p>Medewerkers die omwegen verzinnen rond het systeem</p></div>
       </div>
     </div>
   </div>
@@ -375,64 +447,68 @@
   <div class="diensten-hdr">
     <p class="s-tag">Wat ik doe</p>
     <h2 class="s-title">Tools die werken<br><em>voor uw team</em></h2>
-    <p class="s-sub">Analyse en uitvoering in één hand. Ik zoek eerst uit waar het echt knelt en bouw daarna de oplossing in de Microsoft-omgeving die u al hebt. Altijd startend vanuit een werkende proof of concept, zodat u snel ziet of het klopt voor u verder investeert.</p>
+    <p class="s-sub"><strong>Analyse en uitvoering in één hand.</strong> Ik zoek eerst uit waar het echt knelt en bouw daarna de oplossing in de <strong>Microsoft-omgeving die u al hebt</strong>. Altijd startend vanuit een <strong>werkende proof of concept</strong>, zodat u snel ziet of het klopt voor u verder investeert.</p>
   </div>
   <div class="diensten-grid">
-    <div class="dienst-card">
+    <div class="dienst-card reveal">
       <div class="d-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#3A6095" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><polyline points="21 3 21 9 15 9"/></svg></div>
       <span class="dienst-tag">Procesanalyse</span>
       <h3>Eerst kijken waar tijd verloren gaat</h3>
       <p>Na een goed begrip van de situatie schakel ik vrij direct over naar een proof of concept. Zo spreken we van bij de start over hetzelfde en weten we zeker dat de oplossing doet wat ze moet doen, voor we verder bouwen.</p>
     </div>
-    <div class="dienst-card">
+    <div class="dienst-card reveal">
       <div class="d-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#3A6095" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><line x1="11" y1="18" x2="13" y2="18"/></svg></div>
       <span class="dienst-tag">Power Apps</span>
       <h3>Apps die het werk lichter maken</h3>
-      <p>Gebruiksvriendelijke apps die uw team graag gebruikt, ook op de werkvloer.</p>
+      <p>Gebruiksvriendelijke apps die uw team <strong>graag gebruikt, ook op de werkvloer</strong>.</p>
       <ul class="dienst-list">
         <li>Kwaliteitschecks digitaal in productie</li>
         <li>Inventaris bijhouden in het magazijn</li>
         <li>Techniekers verwittigen bij defecten, met foto&apos;s</li>
       </ul>
     </div>
-    <div class="dienst-card">
+    <div class="dienst-card reveal">
       <div class="d-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#3A6095" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="20" x2="6" y2="13"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="18" y1="20" x2="18" y2="9"/></svg></div>
       <span class="dienst-tag">Power BI</span>
       <h3>Alles in één duidelijk overzicht</h3>
-      <p>Heldere rapporten en dashboards zodat iedereen altijd de juiste info heeft, op het juiste moment.</p>
+      <p>Heldere rapporten en dashboards zodat iedereen <strong>altijd de juiste info</strong> heeft, op het juiste moment.</p>
       <ul class="dienst-list">
         <li>Productiestatus live op de werkvloer</li>
         <li>Financi&euml;le rapportage per product of sector</li>
         <li>Master data controle voor foutloze processen</li>
       </ul>
     </div>
-    <div class="dienst-card">
+    <div class="dienst-card reveal">
       <div class="d-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#3A6095" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 4 14 12 14 11 22 20 10 12 10 13 2"/></svg></div>
       <span class="dienst-tag">Power Automate</span>
       <h3>Repetitief werk automatiseren</h3>
-      <p>Documenten, mails en taken die vanzelf gebeuren, zonder manueel werk.</p>
+      <p>Documenten, mails en taken die <strong>vanzelf gebeuren</strong>, zonder manueel werk.</p>
       <ul class="dienst-list">
         <li>Automatisch documenten genereren na formulierinvulling</li>
         <li>Mails en notificaties op het juiste moment versturen</li>
         <li>Workflows starten op basis van events of tijdstip</li>
       </ul>
     </div>
-    <div class="dienst-card">
+    <div class="dienst-card dienst-wide reveal">
+      <div class="dienst-wide-text">
       <div class="d-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#3A6095" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></div>
       <span class="dienst-tag">Meegroeien</span>
       <h3>Uw tool past zich aan, ook later nog</h3>
-      <p>Verandert uw werking? Dan hoeft u niet te wachten op een leverancier of een offerte.</p>
+      <p>Verandert uw werking? Dan hoeft u <strong>niet te wachten op een leverancier</strong> of een offerte.</p>
       <ul class="dienst-list">
         <li>Zelf velden en keuzelijsten toevoegen of aanpassen</li>
         <li>Foto&apos;s toevoegen aan keuzelijsten, zodat iedereen ziet wat bedoeld wordt</li>
         <li>Alles in uw eigen Microsoft-omgeving, u blijft eigenaar</li>
       </ul>
+      </div>
+      <!-- Beeld: img/cases/meegroeien.webp (beheerscherm waar de klant zelf velden aanmaakt) -->
+      <figure class="dienst-visual"><img src="img/cases/meegroeien.webp" alt="Beheerscherm waar u zelf velden, keuzelijsten en tabs aanpast" loading="lazy" onerror="this.parentNode.classList.add('empty')"><figcaption>U beheert zelf velden en keuzelijsten</figcaption></figure>
     </div>
   </div>
   <div class="deuren">
-    <a class="deur" href="/excel-vervangen-door-app.html"><strong>Excel vervangen door een app &rarr;</strong><span>Wanneer uw bestand te groot geworden is voor Excel</span></a>
-    <a class="deur" href="/papieren-formulieren-digitaliseren.html"><strong>Papieren formulieren digitaliseren &rarr;</strong><span>Van invulblad op de werkvloer naar app</span></a>
-    <a class="deur" href="/power-platform-consultant-oost-vlaanderen.html"><strong>Power Platform consultant &rarr;</strong><span>Werken met een vaste consultant in Oost-Vlaanderen</span></a>
+    <a class="deur reveal" href="/excel-vervangen-door-app.html"><strong>Excel vervangen door een app &rarr;</strong><span>Wanneer uw bestand te groot geworden is voor Excel</span></a>
+    <a class="deur reveal" href="/papieren-formulieren-digitaliseren.html"><strong>Papieren formulieren digitaliseren &rarr;</strong><span>Van invulblad op de werkvloer naar app</span></a>
+    <a class="deur reveal" href="/power-platform-consultant-oost-vlaanderen.html"><strong>Power Platform consultant &rarr;</strong><span>Werken met een vaste consultant in Oost-Vlaanderen</span></a>
   </div>
 </section>
 
@@ -440,79 +516,122 @@
   <div class="cases-hdr">
     <p class="s-tag">Resultaten in de praktijk</p>
     <h2 class="s-title">Zo ziet het eruit<br><em>in de echte wereld</em></h2>
-    <p class="s-sub">Vier concrete projecten. Telkens dezelfde aanpak: doelgericht op zoek naar een gebruiksvriendelijke oplossing die het werk echt lichter maakt.</p>
+    <p class="s-sub">Vijf concrete projecten. Telkens dezelfde aanpak: doelgericht op zoek naar een <strong>gebruiksvriendelijke oplossing die het werk echt lichter maakt</strong>. Links hoe het was, rechts hoe het nu loopt.</p>
   </div>
   <div class="cases-grid">
 
-    <div class="case-card">
+    <div class="case-card reveal">
       <div class="case-top">
         <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></div>
         <div><h3>Centrale projectdatabank voor een internationale industri&euml;le groep</h3><div class="case-sector">Industrie</div></div>
       </div>
+      <!-- Voor/na: zet projectdatabank-voor.webp en projectdatabank-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
+      <div class="case-visual">
+        <figure class="voor"><img src="img/cases/projectdatabank-voor.webp" alt="Projectinfo verspreid over mails en Excel-versies" loading="lazy" onerror="cvMissing(this)"><figcaption>Voor</figcaption></figure>
+        <figure class="na"><img src="img/cases/projectdatabank-na.webp" alt="Centrale projectenlijst met filters en dashboard" loading="lazy" onerror="cvMissing(this)"><figcaption>Na</figcaption></figure>
+      </div>
       <div class="case-body">
         <div class="case-block">
           <div class="case-label">Uitdaging</div>
-          <p>Projectparameters verspreid over mails, bestanden en mensen. Geen versiecontrole, geen overzicht, fouten door miscommunicatie.</p>
+          <p>Projectparameters <strong>verspreid over mails, bestanden en mensen</strong>. Geen versiecontrole, geen overzicht, fouten door miscommunicatie.</p>
         </div>
         <div class="case-block">
           <div class="case-label">Oplossing</div>
-          <p>Een centrale tool waar het team zelf parameters toevoegt en aanpast. Elke wijziging wordt bijgehouden per persoon. Foto&apos;s en screenshots zijn rechtstreeks koppelbaar. Met &eacute;&eacute;n druk op de knop vertrekt er een volledig overzicht per mail.</p>
+          <p>Een centrale tool waar <strong>het team zelf parameters toevoegt en aanpast</strong>. <strong>Elke wijziging wordt bijgehouden</strong> per persoon. Foto&apos;s en screenshots zijn rechtstreeks koppelbaar. Met &eacute;&eacute;n druk op de knop vertrekt er een volledig overzicht per mail.</p>
         </div>
         <div class="case-result-row">E&eacute;n single source of truth voor het volledige team</div>
       </div>
     </div>
 
-    <div class="case-card">
+    <div class="case-card reveal">
       <div class="case-top">
         <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3"/><path d="m9 13 2 2 4-4"/></svg></div>
         <div><h3>Mystery shopper rapporteert live vanuit de winkel</h3><div class="case-sector">Retail</div></div>
       </div>
+      <!-- Voor/na: zet mystery-shopper-voor.webp en mystery-shopper-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
+      <div class="case-visual">
+        <figure class="voor"><img src="img/cases/mystery-shopper-voor.webp" alt="Mystery shopper vult de checklist in op zijn gsm, met foto's per vraag" loading="lazy" onerror="cvMissing(this)"><figcaption>In de winkel</figcaption></figure>
+        <figure class="na"><img src="img/cases/mystery-shopper-na.webp" alt="Automatisch rapport met score, groen/rood per vraag en foto's" loading="lazy" onerror="cvMissing(this)"><figcaption>Rapport, automatisch</figcaption></figure>
+      </div>
       <div class="case-body">
         <div class="case-block">
           <div class="case-label">Uitdaging</div>
-          <p>Na elk bezoek uren werk: foto&apos;s sorteren, commentaar uitschrijven, alles in PowerPoint zetten, de juiste e-mailadressen opzoeken en alles versturen. Tijdrovend en foutgevoelig.</p>
+          <p><strong>Na elk bezoek uren werk</strong>: foto&apos;s sorteren, commentaar uitschrijven, alles in PowerPoint zetten, de juiste e-mailadressen opzoeken en alles versturen. Tijdrovend en foutgevoelig.</p>
         </div>
         <div class="case-block">
           <div class="case-label">Oplossing</div>
-          <p>De shopper bereidt zijn vragen op voorhand voor per winkel. Ter plaatse trekt hij foto&apos;s, geeft commentaar en punten in de app. Op het einde van zijn ronde drukt hij op verzenden en de winkel ontvangt automatisch een nette PDF.</p>
+          <p>De shopper bereidt zijn vragen op voorhand voor per winkel. Ter plaatse trekt hij foto&apos;s, geeft commentaar en punten in de app. Op het einde van zijn ronde drukt hij op verzenden en <strong>de winkel ontvangt automatisch een nette PDF</strong>.</p>
         </div>
         <div class="case-result-row">Rapport bij de klant nog voor de shopper de winkel uit is</div>
       </div>
     </div>
 
-    <div class="case-card">
+    <div class="case-card reveal">
       <div class="case-top">
         <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.5" cy="7.5" r="1.3"/></svg></div>
         <div><h3>Labelplanning in sync met productie bij voedingsbedrijf</h3><div class="case-sector">Food &amp; Quality</div></div>
       </div>
+      <!-- Voor/na: zet labelplanning-voor.webp en labelplanning-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
+      <div class="case-visual">
+        <figure class="voor"><img src="img/cases/labelplanning-voor.webp" alt="Losse planning in Excel zonder koppeling met productie" loading="lazy" onerror="cvMissing(this)"><figcaption>Voor</figcaption></figure>
+        <figure class="na"><img src="img/cases/labelplanning-na.webp" alt="Labelplanning live gekoppeld aan de productieplanning" loading="lazy" onerror="cvMissing(this)"><figcaption>Na</figcaption></figure>
+      </div>
       <div class="case-body">
         <div class="case-block">
           <div class="case-label">Uitdaging</div>
-          <p>Voedingslabels te laat in productie door complexe planning en gebrekkige communicatie. Collega&apos;s wisten niet wanneer orders verschoven of welke stappen al gedaan waren.</p>
+          <p><strong>Voedingslabels te laat in productie</strong> door complexe planning en gebrekkige communicatie. Collega&apos;s wisten niet wanneer orders verschoven of welke stappen al gedaan waren.</p>
         </div>
         <div class="case-block">
           <div class="case-label">Oplossing</div>
-          <p>De tool koppelt de labelplanning live aan de productieplanning. Verschuift een order? Iedereen ziet het meteen. Extra informatie van klanten kan geregistreerd worden zodat collega&apos;s hiervan op de hoogte zijn. Stappen worden opgevolgd tussen collega&apos;s onderling.</p>
+          <p>De tool koppelt de labelplanning <strong>live aan de productieplanning</strong>. Verschuift een order? <strong>Iedereen ziet het meteen.</strong> Extra informatie van klanten kan geregistreerd worden zodat collega&apos;s hiervan op de hoogte zijn. Stappen worden opgevolgd tussen collega&apos;s onderling.</p>
         </div>
         <div class="case-result-row">Geen vertraagde labels meer door informatietekort</div>
       </div>
     </div>
 
-    <div class="case-card">
+    <div class="case-card reveal">
       <div class="case-top">
         <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 17V6a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h1"/><path d="M14 17h-4"/><path d="M18 17h1a1 1 0 0 0 1-1v-3.3a1 1 0 0 0-.2-.6l-2.9-3.6a1 1 0 0 0-.8-.4H14"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/></svg></div>
         <div><h3>Wachttijden en boetes terugdringen bij petrochemie</h3><div class="case-sector">Petrochemie &amp; Logistiek</div></div>
       </div>
+      <!-- Voor/na: zet wachttijden-voor.webp en wachttijden-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
+      <div class="case-visual">
+        <figure class="voor"><img src="img/cases/wachttijden-voor.webp" alt="Weekplanning laadslots met status per vrachtwagen (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Planning, live</figcaption></figure>
+        <figure class="na"><img src="img/cases/wachttijden-na.webp" alt="Maandrapport per transporteur: verdeling, percentage te laat en uren afwijking (nagebouwd met fictieve cijfers)" loading="lazy" onerror="cvMissing(this)"><figcaption>Maandrapport transporteurs</figcaption></figure>
+      </div>
       <div class="case-body">
         <div class="case-block">
           <div class="case-label">Uitdaging</div>
-          <p>Grote boetes voor wachttijden bij vrachtwagens. Geen zicht op wie wanneer aankomt of welke transporteurs het meest betrouwbaar zijn.</p>
+          <p><strong>Grote boetes voor wachttijden</strong> bij vrachtwagens. Geen zicht op wie wanneer aankomt of welke transporteurs het meest betrouwbaar zijn.</p>
         </div>
         <div class="case-block">
           <div class="case-label">Oplossing</div>
-          <p>De planning wordt ingegeven in het systeem. De receptionist klikt aan welke vrachtwagen is aangekomen. De magazijnier ziet live of hij op tijd is en kan hem indien nodig voorrang geven. Transporteurs ontvangen maandelijks een KPI-rapport met hun betrouwbaarheidsscore.</p>
+          <p>De planning wordt ingegeven in het systeem. De receptionist klikt aan welke vrachtwagen is aangekomen. De magazijnier ziet live of hij op tijd is en kan hem indien nodig voorrang geven. Transporteurs ontvangen <strong>maandelijks een KPI-rapport</strong> met hun betrouwbaarheidsscore.</p>
         </div>
         <div class="case-result-row">Wachttijdkosten significant teruggedrongen</div>
+      </div>
+    </div>
+
+    <div class="case-card reveal">
+      <div class="case-top">
+        <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/><path d="M9 15l2 2 4-4"/></svg></div>
+        <div><h3>Boekingen, voorschotten en facturen in &eacute;&eacute;n kalender</h3><div class="case-sector">Verhuur &amp; Events</div></div>
+      </div>
+      <!-- Voor/na: zet boekingen-voor.webp en boekingen-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
+      <div class="case-visual">
+        <figure class="voor"><img src="img/cases/boekingen-voor.webp" alt="Papieren agenda en losse mails voor boekingen" loading="lazy" onerror="cvMissing(this)"><figcaption>Voor</figcaption></figure>
+        <figure class="na"><img src="img/cases/boekingen-na.webp" alt="Boeking met status, voorschotfactuur en voorbeeld van de factuur" loading="lazy" onerror="cvMissing(this)"><figcaption>Na</figcaption></figure>
+      </div>
+      <div class="case-body">
+        <div class="case-block">
+          <div class="case-label">Uitdaging</div>
+          <p><strong>Geen overzicht van wie bevestigd had, wie betaald had en waar nog een factuur moest vertrekken.</strong> Een boeking vergeten in de agenda zetten gaf dubbele boekingen. Een annulatie vergeten schrappen gaf net een lege plek.</p>
+        </div>
+        <div class="case-block">
+          <div class="case-label">Oplossing</div>
+          <p>&Eacute;&eacute;n kalender waarin elke boeking een status heeft: <strong>aangevraagd, bevestigd, voorschot betaald, rest betaald</strong>. De voorschot- en eindfactuur worden vanuit de boeking zelf aangemaakt en opgevolgd, dus niets valt nog tussen de plooien.</p>
+        </div>
+        <div class="case-result-row">Geen dubbele boekingen meer, elke boeking zichtbaar in haar fase van het proces, en &eacute;&eacute;n overzicht van alle facturen en creditnota&apos;s</div>
       </div>
     </div>
 
@@ -524,32 +643,32 @@
     <p class="s-tag" style="text-align:center;">Wat opdrachtgevers zeggen</p>
     <h2 class="s-title" style="text-align:center;">Reacties uit<br><em>de praktijk</em></h2>
     <div class="reacties-grid">
-      <div class="quote-card">
+      <div class="quote-card reveal">
         <div class="quote-mark">&ldquo;</div>
         <p class="quote-text">Vanaf het eerste gesprek was er een klik. Onze wensen werden vertaald naar een oplossing die perfect aansloot bij onze behoeften en zelfs meer bood dan we hadden verwacht. Het was indrukwekkend om onze ideeën werkelijkheid te zien worden. Professioneel, betrokken en een absolute aanrader.</p>
         <div class="quote-author"><strong>Business Process Manager</strong><span>Engineering</span></div>
       </div>
-      <div class="quote-card">
+      <div class="quote-card reveal">
         <div class="quote-mark">&ldquo;</div>
         <p class="quote-text">Nu kunnen we eindelijk objectief aantonen welke transporteurs betrouwbaar zijn. En we hebben onze processen veel meer kunnen standaardiseren.</p>
         <div class="quote-author"><strong>Logistiek manager</strong><span>Logistiek</span></div>
       </div>
-      <div class="quote-card">
+      <div class="quote-card reveal">
         <div class="quote-mark">&ldquo;</div>
         <p class="quote-text">Dit werkt zo goed, mag het ook uitgerold worden naar onze plants in Duitsland en Frankrijk?</p>
         <div class="quote-author"><strong>Continuous Improvement Manager</strong><span>Internationale productiegroep</span></div>
       </div>
-      <div class="quote-card">
+      <div class="quote-card reveal">
         <div class="quote-mark">&ldquo;</div>
         <p class="quote-text">Echt leuk! Als we op de knop drukken en het bolletje wordt groen, zien we meteen dat we goed bezig zijn. Dat geeft een fijn gevoel.</p>
         <div class="quote-author"><strong>Medewerkers productie</strong><span>Voedingsbedrijf</span></div>
       </div>
-      <div class="quote-card">
+      <div class="quote-card reveal">
         <div class="quote-mark">&ldquo;</div>
         <p class="quote-text">Dit hadden we echt nodig. We kunnen onze audits nu veel beter voorbereiden en onderbouwen. En loopt er iets mis in productie, dan zijn we er meteen bij.</p>
         <div class="quote-author"><strong>Kwaliteitsverantwoordelijke</strong><span>Voedingsbedrijf</span></div>
       </div>
-      <div class="quote-card">
+      <div class="quote-card reveal">
         <div class="quote-mark">&ldquo;</div>
         <p class="quote-text">Wat mij vooral opviel, is haar vermogen om snel oplossingsgericht te denken en collega&apos;s te motiveren. Naast haar vakinhoudelijke kwaliteiten is zij een prettige collega om mee samen te werken. Communicatief vaardig, collegiaal en altijd bereid om een stap extra te zetten.</p>
         <div class="quote-author"><strong>Learning &amp; Development Coordinator</strong><span>Industrie, interne opdracht</span></div>
@@ -686,5 +805,15 @@
   <div class="footer-copy">&copy; 2026 Flow4Q BV &middot; Alle rechten voorbehouden</div>
 </footer>
 
+<script>
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(function (e) { io.observe(e); });
+  })();
+</script>
 </body>
 </html>
