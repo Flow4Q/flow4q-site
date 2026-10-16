@@ -257,6 +257,14 @@
   .cases-hdr { margin-bottom: 3.5rem; }
   .cases-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
   .cases-grid > .case-card:last-child:nth-child(odd) { grid-column: 1 / -1; width: 70%; justify-self: center; }
+  .case-next { text-decoration: none; border: 2px dashed var(--c300); background: var(--c50); align-items: center; justify-content: center; text-align: center; padding: 3rem 2rem; min-height: 320px; }
+  .case-next:hover { border-color: var(--c500); background: var(--white); }
+  .case-next-inner { max-width: 420px; }
+  .case-next-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--c900); color: var(--white); font-size: 1.6rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem; }
+  .case-next h3 { font-size: 1.25rem; font-weight: 700; color: var(--c900); margin-bottom: 0.7rem; }
+  .case-next p { font-size: 0.95rem; line-height: 1.65; color: var(--muted); margin-bottom: 1.4rem; }
+  .case-next p strong { color: var(--c900); font-weight: 600; }
+  .case-next-cta { display: inline-block; font-weight: 600; color: var(--c500); font-size: 0.95rem; }
   @media (max-width: 900px) { .cases-grid > .case-card:last-child:nth-child(odd) { width: 100%; } }
   .case-card { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; }
   .case-card:hover { transform: translateY(-4px); box-shadow: 0 16px 50px rgba(27,40,61,0.1); }
@@ -493,7 +501,7 @@
   <div class="cases-hdr">
     <p class="s-tag">Resultaten in de praktijk</p>
     <h2 class="s-title">Zo ziet het eruit<br><em>in de echte wereld</em></h2>
-    <p class="s-sub">Zes projecten, telkens dezelfde aanpak: <strong>een oplossing die het werk echt lichter maakt</strong>. Met een blik op het scherm zelf.</p>
+    <p class="s-sub">Zeven projecten in zeven sectoren. <strong>De sector doet er niet toe, uw probleem wel.</strong> Telkens dezelfde aanpak: een oplossing die het werk echt lichter maakt, met een blik op het scherm zelf.</p>
   </div>
   <div class="cases-grid">
 
@@ -635,6 +643,38 @@
       </div>
     </div>
 
+    <div class="case-card reveal">
+      <div class="case-top">
+        <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+        <div><h3>Onderhoud gepland, uitgelegd en opgevolgd per machine</h3><div class="case-sector">Food, vleesverwerking</div></div>
+      </div>
+      <!-- Beelden: onderhoud-voor.webp (takenlijst) en onderhoud-na.webp (machinefiche), nagebouwd met fictieve gegevens -->
+      <div class="case-visual">
+        <figure class="voor"><img src="img/cases/onderhoud-voor.webp" alt="Takenlijst van de technische dienst per dag, met filmpje en stappen per taak (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Takenlijst per dag</figcaption></figure>
+        <figure class="na"><img src="img/cases/onderhoud-na.webp" alt="Machinefiche met parameters, onderhoudscycli en meldingen uit productie met foto (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Machinefiche en meldingen</figcaption></figure>
+      </div>
+      <div class="case-body">
+        <div class="case-block">
+          <div class="case-label">Uitdaging</div>
+          <p><strong>Onderhoud zat in een Excel en in het hoofd van één technieker</strong>: wat wanneer moest gebeuren, en hoe, wist niemand anders.</p>
+        </div>
+        <div class="case-block">
+          <div class="case-label">Oplossing</div>
+          <p>Per machine een fiche met serienummer, leverancier, type en onderhoudscyclus, <strong>met een filmpje van hoe het moet</strong>. De technische dienst krijgt elke dag zijn takenlijst; staat een taak op done, dan plant de tool de volgende in. Productie meldt een probleem met foto, en dat komt in dezelfde lijst.</p>
+        </div>
+        <div class="case-result-row">Geen vergeten onderhoud meer, en elke technieker weet hoe het moet, ook de nieuwe</div>
+      </div>
+    </div>
+
+    <a class="case-card case-next reveal" href="#contact">
+      <div class="case-next-inner">
+        <div class="case-next-icon">?</div>
+        <h3>Uw probleem staat hier nog niet</h3>
+        <p>Elke case hierboven begon als een frustratie waar niemand een naam voor had. <strong>Vertel me de uwe.</strong> Welke sector of welk proces maakt niet uit.</p>
+        <span class="case-next-cta">Gratis intake, een uur &rarr;</span>
+      </div>
+    </a>
+
   </div>
 </section>
 
@@ -698,8 +738,8 @@
       <div class="stap reveal">
         <div class="stap-nr">1</div>
         <h3>Intake</h3>
-        <p>30 minuten, bij u of online. U vertelt waar het wringt, en we bekijken samen <strong>of digitaliseren hier het antwoord is</strong>.</p>
-        <span class="stap-duur">30 minuten, gratis</span>
+        <p>Een uur, bij u of online. U vertelt waar het wringt, en we bekijken samen <strong>of digitaliseren hier het antwoord is</strong>.</p>
+        <span class="stap-duur">1 uur, gratis</span>
       </div>
       <div class="stap reveal">
         <div class="stap-nr">2</div>
@@ -822,7 +862,7 @@
       </details>
       <details>
         <summary>Hoeveel tijd vraagt dit van ons team?</summary>
-        <p>De intake: 30 minuten. Bij het bouwen van de eerste versie: een paar korte gesprekken met de mensen die het werk doen, en nadien <strong>wat tijd om de versie uit te proberen</strong> en feedback te geven, afhankelijk van de grootte van de tool. Ik vraag geen ellenlange workshops.</p>
+        <p>De intake: een uur. Bij het bouwen van de eerste versie: een paar korte gesprekken met de mensen die het werk doen, en nadien <strong>wat tijd om de versie uit te proberen</strong> en feedback te geven, afhankelijk van de grootte van de tool. Ik vraag geen ellenlange workshops.</p>
       </details>
       <details>
         <summary>Kan ik u ook vast inhuren in plaats van per project?</summary>
@@ -841,7 +881,7 @@
     <div class="contact-info">
       <p class="s-tag">Samenwerken</p>
       <h2>Benieuwd wat er mogelijk is?</h2>
-      <p>Start met een gratis intake van 30 minuten. Samen kijken we waar de grootste winst zit, volledig vrijblijvend. Wilt u daarna verder, dan bouw ik een proof of concept vanaf drie dagen werk. U krijgt vooraf een raming en beslist pas nadien of we verder gaan.</p>
+      <p>Start met een gratis intake van een uur. Samen kijken we waar de grootste winst zit, volledig vrijblijvend. Wilt u daarna verder, dan bouw ik een proof of concept vanaf drie dagen werk. U krijgt vooraf een raming en beslist pas nadien of we verder gaan.</p>
       <div class="contact-items">
         <a href="tel:+32474627187" class="contact-item">
           <div class="c-icon">&#128222;</div>
