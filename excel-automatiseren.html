@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Excel automatiseren met VBA: Excel houden, het handwerk niet | Flow4Q</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Uw Excel-bestanden automatiseren met VBA en Power Automate: importeren, berekenen, rapporteren en versturen met één knop. Excel blijft, het overtypen niet. Flow4Q, Lokeren.">
+<link rel="canonical" href="https://www.flow4q.com/excel-automatiseren.html">
+<meta property="og:title" content="Excel automatiseren met VBA: Excel houden, het handwerk niet | Flow4Q">
+<meta property="og:description" content="Uw Excel-bestanden automatiseren met VBA en Power Automate: importeren, berekenen, rapporteren en versturen met één knop. Excel blijft, het overtypen niet. Flow4Q, Lokeren.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.flow4q.com/img/excel.webp">
+<meta property="og:url" content="https://www.flow4q.com/excel-automatiseren.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --c900: #1B283D; --c800: #243550; --c700: #2E4A72; --c600: #3A6095;
+    --c500: #5080B8; --c400: #7AAAD4; --c300: #A8C8E8; --c200: #CCDFF3;
+    --c100: #E4EFF8; --c50: #F2F7FC; --white: #FFFFFF;
+    --text: #1B283D; --muted: #56697D; --border: #D0E0EF; --radius: 14px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body { font-family: "Outfit", sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; line-height: 1.7; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 6vw; height: 66px;
+    background: rgba(27,40,61,0.97); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-logo { display: flex; align-items: center; }
+  .nav-right { display: flex; align-items: center; gap: 1.8rem; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta { background: var(--c500) !important; color: var(--white) !important; padding: 0.42rem 1.15rem; border-radius: 6px; font-weight: 600 !important; }
+  .nav-divider { width: 1px; height: 22px; background: rgba(255,255,255,0.15); }
+  .nav-slogan { font-family: "Lora", serif; font-style: italic; font-size: 0.88rem; color: var(--c300); }
+
+  /* HERO */
+  .hero { background: linear-gradient(160deg, var(--c900) 0%, var(--c700) 100%); color: var(--white); padding: 9rem 6vw 4.5rem; }
+  .inner { max-width: 1000px; margin: 0 auto; }
+  .eyebrow { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--c300); font-weight: 600; margin-bottom: 1rem; }
+  .hero h1 { font-family: "Lora", serif; font-weight: 400; font-size: clamp(2.1rem, 5vw, 3.2rem); line-height: 1.15; letter-spacing: -0.5px; max-width: 20ch; }
+  .hero h1 em { font-style: italic; color: var(--c400); }
+  .hero p { color: rgba(255,255,255,0.78); font-size: 1.08rem; margin-top: 1.2rem; max-width: 58ch; }
+  .btns { display: flex; gap: 0.9rem; margin-top: 2rem; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: 0.2s; }
+  .btn-p { background: var(--c500); color: var(--white); }
+  .btn-p:hover { background: var(--c400); }
+  .btn-s { border: 1px solid rgba(255,255,255,0.28); color: var(--white); }
+  .btn-s:hover { background: rgba(255,255,255,0.08); }
+
+  section { padding: 4rem 6vw; }
+  section.alt { background: var(--c50); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  h2 { font-family: "Lora", serif; font-weight: 400; font-size: clamp(1.6rem, 3vw, 2.1rem); line-height: 1.25; letter-spacing: -0.3px; margin-bottom: 1rem; }
+  h2 em { font-style: italic; color: var(--c600); }
+  h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.4rem; }
+  section p { margin-bottom: 1rem; max-width: 68ch; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+  .card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem 1.5rem; }
+  .card p { font-size: 0.95rem; color: var(--muted); margin: 0; }
+  .pains { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.7rem; margin-top: 1.8rem; }
+  .pains li { background: var(--white); border: 1px solid var(--border); border-left: 3px solid var(--c400); border-radius: 0 8px 8px 0; padding: 0.75rem 1rem; font-size: 0.95rem; }
+  .steps { counter-reset: s; list-style: none; margin-top: 2rem; }
+  .steps li { counter-increment: s; position: relative; padding-left: 3.2rem; margin-bottom: 1.6rem; max-width: 68ch; }
+  .steps li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 2.2rem; height: 2.2rem; border-radius: 50%; background: var(--c100); color: var(--c700); font-weight: 600; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; }
+  .case { background: var(--c900); color: var(--white); border-radius: var(--radius); padding: 2rem 2.2rem; margin-top: 2rem; }
+  .case h3 { color: var(--c300); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.8rem; }
+  .case p { color: rgba(255,255,255,0.8); }
+  .case .result { font-family: "Lora", serif; font-style: italic; color: var(--c300); font-size: 1.1rem; margin: 0; }
+  .faq { margin-top: 2rem; }
+  .faq details { border-bottom: 1px solid var(--border); padding: 1rem 0; max-width: 72ch; }
+  .faq summary { font-weight: 600; cursor: pointer; font-size: 1rem; }
+  .faq details p { margin: 0.7rem 0 0; color: var(--muted); font-size: 0.97rem; }
+  .cta { background: var(--c900); color: var(--white); text-align: center; }
+  .cta h2 { color: var(--white); }
+  .cta p { color: rgba(255,255,255,0.75); margin: 0 auto 1.8rem; }
+  .cta .btns { justify-content: center; }
+  .related { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+  .related a { flex: 1 1 240px; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.3rem; text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.97rem; transition: 0.2s; }
+  .related a:hover { border-color: var(--c500); background: var(--c50); }
+  .related span { display: block; font-weight: 400; color: var(--muted); font-size: 0.88rem; margin-top: 0.25rem; }
+
+  footer { background: var(--c900); color: rgba(255,255,255,0.5); padding: 2.5rem 6vw; font-size: 0.82rem; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem; }
+  .footer-brand { display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-tagline { font-family: "Lora", serif; font-style: italic; font-size: 0.82rem; color: var(--c300); }
+  .footer-info { display: flex; flex-direction: column; gap: 0.35rem; text-align: right; }
+  .footer-copy { width: 100%; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.3rem; font-size: 0.76rem; color: rgba(255,255,255,0.35); }
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  footer a:hover { color: var(--white); }
+
+  @media (max-width: 860px) { .nav-links { gap: 1.1rem; } .nav-divider, .nav-slogan { display: none; } }
+  @media (max-width: 640px) {
+    .nav-links li:not(:last-child) { display: none; }
+    .hero { padding-top: 7rem; }
+    .footer-info { text-align: left; }
+    section { padding: 3rem 6vw; }
+  }
+  .shot { margin: 2rem 0 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: 0 18px 50px rgba(27,40,61,0.12); background: var(--white); }
+  .shot img { width: 100%; height: auto; display: block; }
+  .shot figcaption { font-size: 0.82rem; color: var(--muted); padding: 0.6rem 1rem; border-top: 1px solid var(--border); }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Wanneer kies ik voor Excel automatiseren en wanneer voor een app?", "acceptedAnswer": {"@type": "Answer", "text": "Excel als één persoon of een klein team ermee werkt en het om berekeningen en rapporten gaat. Een app zodra meerdere mensen tegelijk moeten ingeven, zeker op de werkvloer. Ik zeg u in de intake welk van de twee."}}, {"@type": "Question", "name": "Werkt VBA nog in de nieuwste Excel?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. VBA werkt in alle Windows-versies van Excel, ook in Microsoft 365. Op Mac en in de browser zijn er beperkingen, dat bekijk ik vooraf."}}, {"@type": "Question", "name": "Kan dit ook met Power Automate in plaats van macro's?", "acceptedAnswer": {"@type": "Answer", "text": "Vaak wel, zeker voor mails, bestanden verplaatsen en koppelingen met SharePoint of Teams. Ik kies per taak wat het stabielst is."}}, {"@type": "Question", "name": "Wat als de macro stuk gaat?", "acceptedAnswer": {"@type": "Answer", "text": "Gedocumenteerde code en ingebouwde foutmeldingen, zodat u weet wat er misliep. En ik blijf beschikbaar voor aanpassingen."}}, {"@type": "Question", "name": "Hoe snel kan dit draaien?", "acceptedAnswer": {"@type": "Answer", "text": "De eerste automatisering staat er binnen enkele dagen. Een volledig bestand met koppelingen vraagt een paar rondes."}}]}</script>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/"><svg height="38" viewBox="0 0 190 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="navGrad" x1="0" y1="32" x2="34" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#A8C8E8" stop-opacity="0.5"/>
+          <stop offset="50%" stop-color="#7AAAD4"/>
+          <stop offset="100%" stop-color="white"/>
+        </linearGradient>
+      </defs>
+      <circle cx="7" cy="30" r="4" fill="#7AAAD4" opacity="0.45"/>
+      <circle cx="19" cy="19" r="5.5" fill="#7AAAD4"/>
+      <circle cx="33" cy="7" r="7" fill="white"/>
+      <path d="M7 30 C11 25 15 23 19 19 C23 15 27 11 33 7" stroke="url(#navGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M28 3 L33 7 L38 3" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="48" y1="4" x2="48" y2="34" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <text x="56" y="26" font-family="Outfit, sans-serif" font-weight="600" font-size="22" fill="white" letter-spacing="-0.5">Flow</text>
+      <text x="104" y="26" font-family="Outfit, sans-serif" font-weight="300" font-size="22" fill="#7AAAD4" letter-spacing="-0.5">4Q</text>
+    </svg></a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="/#diensten">Diensten</a></li>
+      <li><a href="/#cases">Cases</a></li>
+      <li><a href="/#over">Over mij</a></li>
+      <li><a href="/#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <span class="nav-divider"></span>
+    <span class="nav-slogan">Kwaliteit begint bij een goed proces.</span>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="inner">
+    <div class="eyebrow">Excel, VBA, macro's, automatisering</div>
+<h1>Excel automatiseren, <em>zonder Excel op te geven</em></h1>
+<p>Niet elke Excel moet een app worden. Soms is Excel precies de juiste tool, en is het probleem de twee uur handwerk die er elke week rond zit: bestanden importeren, kopiëren, controleren, een rapport opmaken, versturen. Dat handwerk kan weg, Excel mag blijven.</p>
+    <div class="btns">
+      <a class="btn btn-p" href="/#contact">Gratis intake, tot een uur</a>
+      <a class="btn btn-s" href="/#cases">Bekijk cases</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="inner">
+    <h2>Waar de tijd in Excel <em>echt naartoe gaat</em></h2>
+    <p>Niet in de formules. In het werk errond: de export uit het ERP inlezen, de lijst van vorige maand ernaast leggen, de opmaak herstellen, de totalen controleren, het rapport als PDF versturen. Elke week opnieuw, door dezelfde persoon, op dezelfde manier.</p>
+    <ul class="pains">
+      <li>Elke week dezelfde export importeren en opschonen</li>
+      <li>Gegevens kopiëren van het ene bestand naar het andere</li>
+      <li>Formules die sneuvelen bij een verkeerde klik</li>
+      <li>Een rapport dat handmatig als PDF verstuurd wordt</li>
+      <li>Eén persoon die weet hoe het bestand werkt</li>
+      <li>Koppelingen met andere systemen die via knippen en plakken lopen</li>
+    </ul>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="inner">
+    <h2>Wat ik doe</h2>
+    <p>Ik bouw de automatisering in het bestand zelf, met VBA, of ernaast, met Power Automate. Eén knop importeert, berekent, controleert en verstuurt. Fouten worden gemeld in plaats van verborgen. En waar het zinvol is, koppel ik Excel aan uw andere systemen, zoals Teamleader of uw boekhoudpakket, zodat niemand nog overtypt.</p>
+    <figure class="shot"><img src="/img/excel.webp" alt="Excel-werkmap met knoppen voor importeren, rapporteren en versturen, en een logboek van de automatisering" loading="lazy"><figcaption>Excel-werkmap met knoppen voor importeren, rapporteren en versturen, en een logboek van de automatisering (nagebouwd met fictieve gegevens)</figcaption></figure>
+    <div class="grid">
+      <div class="card"><h3>Eén knop voor het weekwerk</h3><p>Importeren, opschonen, berekenen, rapporteren: wat nu twee uur duurt, loopt in twee minuten.</p></div>
+      <div class="card"><h3>Controles ingebouwd</h3><p>Ontbrekende gegevens, dubbele regels, afwijkende totalen: de macro meldt het in plaats van ze stilletjes door te laten.</p></div>
+      <div class="card"><h3>Koppelingen met andere systemen</h3><p>Teamleader, Business Central of een ander pakket met een API: Excel haalt en stuurt gegevens zonder knippen en plakken.</p></div>
+      <div class="card"><h3>Rapport als PDF, automatisch verstuurd</h3><p>Met uw opmaak, naar de juiste mensen, op het juiste moment. Via VBA of Power Automate.</p></div>
+      <div class="card"><h3>Formulieren in Excel</h3><p>Invoerschermen met keuzelijsten en controles, zodat het bestand niet stuk kan door een verkeerde klik.</p></div>
+      <div class="card"><h3>Documentatie en overdracht</h3><p>Gedocumenteerde code, zodat het bestand niet afhangt van één persoon. Ook niet van mij.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="inner">
+    <h2>Hoe ik het aanpak</h2>
+    <ol class="steps">
+      <li><h3>Ik kijk eerst wat Excel moet blijven doen</h3>Soms is een app beter, soms is Excel perfect. Ik zeg u eerlijk welk van de twee, voor ik iets bouw.</li>
+      <li><h3>Het weekwerk in kaart</h3>Elke handeling die elke week terugkomt, opgelijst. Dat is de lijst van wat geautomatiseerd wordt.</li>
+      <li><h3>Eerste automatisering binnen enkele dagen</h3>De grootste tijdvreter eerst, als werkende macro. U gebruikt ze een week, dan volgt de rest.</li>
+      <li><h3>Documenteren en overdragen</h3>Code met uitleg, een handleiding, en een gesprek met wie het bestand beheert.</li>
+    </ol>
+    <div class="case">
+      <h3>Uit de praktijk</h3>
+      <p>Voor een Belgische vastgoedontwikkelaar bouwde ik projectopvolging in Excel en VBA: budget, offertes en facturen per project, met een budgetoverzicht en dashboard die zichzelf vernieuwen. Voor een andere klant koppelde ik Excel aan Teamleader, zodat offertes niet meer overgetypt worden.</p>
+      <p class="result">Excel bleef, het overtypen niet.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="inner">
+    <h2>Veelgestelde vragen</h2>
+    <div class="faq">
+      <details><summary>Wanneer kies ik voor Excel automatiseren en wanneer voor een app?</summary><p>Excel als één persoon of een klein team ermee werkt en het om berekeningen en rapporten gaat. Een app zodra meerdere mensen tegelijk moeten ingeven, zeker op de werkvloer. Ik zeg u in de intake welk van de twee.</p></details>
+      <details><summary>Werkt VBA nog in de nieuwste Excel?</summary><p>Ja. VBA werkt in alle Windows-versies van Excel, ook in Microsoft 365. Op Mac en in de browser zijn er beperkingen, dat bekijk ik vooraf.</p></details>
+      <details><summary>Kan dit ook met Power Automate in plaats van macro's?</summary><p>Vaak wel, zeker voor mails, bestanden verplaatsen en koppelingen met SharePoint of Teams. Ik kies per taak wat het stabielst is.</p></details>
+      <details><summary>Wat als de macro stuk gaat?</summary><p>Gedocumenteerde code en ingebouwde foutmeldingen, zodat u weet wat er misliep. En ik blijf beschikbaar voor aanpassingen.</p></details>
+      <details><summary>Hoe snel kan dit draaien?</summary><p>De eerste automatisering staat er binnen enkele dagen. Een volledig bestand met koppelingen vraagt een paar rondes.</p></details>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="inner">
+    <h2>Ook interessant</h2>
+    <div class="related"><a href="/excel-vervangen-door-app.html">Excel vervangen door een app<span>Wanneer uw bedrijf te groot wordt voor Excel</span></a><a href="/power-bi-dashboard-kmo.html">Power BI dashboard voor KMO's<span>Cijfers die zichzelf vernieuwen</span></a></div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="inner">
+    <h2>Benieuwd wat er in uw geval mogelijk is?</h2>
+    <p>Start met een gratis intake van maximaal een uur. Samen kijken we waar de grootste winst zit, vrijblijvend en zonder verplichtingen.</p>
+    <div class="btns">
+      <a class="btn btn-p" href="/#contact">Neem contact op</a>
+      <a class="btn btn-s" href="tel:+32474627187">Bel +32 474 62 71 87</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">
+    <svg height="34" viewBox="0 0 190 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="footGrad" x1="0" y1="32" x2="34" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#A8C8E8" stop-opacity="0.5"/>
+          <stop offset="50%" stop-color="#7AAAD4"/>
+          <stop offset="100%" stop-color="white"/>
+        </linearGradient>
+      </defs>
+      <circle cx="7" cy="30" r="4" fill="#7AAAD4" opacity="0.45"/>
+      <circle cx="19" cy="19" r="5.5" fill="#7AAAD4"/>
+      <circle cx="33" cy="7" r="7" fill="white"/>
+      <path d="M7 30 C11 25 15 23 19 19 C23 15 27 11 33 7" stroke="url(#footGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M28 3 L33 7 L38 3" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="48" y1="4" x2="48" y2="34" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <text x="56" y="26" font-family="Outfit, sans-serif" font-weight="600" font-size="22" fill="white" letter-spacing="-0.5">Flow</text>
+      <text x="104" y="26" font-family="Outfit, sans-serif" font-weight="300" font-size="22" fill="#7AAAD4" letter-spacing="-0.5">4Q</text>
+    </svg>
+    <span class="footer-tagline">Kwaliteit begint bij een goed proces.</span>
+  </div>
+  <div class="footer-info" style="text-align:left">
+    <span style="color:rgba(255,255,255,0.75);font-weight:600">Aanpak</span>
+    <span><a href="/excel-vervangen-door-app.html">Excel vervangen door een app</a></span>
+    <span><a href="/papieren-formulieren-digitaliseren.html">Papieren formulieren digitaliseren</a></span>
+    <span><a href="/power-platform-consultant-oost-vlaanderen.html">Power Platform consultant</a></span>
+    <span><a href="/dagoverleg-app.html">Dagoverleg app</a></span>
+    <span><a href="/onderhoudsplanning-app.html">Onderhoudsplanning app</a></span>
+    <span><a href="/productieopvolging-app.html">Productieopvolging app</a></span>
+    <span><a href="/digitale-checklist-app.html">Digitale checklist app</a></span>
+    <span><a href="/boekingssysteem-app.html">Boekingssysteem op maat</a></span>
+    <span><a href="/voorraadbeheer-app.html">Voorraadbeheer app</a></span>
+    <span><a href="/power-bi-dashboard-kmo.html">Power BI dashboard voor KMO's</a></span>
+    <span><a href="/excel-automatiseren.html">Excel automatiseren</a></span>
+  </div>
+  <div class="footer-info">
+    <span>Flow4Q BV &middot; Lokeren</span>
+    <span>BTW BE 1011.753.847</span>
+    <span><a href="mailto:info@flow4q.com">info@flow4q.com</a></span>
+    <span><a href="/privacy.html">Privacyverklaring</a> &middot; <a href="/voorwaarden.html">Algemene voorwaarden</a></span>
+  </div>
+  <div class="footer-copy">&copy; 2026 Flow4Q BV &middot; Alle rechten voorbehouden</div>
+</footer>
+
+</body>
+</html>
