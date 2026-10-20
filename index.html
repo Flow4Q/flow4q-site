@@ -117,7 +117,7 @@
   .logos-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1rem 3rem; }
   .logo-slot { height: 44px; display: flex; align-items: center; justify-content: center; filter: grayscale(1); opacity: 0.55; transition: filter 0.25s, opacity 0.25s; }
   .logo-slot:hover { filter: none; opacity: 1; }
-  .logo-slot img { max-height: 44px; max-width: 150px; width: auto; display: block; }
+  .logo-slot img { max-height: 56px; max-width: 150px; width: auto; display: block; }
 
   /* BEELD IN DIENST-KAART */
   .dienst-visual { margin: 1rem 0 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--c50); position: relative; }
@@ -164,6 +164,11 @@
   .faq-list details p strong { color: var(--c900); font-weight: 600; }
 
   .case-top h3 { min-height: 2.6em; }
+  .case-top h3 a { color: inherit; text-decoration: none; }
+  .case-top h3 a:hover { text-decoration: underline; }
+  .cases-more { margin-top: 2rem; text-align: center; }
+  .cases-more a { font-weight: 600; color: var(--c600); text-decoration: none; font-size: 1rem; }
+  .cases-more a:hover { text-decoration: underline; }
   /* VOOR / NA IN CASES */
   .case-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); border-bottom: 1px solid var(--border); }
   .case-visual figure { position: relative; margin: 0; min-width: 0; background: var(--white); display: flex; flex-direction: column; overflow: hidden; }
@@ -482,15 +487,6 @@
   </div>
 </section>
 
-<!-- SHOWCASE: nagebouwd scherm, fictieve gegevens. Vervangen door img/dagoverleg.webp met een eigen scherm kan altijd. -->
-<section class="showcase">
-  <div class="showcase-wrap">
-    <p class="s-tag">Bijvoorbeeld</p>
-    <h2 class="s-title">Eén scherm voor het dagoverleg,<br><em>en iedereen ziet hetzelfde</em></h2>
-    <p class="s-sub">Per afdeling en per topic: ok of niet ok. Rood vraagt een opmerking, een actie en een verantwoordelijke. <strong>Zo bouw ik alles: visueel, in één oogopslag leesbaar</strong>, ook voor wie met handschoenen aan op de werkvloer staat.</p>
-    <figure class="showcase-frame"><img src="img/dagoverleg.webp" alt="Dagoverleg per afdeling en topic, rood of groen, met opmerking, actie en status (nagebouwd met fictieve gegevens)" loading="lazy"></figure>
-  </div>
-</section>
 
 <section id="herkent">
   <div class="herkent-wrap">
@@ -516,14 +512,14 @@
   <div class="cases-hdr">
     <p class="s-tag">Resultaten in de praktijk</p>
     <h2 class="s-title">Zo ziet het eruit<br><em>in de echte wereld</em></h2>
-    <p class="s-sub">Zeven projecten in zeven sectoren. <strong>De sector doet er niet toe, uw probleem wel.</strong> Telkens dezelfde aanpak: een oplossing die het werk echt lichter maakt, met een blik op het scherm zelf.</p>
+    <p class="s-sub">Vijf projecten uit vijf sectoren. <strong>De sector doet er niet toe, uw probleem wel.</strong> Telkens dezelfde aanpak: een oplossing die het werk echt lichter maakt, met een blik op het scherm zelf.</p>
   </div>
   <div class="cases-grid">
 
     <div class="case-card reveal">
       <div class="case-top">
         <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></div>
-        <div><h3>Centrale projectdatabank voor een internationale industri&euml;le groep</h3><div class="case-sector">Industrie</div></div>
+        <div><h3><a href="/cases.html#projectdatabank">Centrale projectdatabank voor een internationale industri&euml;le groep</a></h3><div class="case-sector">Industrie</div></div>
       </div>
       <!-- Voor/na: zet projectdatabank-voor.webp en projectdatabank-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
       <div class="case-visual">
@@ -546,7 +542,7 @@
     <div class="case-card reveal">
       <div class="case-top">
         <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3"/><path d="m9 13 2 2 4-4"/></svg></div>
-        <div><h3>Mystery shopper rapporteert live vanuit de winkel</h3><div class="case-sector">Retail</div></div>
+        <div><h3><a href="/cases.html#mystery-shopper">Mystery shopper rapporteert live vanuit de winkel</a></h3><div class="case-sector">Retail</div></div>
       </div>
       <!-- Voor/na: zet mystery-shopper-voor.webp en mystery-shopper-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
       <div class="case-visual">
@@ -566,33 +562,11 @@
       </div>
     </div>
 
-    <div class="case-card reveal">
-      <div class="case-top">
-        <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.5" cy="7.5" r="1.3"/></svg></div>
-        <div><h3>Labelplanning in sync met productie bij voedingsbedrijf</h3><div class="case-sector">Food &amp; Quality</div></div>
-      </div>
-      <!-- Voor/na: zet labelplanning-voor.webp en labelplanning-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
-      <div class="case-visual">
-        <figure class="voor"><img src="img/cases/labelplanning-voor.webp" alt="Labelplanning per PO, gekleurd per status, gesorteerd op productiedatum (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Planning</figcaption></figure>
-        <figure class="na"><img src="img/cases/labelplanning-na.webp" alt="Labelfiche met ingrediënten, THT, klantstatus en controles (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Labelfiche</figcaption></figure>
-      </div>
-      <div class="case-body">
-        <div class="case-block">
-          <div class="case-label">Uitdaging</div>
-          <p><strong>Labels te laat in productie</strong>: niemand wist wanneer een order verschoof of welke stap al gedaan was.</p>
-        </div>
-        <div class="case-block">
-          <div class="case-label">Oplossing</div>
-          <p>Labelplanning <strong>live gekoppeld aan de productieplanning</strong>: verschuift een order, dan ziet iedereen het. Elke stap en elke klantvraag staat op de fiche.</p>
-        </div>
-        <div class="case-result-row">Geen vertraagde labels meer door informatietekort</div>
-      </div>
-    </div>
 
     <div class="case-card reveal">
       <div class="case-top">
         <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 17V6a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h1"/><path d="M14 17h-4"/><path d="M18 17h1a1 1 0 0 0 1-1v-3.3a1 1 0 0 0-.2-.6l-2.9-3.6a1 1 0 0 0-.8-.4H14"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/></svg></div>
-        <div><h3>Wachttijden en boetes terugdringen bij petrochemie</h3><div class="case-sector">Petrochemie &amp; Logistiek</div></div>
+        <div><h3><a href="/cases.html#wachttijden">Wachttijden en boetes terugdringen bij petrochemie</a></h3><div class="case-sector">Petrochemie &amp; Logistiek</div></div>
       </div>
       <!-- Voor/na: zet wachttijden-voor.webp en wachttijden-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
       <div class="case-visual full">
@@ -615,7 +589,7 @@
     <div class="case-card reveal">
       <div class="case-top">
         <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/><path d="M9 15l2 2 4-4"/></svg></div>
-        <div><h3>Boekingen, voorschotten en facturen in &eacute;&eacute;n kalender</h3><div class="case-sector">Verhuur &amp; Events</div></div>
+        <div><h3><a href="/cases.html#boekingen">Boekingen, voorschotten en facturen in &eacute;&eacute;n kalender</a></h3><div class="case-sector">Verhuur &amp; Events</div></div>
       </div>
       <!-- Voor/na: zet boekingen-voor.webp en boekingen-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
       <div class="case-visual">
@@ -638,7 +612,7 @@
     <div class="case-card reveal">
       <div class="case-top">
         <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l4-4 4 4 5-6 5 5"/></svg></div>
-        <div><h3>Productieopvolging op de lijn, pallet per pallet</h3><div class="case-sector">Food, chocolade</div></div>
+        <div><h3><a href="/cases.html#productieopvolging">Productieopvolging op de lijn, pallet per pallet</a></h3><div class="case-sector">Food, chocolade</div></div>
       </div>
       <!-- Beelden: productieopvolging-voor.webp (operatorscherm) en productieopvolging-na.webp (rapport), nagebouwd met fictieve gegevens -->
       <div class="case-visual">
@@ -658,28 +632,6 @@
       </div>
     </div>
 
-    <div class="case-card reveal">
-      <div class="case-top">
-        <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-        <div><h3>Onderhoud gepland, uitgelegd en opgevolgd per machine</h3><div class="case-sector">Productie</div></div>
-      </div>
-      <!-- Beelden: onderhoud-voor.webp (takenlijst) en onderhoud-na.webp (machinefiche), nagebouwd met fictieve gegevens -->
-      <div class="case-visual">
-        <figure class="voor"><img src="img/cases/onderhoud-voor.webp" alt="Takenlijst van de technische dienst per dag, met filmpje en stappen per taak (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Takenlijst per dag</figcaption></figure>
-        <figure class="na"><img src="img/cases/onderhoud-na.webp" alt="Machinefiche met parameters, onderhoudscycli en meldingen uit productie met foto (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Machinefiche en meldingen</figcaption></figure>
-      </div>
-      <div class="case-body">
-        <div class="case-block">
-          <div class="case-label">Uitdaging</div>
-          <p><strong>Onderhoud zat in een Excel en in het hoofd van één technieker</strong>: wat wanneer moest gebeuren, en hoe, wist niemand anders.</p>
-        </div>
-        <div class="case-block">
-          <div class="case-label">Oplossing</div>
-          <p>Per machine een fiche met serienummer, leverancier, type en onderhoudscyclus, <strong>met een filmpje van hoe het moet</strong>. De technische dienst krijgt elke dag zijn takenlijst; staat een taak op done, dan plant de tool de volgende in. Productie meldt een probleem met foto, en dat komt in dezelfde lijst.</p>
-        </div>
-        <div class="case-result-row">Geen vergeten onderhoud meer, en elke technieker weet hoe het moet, ook de nieuwe</div>
-      </div>
-    </div>
 
     <a class="case-card case-next reveal" href="#contact">
       <div class="case-next-inner">
@@ -691,6 +643,7 @@
     </a>
 
   </div>
+  <p class="cases-more"><a href="/cases.html">Alle cases bekijken, met grotere schermen &rarr;</a></p>
 </section>
 
 <section id="diensten">
@@ -738,19 +691,6 @@
       </ul>
     </div>
       </div>
-  <div class="deuren">
-    <a class="deur reveal" href="/excel-vervangen-door-app.html"><strong>Excel vervangen door een app &rarr;</strong><span>Wanneer uw bedrijf te groot wordt voor Excel</span></a>
-    <a class="deur reveal" href="/papieren-formulieren-digitaliseren.html"><strong>Papieren formulieren digitaliseren &rarr;</strong><span>Van invulblad op de werkvloer naar app</span></a>
-    <a class="deur reveal" href="/power-platform-consultant-oost-vlaanderen.html"><strong>Power Platform consultant &rarr;</strong><span>Werken met een vaste consultant in Oost-Vlaanderen</span></a>
-    <a class="deur reveal" href="/dagoverleg-app.html"><strong>Dagoverleg app &rarr;</strong><span>Eén scherm per afdeling, rood of groen</span></a>
-    <a class="deur reveal" href="/onderhoudsplanning-app.html"><strong>Onderhoudsplanning app &rarr;</strong><span>Takenlijst per dag, met filmpje per taak</span></a>
-    <a class="deur reveal" href="/productieopvolging-app.html"><strong>Productieopvolging app &rarr;</strong><span>Pallet per pallet, groen of rood, live voor planning</span></a>
-    <a class="deur reveal" href="/digitale-checklist-app.html"><strong>Digitale checklist app &rarr;</strong><span>Controles op gsm, rapport automatisch</span></a>
-    <a class="deur reveal" href="/boekingssysteem-app.html"><strong>Boekingssysteem op maat &rarr;</strong><span>Kalender, voorschot en facturen in één</span></a>
-    <a class="deur reveal" href="/voorraadbeheer-app.html"><strong>Voorraadbeheer app &rarr;</strong><span>Tellen, scannen, bestellen</span></a>
-    <a class="deur reveal" href="/power-bi-dashboard-kmo.html"><strong>Power BI dashboard voor KMO's &rarr;</strong><span>Cijfers die zichzelf vernieuwen</span></a>
-    <a class="deur reveal" href="/excel-automatiseren.html"><strong>Excel automatiseren &rarr;</strong><span>Excel houden, het handwerk niet</span></a>
-  </div>
 </section>
 
 <section id="aanpak">
@@ -790,7 +730,6 @@
         <span class="stap-duur">korte opvolging</span>
       </div>
     </div>
-    <p class="stappen-note">Enkel de intake is gratis. Vanaf stap 2 werk ik aan uurtarief, en na de intake krijgt u <strong>een raming van de uren voor het hele traject</strong>, zodat u weet waar u aan toe bent voor we starten.</p>
     <p class="stappen-note">Liever doorlopende ondersteuning? <strong>Ik kan ook op vaste dagen per week in uw team meewerken.</strong></p>
     <a class="btn-primary stappen-cta" href="#contact">Plan uw gratis intake &rarr;</a>
   </div>
@@ -838,6 +777,7 @@
       <a class="logo-slot" href="https://www.stikalabels.be/" target="_blank" rel="noopener"><img src="img/logos/stika.png" alt="Stika" loading="lazy" onerror="this.parentNode.style.display='none'"></a>
       <a class="logo-slot" href="https://www.exceleroo.be/" target="_blank" rel="noopener"><img src="img/logos/exceleroo.png" alt="Exceleroo" loading="lazy" onerror="this.parentNode.style.display='none'"></a>
       <a class="logo-slot" href="https://chateaulevert.com/" target="_blank" rel="noopener"><img src="img/logos/chateau-le-vert.png" alt="Château Le Vert" loading="lazy" onerror="this.parentNode.style.display='none'"></a>
+      <span class="logo-slot"><img src="img/logos/daems-willemsens.png" alt="Albert Heijn Daems-Willemsens" loading="lazy" onerror="this.parentNode.style.display='none'"></span>
     </div>
   </div>
 </section>
@@ -868,18 +808,13 @@
 <section id="faq">
   <div class="faq-wrap">
     <p class="s-tag">Veelgestelde vragen</p>
-    <h2 class="s-title">Wat u zich waarschijnlijk<br><em>al afvraagt</em></h2>
     <div class="faq-list">
-      <details>
-        <summary>Wat kost zoiets?</summary>
-        <p>Een eenvoudige opdracht, zoals een basisopzet van Power BI of een standaardformulier met een tiental velden in SharePoint, start rond <strong>3.000 euro</strong>. Zodra het flexibel moet zijn, met meerdere schermen, meerdere tools of beveiliging per rol, zit u <strong>snel boven 5.000 euro</strong>. Ik werk <strong>aan uurtarief</strong>. Na de gratis intake krijgt u <strong>een raming van de uren</strong> voor het hele traject, zodat u weet waar u aan toe bent voor we starten.</p>
-      </details>
       <details>
         <summary>Moet ik extra software of licenties kopen?</summary>
         <p>Meestal niet. Power Apps, Power Automate en SharePoint zitten in <strong>de meeste Microsoft 365-abonnementen</strong> die bedrijven al hebben. Power BI vraagt soms een extra licentie per gebruiker. Ik check dit tijdens de intake, zodat u vooraf weet waar u aan toe bent.</p>
       </details>
       <details>
-        <summary>Wat als we er later mee stoppen of u niet meer beschikbaar bent?</summary>
+        <summary>Hoe zit het met continuïteit?</summary>
         <p>Dat hangt af van wat we afspreken. <strong>Maatwerk voor u staat in uw eigen Microsoft-omgeving</strong>, op uw naam: u kan er altijd zelf mee verder of een andere partij erbij halen, en ik documenteer wat ik bouw. Werkt u met een tool die ik al eerder ontwikkelde, dan <strong>blijf ik daar eigenaar van</strong> en leggen we vooraf vast hoe u ze blijft gebruiken.</p>
       </details>
       <details>
@@ -889,10 +824,6 @@
       <details>
         <summary>Hoeveel tijd vraagt dit van ons team?</summary>
         <p>De intake: tot een uur. Bij het bouwen van de eerste versie: een paar korte gesprekken met de mensen die het werk doen, en nadien <strong>wat tijd om de versie uit te proberen</strong> en feedback te geven, afhankelijk van de grootte van de tool. Ik vraag geen ellenlange workshops.</p>
-      </details>
-      <details>
-        <summary>Kan ik u ook vast inhuren in plaats van per project?</summary>
-        <p>Ja. Naast projecten kan u mij <strong>een vaste capaciteit per week of per maand</strong> laten reserveren. Die tijd staat dan voor u klaar: aanpassingen, nieuwe vragen, een collega die vastzit. U hoeft niet telkens een nieuw project op te starten, en ik ken uw omgeving al.</p>
       </details>
       <details>
         <summary>Werkt u ook voor kleine bedrijven?</summary>
@@ -992,7 +923,7 @@
     <span class="footer-tagline">Kwaliteit begint bij een goed proces.</span>
   </div>
   <div class="footer-info" style="text-align:left">
-    <span style="color:rgba(255,255,255,0.75);font-weight:600">Aanpak</span>
+    <span style="color:rgba(255,255,255,0.75);font-weight:600">Onderwerpen</span>
     <span><a href="/excel-vervangen-door-app.html">Excel vervangen door een app</a></span>
     <span><a href="/papieren-formulieren-digitaliseren.html">Papieren formulieren digitaliseren</a></span>
     <span><a href="/power-platform-consultant-oost-vlaanderen.html">Power Platform consultant</a></span>

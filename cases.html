@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cases: acht voorbeelden van apps en dashboards die het werk lichter maken | Flow4Q</title>
+<meta name="google-site-verification" content="N8YtIp-gTpfpyfc0WfzXy_jSlpRgND1IqqCYLqcR4KI">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Acht voorbeelden uit de praktijk: dagoverleg, projectopvolging, mystery shopper, labelplanning, wachttijden, boekingen, productieopvolging en onderhoud. Met de schermen erbij. Flow4Q, Lokeren.">
+<link rel="canonical" href="https://www.flow4q.com/cases.html">
+<meta property="og:title" content="Cases: acht voorbeelden uit de praktijk | Flow4Q">
+<meta property="og:description" content="Van frustratie tot werkende tool: procesanalyse, Power Apps, dashboards en automatisering voor KMO's in Vlaanderen. Gratis intake, tot een uur.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.flow4q.com/cases.html">
+<meta property="og:image" content="https://www.flow4q.com/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="nl_BE">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Flow4Q BV","alternateName":"Flow4Q","description":"Procesoptimalisatie en automatisering met Microsoft Power Platform voor KMO's en bedrijven in Oost-Vlaanderen: procesanalyse, Power Apps, Power BI dashboards, Power Automate en Excel.","url":"https://www.flow4q.com/","logo":"https://www.flow4q.com/apple-touch-icon.png","image":"https://www.flow4q.com/img/og-image.jpg","telephone":"+32474627187","email":"info@flow4q.com","vatID":"BE1011753847","founder":{"@type":"Person","name":"Sabine Beke"},"address":{"@type":"PostalAddress","addressLocality":"Lokeren","postalCode":"9160","addressRegion":"Oost-Vlaanderen","addressCountry":"BE"},"areaServed":[{"@type":"City","name":"Lokeren"},{"@type":"AdministrativeArea","name":"Oost-Vlaanderen"},{"@type":"AdministrativeArea","name":"Vlaanderen"}],"priceRange":"vanaf 3000 EUR","knowsAbout":["Procesoptimalisatie","Procesverbetering","Procesautomatisering","Automatisering","Microsoft Power Platform","Power Apps","Power BI","Power Automate","SharePoint","Microsoft 365","Excel VBA","Excel advies","Rapportering en dashboards","Datakwaliteit","Masterdata","Gegevensverwerking","Databases","Dagoverleg app","Projectopvolging","Onderhoudsplanning","Opleidingstool","Digitalisering KMO","Low-code apps","Maatwerk apps"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Diensten","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Procesanalyse en procesoptimalisatie"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Power Apps op maat (apps voor werkvloer, planning, projectopvolging, onderhoud, dagoverleg)"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Power BI dashboards en rapportering"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Automatisering met Power Automate"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Excel vervangen door een app, Excel en VBA advies"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Masterdata en datakwaliteit"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Doorlopende ondersteuning op vaste dagen per week"}}]}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --c900: #1B283D;
+    --c800: #243550;
+    --c700: #2E4A72;
+    --c600: #3A6095;
+    --c500: #5080B8;
+    --c400: #7AAAD4;
+    --c300: #A8C8E8;
+    --c200: #CCDFF3;
+    --c100: #E4EFF8;
+    --c50:  #F2F7FC;
+    --white: #FFFFFF;
+    --text:  #1B283D;
+    --muted: #56697D;
+    --border: #D0E0EF;
+    --radius: 14px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body { font-family: "Outfit", sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 6vw; height: 66px;
+    background: rgba(27,40,61,0.97); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-logo { display: flex; align-items: center; }
+  .nav-right { display: flex; flex-direction: row; align-items: center; gap: 1.8rem; }
+  .nav-slogan { font-family: "Lora", serif; font-style: italic; font-size: 0.88rem; color: var(--c300); letter-spacing: 0.2px; }
+  .nav-divider { width: 1px; height: 22px; background: rgba(255,255,255,0.15); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta { background: var(--c500) !important; color: var(--white) !important; padding: 0.42rem 1.15rem; border-radius: 6px; font-weight: 600 !important; transition: background 0.2s !important; }
+  .nav-cta:hover { background: var(--c600) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(150deg, var(--c900) 0%, var(--c800) 55%, var(--c700) 100%);
+    display: flex; align-items: center; justify-content: center;
+    padding: 110px 0 70px;
+    position: relative; overflow: hidden;
+  }
+  .hero-inner {
+    display: grid; grid-template-columns: 1.15fr 0.85fr;
+    align-items: center; gap: 4rem;
+    width: 100%; max-width: 1100px;
+    padding: 0 clamp(1.5rem, 5vw, 4rem);
+  }
+  .hero::before {
+    content: ""; position: absolute;
+    width: 650px; height: 650px;
+    background: radial-gradient(circle, rgba(80,128,184,0.18) 0%, transparent 68%);
+    top: -120px; right: -80px; pointer-events: none;
+  }
+  .hero-text { position: relative; z-index: 1; }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(168,200,232,0.12); border: 1px solid rgba(168,200,232,0.22);
+    color: var(--c300); font-size: 0.76rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 0.36rem 0.9rem; border-radius: 100px; margin-bottom: 1.8rem;
+  }
+  .hero h1 {
+    font-weight: 300; font-size: clamp(2.4rem, 4.2vw, 3.6rem);
+    line-height: 1.12; letter-spacing: -0.02em; color: var(--white); margin-bottom: 1.5rem;
+  }
+  .hero h1 strong { font-weight: 600; color: var(--white); }
+  .hero h1 em { font-style: italic; font-family: "Lora", serif; font-weight: 400; color: var(--c300); }
+  .hero-slagzin { font-family: "Lora", serif; font-style: italic; font-size: 1.15rem; color: var(--c300); margin-bottom: 1rem; font-weight: 400; }
+  .hero-sub { color: rgba(255,255,255,0.6); font-size: 1rem; line-height: 1.75; max-width: 460px; margin-bottom: 2.5rem; font-weight: 300; }
+  .hero-sub strong { color: var(--white); font-weight: 500; }
+
+  /* KERNWOORDEN */
+  .s-sub strong, .case-block p strong, .dienst-card p strong, .herkent-item p strong { color: var(--c900); font-weight: 600; }
+
+  /* LOGO'S KLANTEN */
+  .logos { background: var(--white); padding: 2.6rem 6vw 2.2rem; border-bottom: 1px solid var(--border); }
+  .logos-wrap { max-width: 1100px; margin: 0 auto; }
+  .logos-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.4rem; }
+  .ref-list { list-style: none; margin: 0 0 0.4rem; padding: 0; max-width: 820px; text-align: left; display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem 2rem; }
+  .ref-list li { font-size: 0.9rem; line-height: 1.6; color: var(--muted); padding-left: 1rem; border-left: 2px solid var(--c300); }
+  .ref-list li strong { color: var(--c900); font-weight: 600; }
+  .ref-sector { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c500); margin-bottom: 0.2rem; }
+  @media (max-width: 720px) { .ref-list { grid-template-columns: 1fr; } }
+  .logos-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1rem 3rem; }
+  .logo-slot { height: 44px; display: flex; align-items: center; justify-content: center; filter: grayscale(1); opacity: 0.55; transition: filter 0.25s, opacity 0.25s; }
+  .logo-slot:hover { filter: none; opacity: 1; }
+  .logo-slot img { max-height: 56px; max-width: 150px; width: auto; display: block; }
+
+  /* BEELD IN DIENST-KAART */
+  .dienst-visual { margin: 1rem 0 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--c50); position: relative; }
+  .dienst-visual img { width: 100%; max-width: 100%; height: auto; display: block; }
+  .dienst-visual figcaption { position: absolute; left: 0; right: 0; bottom: 0; font-size: 0.7rem; padding: 0.35rem 0.7rem; color: var(--white); background: rgba(27,40,61,0.78); }
+  .dienst-visual.empty img, .dienst-visual.empty figcaption { display: none; }
+  .dienst-visual.empty::after { content: "beeld volgt"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 0.74rem; color: var(--c400); }
+
+  /* SHOWCASE */
+  .showcase { background: var(--c50); padding: 80px 6vw 90px; border-bottom: 1px solid var(--border); }
+  .showcase-wrap { max-width: 1100px; margin: 0 auto; }
+  .showcase-frame { margin: 2.2rem 0 0; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 24px 60px rgba(27,40,61,0.14); background: var(--white); }
+  .showcase-frame img { width: 100%; height: auto; display: block; }
+
+  /* HOE WERKT HET */
+  #aanpak { background: var(--white); padding: 90px 6vw; border-top: 1px solid var(--border); }
+  .aanpak-wrap { max-width: 1100px; margin: 0 auto; }
+  .stappen { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.2rem; margin-top: 2.5rem; }
+  @media (max-width: 1100px) { .stappen { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 800px) { .stappen { grid-template-columns: 1fr 1fr; } }
+  .stap { position: relative; background: var(--c50); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem 1.2rem 1.3rem; display: flex; flex-direction: column; }
+  .stap .stap-duur { margin-top: auto; padding-top: 0.9rem; }
+  .stap-nr { font-family: Georgia, serif; font-size: 2.6rem; line-height: 1; color: var(--c300); font-style: italic; margin-bottom: 0.6rem; }
+  .stap h3 { font-size: 1.02rem; font-weight: 600; color: var(--c900); margin-bottom: 0.45rem; }
+  .stap p { font-size: 0.86rem; line-height: 1.65; color: var(--muted); }
+  .stap p strong { color: var(--c900); font-weight: 600; }
+  .stappen-note { margin-top: 1.6rem; font-size: 0.92rem; line-height: 1.65; color: var(--muted); max-width: 720px; }
+  .stappen-note strong { color: var(--c900); font-weight: 600; }
+  .stappen-note + .stappen-note { margin-top: 0.6rem; }
+  .stappen-cta { display: inline-block; margin-top: 1.4rem; }
+  .stap-duur { display: inline-block; margin-top: 0.9rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c500); }
+  @media (max-width: 600px) { .stappen { grid-template-columns: 1fr; } }
+
+  /* FAQ */
+  #faq { background: var(--c50); padding: 90px 6vw; border-top: 1px solid var(--border); }
+  .faq-wrap { max-width: 820px; margin: 0 auto; }
+  .faq-list { margin-top: 2rem; border-top: 1px solid var(--border); }
+  .faq-list details { border-bottom: 1px solid var(--border); }
+  .faq-list summary { cursor: pointer; list-style: none; padding: 1.1rem 2.2rem 1.1rem 0; font-weight: 600; color: var(--c900); font-size: 1rem; position: relative; }
+  .faq-list summary::-webkit-details-marker { display: none; }
+  .faq-list summary::after { content: "+"; position: absolute; right: 0.2rem; top: 50%; transform: translateY(-50%); font-size: 1.4rem; font-weight: 300; color: var(--c500); transition: transform 0.2s; }
+  .faq-list details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+  .faq-list details p { padding: 0 0 1.2rem; font-size: 0.95rem; line-height: 1.7; color: var(--muted); max-width: 720px; }
+  .faq-list details p strong { color: var(--c900); font-weight: 600; }
+
+  .case-top h3 { min-height: 2.6em; }
+  .case-top h3 a { color: inherit; text-decoration: none; }
+  .case-top h3 a:hover { text-decoration: underline; }
+  .cases-more { margin-top: 2rem; text-align: center; }
+  .cases-more a { font-weight: 600; color: var(--c600); text-decoration: none; font-size: 1rem; }
+  .cases-more a:hover { text-decoration: underline; }
+  /* VOOR / NA IN CASES */
+  .case-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); border-bottom: 1px solid var(--border); }
+  .case-visual figure { position: relative; margin: 0; min-width: 0; background: var(--white); display: flex; flex-direction: column; overflow: hidden; }
+  .case-visual img { width: 100%; aspect-ratio: 16/9; height: auto; max-width: 100%; object-fit: contain; display: block; transition: transform 0.4s; }
+  .case-card:hover .case-visual img { transform: scale(1.03); }
+  .case-visual figcaption { order: -1; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.45rem 0.9rem; color: var(--c700); background: var(--white); border-bottom: 1px solid var(--border); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .case-visual.single { grid-template-columns: 1fr; }
+  .case-visual.single .voor, .case-visual.single figcaption { display: none; }
+  .case-visual figure.empty img { display: none; }
+  .case-visual figure.empty::after { content: "beeld volgt"; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; font-size: 0.74rem; color: var(--c400); }
+
+  /* SCROLL REVEAL */
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  .reveal:nth-child(2) { transition-delay: 0.08s; } .reveal:nth-child(3) { transition-delay: 0.16s; } .reveal:nth-child(4) { transition-delay: 0.24s; } .reveal:nth-child(5) { transition-delay: 0.32s; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--c500); color: var(--white);
+    padding: 0.88rem 2rem; border-radius: 8px; font-weight: 600; font-size: 0.93rem;
+    text-decoration: none; display: inline-block;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(58,96,149,0.35);
+  }
+  .btn-primary:hover { background: var(--c600); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(58,96,149,0.45); }
+  .btn-outline {
+    border: 1.5px solid rgba(255,255,255,0.28); color: rgba(255,255,255,0.85);
+    padding: 0.88rem 2rem; border-radius: 8px; font-weight: 500; font-size: 0.93rem;
+    text-decoration: none; display: inline-block; transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.55); background: rgba(255,255,255,0.05); }
+
+  /* HERO PHOTO */
+  .hero-photo-wrap { position: relative; z-index: 1; display: flex; justify-content: flex-end; }
+  .hero-photo-frame { position: relative; width: 100%; max-width: 340px; }
+  .hero-photo-frame::after {
+    content: ""; position: absolute;
+    inset: 18px -18px -18px 18px;
+    border: 1.5px solid rgba(168,200,232,0.2); border-radius: 16px; z-index: -1;
+  }
+  .hero-photo {
+    width: 100%; aspect-ratio: 3/4.2;
+    object-fit: cover; object-position: 50% 5%;
+    border-radius: 14px; display: block;
+  }
+  .hero-badge {
+    position: absolute; bottom: -22px; left: -22px;
+    background: var(--white); border-radius: 12px;
+    padding: 0.85rem 1.2rem; box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .badge-icon { width: 38px; height: 38px; background: var(--c100); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+  .badge-text strong { display: block; font-weight: 700; font-size: 0.92rem; color: var(--c900); }
+  .badge-text span { font-size: 0.73rem; color: var(--muted); }
+
+  /* STATS */
+  .stats-bar { background: var(--white); border-bottom: 1px solid var(--border); display: flex; justify-content: center; }
+  .stat { padding: 1.9rem 3.5rem; text-align: center; border-right: 1px solid var(--border); }
+  .stat:last-child { border-right: none; }
+  .stat-n { font-size: 2.1rem; font-weight: 700; color: var(--c600); display: block; letter-spacing: -0.03em; }
+  .stat-l { font-size: 0.78rem; color: var(--muted); font-weight: 500; }
+
+  /* SECTION SHARED */
+  section { padding: 90px 6vw; }
+  .s-tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--c600); margin-bottom: 0.6rem; }
+  .s-title { font-weight: 600; font-size: clamp(1.9rem, 3vw, 2.7rem); letter-spacing: -0.025em; color: var(--text); line-height: 1.15; margin-bottom: 1rem; }
+  .s-title em { font-style: italic; font-family: "Lora", serif; font-weight: 400; color: var(--c600); }
+  .s-sub { color: var(--muted); font-size: 1rem; line-height: 1.72; max-width: 560px; font-weight: 300; }
+
+  /* DIENSTEN */
+  #diensten { background: var(--c50); }
+  .diensten-hdr { margin-bottom: 3.5rem; }
+  .diensten-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
+  .dienst-card { flex: 1 1 240px; max-width: calc(25% - 1.2rem); min-width: 0; }
+  @media (max-width: 1000px) { .dienst-card { max-width: calc(50% - 0.75rem); } }
+  @media (max-width: 560px) { .dienst-card { max-width: 100%; } }
+  .dienst-card {
+    background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 2rem; position: relative; overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  }
+  .dienst-card::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--c700), var(--c500));
+    transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
+  }
+  .dienst-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(27,40,61,0.09); border-color: var(--c300); }
+  .dienst-card:hover::before { transform: scaleX(1); }
+  .d-icon { width: 50px; height: 50px; background: var(--c100); border-radius: 11px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; }
+  .dienst-tag { display: inline-block; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c500); margin-bottom: 0.4rem; }
+  .dienst-card h3 { font-weight: 600; font-size: 1.05rem; margin-bottom: 0.55rem; color: var(--c900); line-height: 1.3; }
+  .dienst-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; margin-bottom: 0.8rem; }
+  .dienst-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+  .dienst-list li { font-size: 0.84rem; color: var(--muted); padding-left: 1.1rem; position: relative; line-height: 1.5; }
+  .dienst-list li::before { content: "→"; position: absolute; left: 0; color: var(--c500); font-size: 0.75rem; top: 0.1rem; }
+
+  /* INSTAPPAGINA'S */
+  .deuren { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 2.5rem; }
+  .deur { display: block; background: var(--white); border: 1px solid var(--border); border-left: 3px solid var(--c500); border-radius: 0 var(--radius) var(--radius) 0; padding: 1.1rem 1.3rem; text-decoration: none; color: var(--text); transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
+  .deur:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(27,40,61,0.09); border-color: var(--c500); }
+  .deur strong { display: block; font-weight: 600; font-size: 0.97rem; color: var(--c900); }
+  .deur span { display: block; font-size: 0.85rem; color: var(--muted); margin-top: 0.25rem; line-height: 1.5; }
+
+  /* CASES */
+  #cases { background: var(--white); }
+  .cases-hdr { margin-bottom: 3.5rem; }
+  .cases-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .cases-grid > .case-card:last-child:nth-child(odd) { grid-column: 1 / -1; width: 70%; justify-self: center; }
+  .case-next { text-decoration: none; border: 2px dashed var(--c300); background: var(--c50); align-items: center; justify-content: center; text-align: center; padding: 3rem 2rem; min-height: 320px; }
+  .case-next:hover { border-color: var(--c500); background: var(--white); }
+  .case-next-inner { max-width: 420px; }
+  .case-next-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--c900); color: var(--white); font-size: 1.6rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem; }
+  .case-next h3 { font-size: 1.25rem; font-weight: 700; color: var(--c900); margin-bottom: 0.7rem; }
+  .case-next p { font-size: 0.95rem; line-height: 1.65; color: var(--muted); margin-bottom: 1.4rem; }
+  .case-next p strong { color: var(--c900); font-weight: 600; }
+  .case-next-cta { display: inline-block; font-weight: 600; color: var(--c500); font-size: 0.95rem; }
+  @media (max-width: 900px) { .cases-grid > .case-card:last-child:nth-child(odd) { width: 100%; } }
+  .case-card { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; }
+  .case-card:hover { transform: translateY(-4px); box-shadow: 0 16px 50px rgba(27,40,61,0.1); }
+  .case-top { background: linear-gradient(135deg, var(--c900), var(--c700)); padding: 1.5rem 1.8rem; display: flex; align-items: flex-start; gap: 0.9rem; }
+  .case-icon-wrap { width: 40px; height: 40px; background: rgba(255,255,255,0.15); border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .case-top h3 { font-weight: 600; font-size: 0.95rem; color: var(--white); line-height: 1.35; }
+  .case-sector { font-size: 0.69rem; color: rgba(255,255,255,0.5); margin-top: 0.2rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+  .case-body { padding: 1.6rem 1.8rem; background: var(--white); display: flex; flex-direction: column; gap: 1.1rem; flex: 1; }
+  .case-block { display: flex; flex-direction: column; gap: 0.3rem; }
+  .case-label { font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c600); display: flex; align-items: center; gap: 0.45rem; }
+  .case-label::before { content: ""; display: inline-block; width: 14px; height: 2px; background: var(--c500); border-radius: 2px; flex-shrink: 0; }
+  .case-block p { font-size: 0.87rem; color: var(--muted); line-height: 1.67; }
+  .case-body .case-block:first-child p { min-height: calc(4 * 1.67em); }
+  @media (max-width: 900px) { .case-body .case-block:first-child p { min-height: 0; } }
+  .case-result-row { background: var(--c50); border-left: 3px solid var(--c500); border-radius: 0 8px 8px 0; padding: 0.75rem 1rem; margin-top: auto; min-height: calc(2 * 1.5em + 1.5rem); box-sizing: border-box; display: flex; align-items: center; line-height: 1.5; font-size: 0.84rem; font-weight: 600; color: var(--c800); }
+
+  /* OVER */
+  #over { background: linear-gradient(150deg, var(--c900), var(--c800)); }
+  .over-grid { display: grid; grid-template-columns: auto 1fr; gap: 5rem; align-items: center; }
+  .over-photo-wrap { position: relative; }
+  .over-photo { width: min(300px, 35vw); aspect-ratio: 3/4.2; object-fit: cover; object-position: 50% 5%; border-radius: 14px; display: block; }
+  .over-photo-deco { position: absolute; bottom: -14px; right: -14px; width: 80%; height: 80%; border: 1.5px solid rgba(168,200,232,0.2); border-radius: 14px; z-index: -1; }
+  #over .s-tag { color: var(--c300); }
+  #over .s-title { color: var(--white); }
+  #over .s-title em { color: var(--c300); }
+  .over-text p { color: rgba(255,255,255,0.68); font-size: 0.97rem; line-height: 1.78; font-weight: 300; margin-bottom: 1.1rem; }
+  .pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.8rem; }
+  .pill { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.13); color: rgba(255,255,255,0.82); padding: 0.32rem 0.88rem; border-radius: 100px; font-size: 0.79rem; font-weight: 500; }
+
+  /* CONTACT */
+  #contact { background: var(--c50); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .contact-info h2 { font-weight: 600; font-size: clamp(1.8rem, 2.5vw, 2.4rem); letter-spacing: -0.025em; color: var(--text); margin-bottom: 1rem; line-height: 1.15; }
+  .contact-info p { color: var(--muted); line-height: 1.72; margin-bottom: 2rem; font-weight: 300; }
+  .contact-items { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-item { display: flex; align-items: center; gap: 1rem; text-decoration: none; color: var(--text); transition: color 0.2s; }
+  .contact-item:hover { color: var(--c600); }
+  .c-icon { width: 44px; height: 44px; background: var(--white); border: 1px solid var(--border); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; transition: all 0.2s; }
+  .contact-item:hover .c-icon { background: var(--c100); border-color: var(--c300); }
+  .c-text strong { display: block; font-weight: 600; font-size: 0.93rem; }
+  .c-text span { font-size: 0.79rem; color: var(--muted); }
+  .form-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.2rem; box-shadow: 0 4px 28px rgba(27,40,61,0.06); }
+  .form-group { margin-bottom: 1.1rem; }
+  .form-group label { display: block; font-size: 0.79rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
+  .form-group input, .form-group textarea { width: 100%; border: 1.5px solid var(--border); border-radius: 8px; padding: 0.75rem 1rem; font-family: "Outfit", sans-serif; font-size: 0.9rem; color: var(--text); background: var(--white); transition: border-color 0.2s, box-shadow 0.2s; outline: none; }
+  .form-group input:focus, .form-group textarea:focus { border-color: var(--c600); box-shadow: 0 0 0 3px rgba(58,96,149,0.1); }
+  .form-group textarea { min-height: 110px; resize: vertical; }
+  .btn-submit { width: 100%; background: linear-gradient(135deg, var(--c800), var(--c600)); color: var(--white); border: none; padding: 0.9rem; border-radius: 8px; font-family: "Outfit", sans-serif; font-size: 0.93rem; font-weight: 600; cursor: pointer; transition: opacity 0.2s, transform 0.2s; }
+  .btn-submit:hover { opacity: 0.9; transform: translateY(-1px); }
+
+  /* FOOTER */
+  footer { background: var(--c900); color: rgba(255,255,255,0.5); padding: 2.5rem 6vw; font-size: 0.82rem; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem; }
+  .footer-brand { display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-tagline { font-family: "Lora", serif; font-style: italic; font-size: 0.82rem; color: var(--c300); }
+  .footer-info { display: flex; flex-direction: column; gap: 0.35rem; text-align: right; }
+  .footer-copy { width: 100%; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.3rem; font-size: 0.76rem; color: rgba(255,255,255,0.35); }
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  footer a:hover { color: var(--white); }
+  #reacties { background: var(--c50); padding: 90px 6vw; }
+  .reacties-wrap { max-width: 1100px; margin: 0 auto; }
+  .reacties-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-top: 3rem; }
+  .quote-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; position: relative; display: flex; flex-direction: column; gap: 1.2rem; flex: 1 1 300px; max-width: 340px; transition: transform 0.25s, box-shadow 0.25s; }
+  .quote-card:hover { transform: translateY(-4px); box-shadow: 0 14px 44px rgba(27,40,61,0.09); }
+  .quote-mark { font-family: "Lora", serif; font-size: 3rem; line-height: 0.5; color: var(--c300); height: 1.2rem; }
+  .quote-text { font-size: 0.95rem; color: var(--text); line-height: 1.6; font-weight: 400; flex-grow: 1; }
+  .quote-author { display: flex; flex-direction: column; gap: 0.15rem; border-top: 1px solid var(--border); padding-top: 1rem; }
+  .quote-author strong { font-size: 0.88rem; font-weight: 600; color: var(--c800); }
+  .quote-author span { font-size: 0.78rem; color: var(--muted); }
+  @media (max-width: 860px) { .quote-card { flex: 1 1 100%; max-width: 100%; } }
+  @media (max-width: 600px) { .footer-info { text-align: left; } }
+
+  #herkent { background: var(--white); padding: 80px 6vw; }
+  .herkent-wrap { max-width: 1100px; margin: 0 auto; }
+  .herkent-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .herkent-items { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .herkent-item { background: var(--c50); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .herkent-icon { display: flex; align-items: center; }
+  .herkent-item p { font-size: 0.84rem; color: var(--muted); line-height: 1.5; font-weight: 400; }
+  #reacties { background: var(--c50); padding: 90px 6vw; }
+  .reacties-wrap { max-width: 1100px; margin: 0 auto; }
+  .reacties-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-top: 3rem; }
+  .quote-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; position: relative; display: flex; flex-direction: column; gap: 1.2rem; flex: 1 1 300px; max-width: 340px; transition: transform 0.25s, box-shadow 0.25s; }
+  .quote-card:hover { transform: translateY(-4px); box-shadow: 0 14px 44px rgba(27,40,61,0.09); }
+  .quote-mark { font-family: "Lora", serif; font-size: 3rem; line-height: 0.5; color: var(--c300); height: 1.2rem; }
+  .quote-text { font-size: 0.95rem; color: var(--text); line-height: 1.6; font-weight: 400; flex-grow: 1; }
+  .quote-author { display: flex; flex-direction: column; gap: 0.15rem; border-top: 1px solid var(--border); padding-top: 1rem; }
+  .quote-author strong { font-size: 0.88rem; font-weight: 600; color: var(--c800); }
+  .quote-author span { font-size: 0.78rem; color: var(--muted); }
+  @media (max-width: 860px) { .quote-card { flex: 1 1 100%; max-width: 100%; } }
+  @media (max-width: 600px) {
+    .herkent-items { grid-template-columns: 1fr; }
+    .nav-slogan { display: none; }
+  }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(26px); } to { opacity:1; transform:translateY(0); } }
+  .hero-text { animation: fadeUp 0.7s ease both; }
+  .hero-photo-wrap { animation: fadeUp 0.7s 0.18s ease both; }
+
+  @media (max-width: 860px) {
+    .hero-inner { grid-template-columns: 1fr; text-align: center; padding: 0 1.5rem; gap: 3rem; }
+    .hero-btns { justify-content: center; }
+    .hero-sub { margin: 0 auto 2.5rem; }
+    .hero-photo-wrap { justify-content: center; order: -1; }
+    .hero-photo-frame { width: min(240px, 60vw); }
+    .hero-badge { left: 50%; transform: translateX(-50%); bottom: -24px; white-space: nowrap; }
+    .cases-grid { grid-template-columns: 1fr; }
+    .over-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .over-photo { width: 200px; }
+    .stats-bar { flex-wrap: wrap; }
+    .stat { border-right: none; border-bottom: 1px solid var(--border); flex: 1 1 45%; }
+    .nav-links { display: none; }
+    .nav-divider { display: none; }
+    .herkent-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+  .cases-page { padding: 60px 6vw 90px; }
+  .cases-grid-1 { grid-template-columns: 1fr; max-width: 1100px; margin: 0 auto; gap: 2.5rem; }
+  .cases-grid-1 > .case-card:last-child:nth-child(odd) { width: 100%; }
+  .cases-grid-1 .case-top h3 { min-height: 0; }
+  .cases-grid-1 .case-body .case-block:first-child p { min-height: 0; }
+  .cases-grid-1 .case-result-row { margin-top: 0.2rem; min-height: 0; }
+  .case-more { margin-top: 0.4rem; }
+  .case-more a { font-weight: 600; color: var(--c600); text-decoration: none; font-size: 0.92rem; }
+  .case-more a:hover { text-decoration: underline; }
+</style>
+<script>
+  // Case-beelden: ontbreekt het voor-beeld, dan vult het na-beeld de volle breedte; ontbreken beide, dan verdwijnt het blok.
+  function cvMissing(img){var f=img.parentNode,v=f.parentNode;f.classList.add('empty');
+    if(v.querySelectorAll('figure.empty').length===2){v.style.display='none';}
+    else if(f.classList.contains('voor')){v.classList.add('single');}}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <svg height="38" viewBox="0 0 190 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="navGrad" x1="0" y1="32" x2="34" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#A8C8E8" stop-opacity="0.5"/>
+          <stop offset="50%" stop-color="#7AAAD4"/>
+          <stop offset="100%" stop-color="white"/>
+        </linearGradient>
+      </defs>
+      <circle cx="7" cy="30" r="4" fill="#7AAAD4" opacity="0.45"/>
+      <circle cx="19" cy="19" r="5.5" fill="#7AAAD4"/>
+      <circle cx="33" cy="7" r="7" fill="white"/>
+      <path d="M7 30 C11 25 15 23 19 19 C23 15 27 11 33 7" stroke="url(#navGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M28 3 L33 7 L38 3" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="48" y1="4" x2="48" y2="34" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <text x="56" y="26" font-family="Outfit, sans-serif" font-weight="600" font-size="22" fill="white" letter-spacing="-0.5">Flow</text>
+      <text x="104" y="26" font-family="Outfit, sans-serif" font-weight="300" font-size="22" fill="#7AAAD4" letter-spacing="-0.5">4Q</text>
+    </svg>
+  </div>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="/cases.html">Cases</a></li>
+      <li><a href="/#diensten">Diensten</a></li>
+      <li><a href="/#aanpak">Aanpak</a></li>
+      <li><a href="/#reacties">Reacties</a></li>
+      <li><a href="/#over">Over mij</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+      <li><a href="/#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <span class="nav-divider"></span>
+    <span class="nav-slogan">Kwaliteit begint bij een goed proces.</span>
+  </div>
+</nav>
+
+<section class="hero" style="padding-bottom: 3rem;">
+  <div class="hero-inner" style="grid-template-columns: 1fr;">
+    <div>
+    <p class="hero-tag">Cases</p>
+    <h1 class="hero-title">Acht keer <em>hetzelfde recept</em></h1>
+    <p class="hero-sub">Een frustratie, een gesprek met de mensen die het werk doen, en een werkende tool in hun eigen Microsoft-omgeving. Acht sectoren, één aanpak. De schermen zijn nagebouwd met fictieve gegevens waar echte klantdata in beeld kwam.</p>
+    </div>
+  </div>
+</section>
+
+<section id="cases" class="cases-page">
+  <div class="cases-grid cases-grid-1">
+    <div class="case-card reveal" id="mystery-shopper">
+      <div class="case-top">
+        <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3"/><path d="m9 13 2 2 4-4"/></svg></div>
+        <div><h3>Mystery shopper rapporteert live vanuit de winkel</h3><div class="case-sector">Retail</div></div>
+      </div>
+      <!-- Voor/na: zet mystery-shopper-voor.webp en mystery-shopper-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
+      <div class="case-visual">
+        <figure class="voor"><img src="img/cases/mystery-shopper-voor.webp" alt="Mystery shopper vult de checklist in op zijn gsm, met foto's per vraag" loading="lazy" onerror="cvMissing(this)"><figcaption>App in de winkel</figcaption></figure>
+        <figure class="na"><img src="img/cases/mystery-shopper-na.webp" alt="Automatisch rapport met score, groen/rood per vraag en foto's" loading="lazy" onerror="cvMissing(this)"><figcaption>PDF, automatisch</figcaption></figure>
+      </div>
+      <div class="case-body">
+        <div class="case-block">
+          <div class="case-label">Uitdaging</div>
+          <p><strong>Na elk winkelbezoek uren werk</strong>: foto&apos;s sorteren, alles in PowerPoint zetten, versturen.</p>
+        </div>
+        <div class="case-block">
+          <div class="case-label">Oplossing</div>
+          <p>In de winkel vult hij de checklist in op zijn gsm, met foto&apos;s. Eén druk op verzenden en <strong>de winkel heeft een nette PDF</strong>.</p>
+        </div>
+        <div class="case-result-row">Rapport bij de klant nog voor de shopper de winkel uit is</div>
+        <p class="case-more"><a href="/digitale-checklist-app.html">Meer over digitale checklists &rarr;</a></p>
+      </div>
+    </div>
+    <div class="case-card reveal" id="productieopvolging">
+      <div class="case-top">
+        <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l4-4 4 4 5-6 5 5"/></svg></div>
+        <div><h3>Productieopvolging op de lijn, pallet per pallet</h3><div class="case-sector">Food, chocolade</div></div>
+      </div>
+      <!-- Beelden: productieopvolging-voor.webp (operatorscherm) en productieopvolging-na.webp (rapport), nagebouwd met fictieve gegevens -->
+      <div class="case-visual">
+        <figure class="voor"><img src="img/cases/productieopvolging-voor.webp" alt="Operatorscherm met order, product, voortgang per pallet, stilstand per machine en gewichtscontrole (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Aan de lijn</figcaption></figure>
+        <figure class="na"><img src="img/cases/productieopvolging-na.webp" alt="Productierapport per order met voortgang, stilstand en gewichtscontrole (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Rapport voor planning en kwaliteit</figcaption></figure>
+      </div>
+      <div class="case-body">
+        <div class="case-block">
+          <div class="case-label">Uitdaging</div>
+          <p><strong>Planning en kwaliteit wisten pas achteraf</strong> hoe een order gelopen was: stilstanden, afwijkingen en voortgang zaten in hoofden en op papier.</p>
+        </div>
+        <div class="case-block">
+          <div class="case-label">Oplossing</div>
+          <p>De operator kiest het order, ziet het eindproduct en drukt bij elke pallet op <strong>"Pallet klaar"</strong>: een groen of rood bolletje zegt meteen of hij goed bezig is. Ingrediënten worden automatisch afgeboekt en het eindproduct opgeboekt; planning en kwaliteit zien alles live in het rapport.</p>
+        </div>
+        <div class="case-result-row">Productie weet meteen of ze goed bezig is, voorraad klopt de hele dag, planning en kwaliteit kijken live mee</div>
+        <p class="case-more"><a href="/productieopvolging-app.html">Meer over productieopvolging &rarr;</a></p>
+      </div>
+    </div>
+    <div class="case-card reveal" id="dagoverleg">
+      <div class="case-top">
+        <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
+        <div><h3>E&eacute;n scherm voor het dagoverleg, en iedereen ziet hetzelfde</h3><div class="case-sector">Industrie</div></div>
+      </div>
+      <div class="case-visual full">
+        <figure class="voor"><img src="img/dagoverleg.webp" alt="Dagoverleg per afdeling en topic, rood of groen, met opmerking, actie en status (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Dagoverleg, per afdeling en topic</figcaption></figure>
+      </div>
+      <div class="case-body">
+        <div class="case-block">
+          <div class="case-label">Uitdaging</div>
+          <p><strong>Het dagoverleg liep op een whiteboard</strong>, met acties die telkens opnieuw opdoken en een nachtploeg die niets zag.</p>
+        </div>
+        <div class="case-block">
+          <div class="case-label">Oplossing</div>
+          <p>Per afdeling en topic één vakje: groen of rood. <strong>Rood vraagt een opmerking, een actie en een verantwoordelijke.</strong> Met een datumfilter bladert iedereen terug, ook de volgende ploeg.</p>
+        </div>
+        <div class="case-result-row">Het dagoverleg duurt korter, en de acties verdwijnen niet meer</div>
+        <p class="case-more"><a href="/dagoverleg-app.html">Meer over de dagoverleg app &rarr;</a></p>
+      </div>
+    </div>
+    <div class="case-card reveal" id="projectdatabank">
+      <div class="case-top">
+        <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></div>
+        <div><h3>Centrale projectdatabank voor een internationale industri&euml;le groep</h3><div class="case-sector">Industrie</div></div>
+      </div>
+      <!-- Voor/na: zet projectdatabank-voor.webp en projectdatabank-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
+      <div class="case-visual">
+        <figure class="voor"><img src="img/cases/projectdatabank-voor.webp" alt="Projectenlijst met filters op impact, resources en programma" loading="lazy" onerror="cvMissing(this)"><figcaption>Projectenlijst</figcaption></figure>
+        <figure class="na"><img src="img/cases/projectdatabank-na.webp" alt="Dashboard met signalen, KPI per project, planning en verdeling per area en lead (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Dashboard</figcaption></figure>
+      </div>
+      <div class="case-body">
+        <div class="case-block">
+          <div class="case-label">Uitdaging</div>
+          <p>Projectinfo <strong>verspreid over mails, bestanden en hoofden</strong>, zonder versiecontrole of overzicht.</p>
+        </div>
+        <div class="case-block">
+          <div class="case-label">Oplossing</div>
+          <p>Eén centrale tool waar <strong>het team zelf projecten en KPI&apos;s bijhoudt</strong>, elke wijziging op naam. Dashboard en overzicht per mail, met één klik.</p>
+        </div>
+        <div class="case-result-row">E&eacute;n single source of truth voor het volledige team</div>
+      </div>
+    </div>
+    <div class="case-card reveal" id="onderhoud">
+      <div class="case-top">
+        <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+        <div><h3>Onderhoud gepland, uitgelegd en opgevolgd per machine</h3><div class="case-sector">Productie</div></div>
+      </div>
+      <!-- Beelden: onderhoud-voor.webp (takenlijst) en onderhoud-na.webp (machinefiche), nagebouwd met fictieve gegevens -->
+      <div class="case-visual">
+        <figure class="voor"><img src="img/cases/onderhoud-voor.webp" alt="Takenlijst van de technische dienst per dag, met filmpje en stappen per taak (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Takenlijst per dag</figcaption></figure>
+        <figure class="na"><img src="img/cases/onderhoud-na.webp" alt="Machinefiche met parameters, onderhoudscycli en meldingen uit productie met foto (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Machinefiche en meldingen</figcaption></figure>
+      </div>
+      <div class="case-body">
+        <div class="case-block">
+          <div class="case-label">Uitdaging</div>
+          <p><strong>Onderhoud zat in een Excel en in het hoofd van één technieker</strong>: wat wanneer moest gebeuren, en hoe, wist niemand anders.</p>
+        </div>
+        <div class="case-block">
+          <div class="case-label">Oplossing</div>
+          <p>Per machine een fiche met serienummer, leverancier, type en onderhoudscyclus, <strong>met een filmpje van hoe het moet</strong>. De technische dienst krijgt elke dag zijn takenlijst; staat een taak op done, dan plant de tool de volgende in. Productie meldt een probleem met foto, en dat komt in dezelfde lijst.</p>
+        </div>
+        <div class="case-result-row">Geen vergeten onderhoud meer, en elke technieker weet hoe het moet, ook de nieuwe</div>
+        <p class="case-more"><a href="/onderhoudsplanning-app.html">Meer over onderhoudsplanning &rarr;</a></p>
+      </div>
+    </div>
+    <div class="case-card reveal" id="wachttijden">
+      <div class="case-top">
+        <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 17V6a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h1"/><path d="M14 17h-4"/><path d="M18 17h1a1 1 0 0 0 1-1v-3.3a1 1 0 0 0-.2-.6l-2.9-3.6a1 1 0 0 0-.8-.4H14"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/></svg></div>
+        <div><h3>Wachttijden en boetes terugdringen bij petrochemie</h3><div class="case-sector">Petrochemie &amp; Logistiek</div></div>
+      </div>
+      <!-- Voor/na: zet wachttijden-voor.webp en wachttijden-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
+      <div class="case-visual full">
+        <figure class="voor"><img src="img/cases/wachttijden-voor.webp" alt="Weekplanning laadslots met status per vrachtwagen (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Planning, live</figcaption></figure>
+        <figure class="na"><img src="img/cases/wachttijden-na.webp" alt="Maandrapport per transporteur: verdeling, percentage te laat en uren afwijking (nagebouwd met fictieve cijfers)" loading="lazy" onerror="cvMissing(this)"><figcaption>Maandrapport transporteurs</figcaption></figure>
+      </div>
+      <div class="case-body">
+        <div class="case-block">
+          <div class="case-label">Uitdaging</div>
+          <p><strong>Grote boetes voor wachttijden</strong>, en geen zicht op wie wanneer aankomt.</p>
+        </div>
+        <div class="case-block">
+          <div class="case-label">Oplossing</div>
+          <p>De receptie klikt een vrachtwagen aan, het magazijn ziet live of hij op tijd is. Transporteurs krijgen <strong>maandelijks een KPI-rapport</strong> met hun score.</p>
+        </div>
+        <div class="case-result-row">Wachttijdkosten significant teruggedrongen</div>
+        <p class="case-more"><a href="/power-bi-dashboard-kmo.html">Meer over dashboards en rapportering &rarr;</a></p>
+      </div>
+    </div>
+    <div class="case-card reveal" id="boekingen">
+      <div class="case-top">
+        <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/><path d="M9 15l2 2 4-4"/></svg></div>
+        <div><h3>Boekingen, voorschotten en facturen in &eacute;&eacute;n kalender</h3><div class="case-sector">Verhuur &amp; Events</div></div>
+      </div>
+      <!-- Voor/na: zet boekingen-voor.webp en boekingen-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
+      <div class="case-visual">
+        <figure class="voor"><img src="img/cases/boekingen-voor.webp" alt="Overzicht van alle boekingen per fase, van aanvraag tot afgewerkt" loading="lazy" onerror="cvMissing(this)"><figcaption>Overzicht per fase</figcaption></figure>
+        <figure class="na"><img src="img/cases/boekingen-na.webp" alt="Boeking met voorschotfactuur en voorbeeld van de factuur" loading="lazy" onerror="cvMissing(this)"><figcaption>Factuur vanuit de boeking</figcaption></figure>
+      </div>
+      <div class="case-body">
+        <div class="case-block">
+          <div class="case-label">Uitdaging</div>
+          <p><strong>Geen overzicht van wie bevestigd of betaald had</strong>, dubbele boekingen door een vergeten agenda, lege plekken door een vergeten annulatie.</p>
+        </div>
+        <div class="case-block">
+          <div class="case-label">Oplossing</div>
+          <p>&Eacute;&eacute;n kalender waarin <strong>elke boeking haar fase heeft</strong>, van aanvraag tot afgewerkt. Voorschot- en eindfactuur vertrekken vanuit de boeking zelf.</p>
+        </div>
+        <div class="case-result-row">Geen dubbele boekingen meer, en elke boeking en factuur in &eacute;&eacute;n oogopslag</div>
+        <p class="case-more"><a href="/boekingssysteem-app.html">Meer over boekingssystemen &rarr;</a></p>
+      </div>
+    </div>
+    <div class="case-card reveal" id="labelplanning">
+      <div class="case-top">
+        <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.5" cy="7.5" r="1.3"/></svg></div>
+        <div><h3>Labelplanning in sync met productie bij voedingsbedrijf</h3><div class="case-sector">Food &amp; Quality</div></div>
+      </div>
+      <!-- Voor/na: zet labelplanning-voor.webp en labelplanning-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
+      <div class="case-visual">
+        <figure class="voor"><img src="img/cases/labelplanning-voor.webp" alt="Labelplanning per PO, gekleurd per status, gesorteerd op productiedatum (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Planning</figcaption></figure>
+        <figure class="na"><img src="img/cases/labelplanning-na.webp" alt="Labelfiche met ingrediënten, THT, klantstatus en controles (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Labelfiche</figcaption></figure>
+      </div>
+      <div class="case-body">
+        <div class="case-block">
+          <div class="case-label">Uitdaging</div>
+          <p><strong>Labels te laat in productie</strong>: niemand wist wanneer een order verschoof of welke stap al gedaan was.</p>
+        </div>
+        <div class="case-block">
+          <div class="case-label">Oplossing</div>
+          <p>Labelplanning <strong>live gekoppeld aan de productieplanning</strong>: verschuift een order, dan ziet iedereen het. Elke stap en elke klantvraag staat op de fiche.</p>
+        </div>
+        <div class="case-result-row">Geen vertraagde labels meer door informatietekort</div>
+        <p class="case-more"><a href="/papieren-formulieren-digitaliseren.html">Meer over digitaliseren op de werkvloer &rarr;</a></p>
+      </div>
+    </div>
+
+    <a class="case-card case-next reveal" href="/#contact">
+      <div class="case-next-inner">
+        <div class="case-next-icon">?</div>
+        <h3>Uw probleem staat hier nog niet</h3>
+        <p>Elke case hierboven begon als een frustratie waar niemand een naam voor had. <strong>Vertel me de uwe.</strong> Welke sector of welk proces maakt niet uit.</p>
+        <span class="case-next-cta">Gratis intake, tot een uur &rarr;</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">
+    <svg height="34" viewBox="0 0 190 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="footGrad" x1="0" y1="32" x2="34" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#A8C8E8" stop-opacity="0.5"/>
+          <stop offset="50%" stop-color="#7AAAD4"/>
+          <stop offset="100%" stop-color="white"/>
+        </linearGradient>
+      </defs>
+      <circle cx="7" cy="30" r="4" fill="#7AAAD4" opacity="0.45"/>
+      <circle cx="19" cy="19" r="5.5" fill="#7AAAD4"/>
+      <circle cx="33" cy="7" r="7" fill="white"/>
+      <path d="M7 30 C11 25 15 23 19 19 C23 15 27 11 33 7" stroke="url(#footGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M28 3 L33 7 L38 3" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="48" y1="4" x2="48" y2="34" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <text x="56" y="26" font-family="Outfit, sans-serif" font-weight="600" font-size="22" fill="white" letter-spacing="-0.5">Flow</text>
+      <text x="104" y="26" font-family="Outfit, sans-serif" font-weight="300" font-size="22" fill="#7AAAD4" letter-spacing="-0.5">4Q</text>
+    </svg>
+    <span class="footer-tagline">Kwaliteit begint bij een goed proces.</span>
+  </div>
+  <div class="footer-info" style="text-align:left">
+    <span style="color:rgba(255,255,255,0.75);font-weight:600">Onderwerpen</span>
+    <span><a href="/cases.html">Alle cases</a></span>
+    <span><a href="/excel-vervangen-door-app.html">Excel vervangen door een app</a></span>
+    <span><a href="/papieren-formulieren-digitaliseren.html">Papieren formulieren digitaliseren</a></span>
+    <span><a href="/power-platform-consultant-oost-vlaanderen.html">Power Platform consultant</a></span>
+    <span><a href="/dagoverleg-app.html">Dagoverleg app</a></span>
+    <span><a href="/onderhoudsplanning-app.html">Onderhoudsplanning app</a></span>
+    <span><a href="/productieopvolging-app.html">Productieopvolging app</a></span>
+    <span><a href="/digitale-checklist-app.html">Digitale checklist app</a></span>
+    <span><a href="/boekingssysteem-app.html">Boekingssysteem op maat</a></span>
+    <span><a href="/voorraadbeheer-app.html">Voorraadbeheer app</a></span>
+    <span><a href="/power-bi-dashboard-kmo.html">Power BI dashboard voor KMO's</a></span>
+    <span><a href="/excel-automatiseren.html">Excel automatiseren</a></span>
+  </div>
+  <div class="footer-info">
+    <span>Flow4Q BV &middot; Lokeren</span>
+    <span>BTW BE 1011.753.847</span>
+    <span><a href="mailto:info@flow4q.com">info@flow4q.com</a></span>
+    <span><a href="/privacy.html">Privacyverklaring</a> &middot; <a href="/voorwaarden.html">Algemene voorwaarden</a></span>
+  </div>
+  <div class="footer-copy">&copy; 2026 Flow4Q BV &middot; Alle rechten voorbehouden</div>
+</footer>
+
+<script>
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(function (e) { io.observe(e); });
+  })();
+</script>
+</body>
+</html>
