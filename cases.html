@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cases: acht voorbeelden van apps en dashboards die het werk lichter maken | Flow4Q</title>
+<title>Cases: acht voorbeelden van apps en dashboards uit de praktijk | Flow4Q</title>
 <meta name="google-site-verification" content="N8YtIp-gTpfpyfc0WfzXy_jSlpRgND1IqqCYLqcR4KI">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Acht voorbeelden uit de praktijk: dagoverleg, projectopvolging, mystery shopper, labelplanning, wachttijden, boekingen, productieopvolging en onderhoud. Met de schermen erbij. Flow4Q, Lokeren.">
+<meta name="description" content="Acht voorbeelden uit de praktijk: mystery shopper, productieopvolging, dagoverleg, projectopvolging, onderhoud, wachttijden, boekingen en labelplanning. Kies een case en bekijk de schermen. Flow4Q, Lokeren.">
 <link rel="canonical" href="https://www.flow4q.com/cases.html">
 <meta property="og:title" content="Cases: acht voorbeelden uit de praktijk | Flow4Q">
 <meta property="og:description" content="Van frustratie tot werkende tool: procesanalyse, Power Apps, dashboards en automatisering voor KMO's in Vlaanderen. Gratis intake, tot een uur.">
@@ -166,6 +166,9 @@
   .case-top h3 { min-height: 2.6em; }
   .case-top h3 a { color: inherit; text-decoration: none; }
   .case-top h3 a:hover { text-decoration: underline; }
+  .case-more { margin-top: 0.6rem; }
+  .case-more a { font-weight: 600; color: var(--c600); text-decoration: none; font-size: 0.9rem; }
+  .case-more a:hover { text-decoration: underline; }
   .cases-more { margin-top: 2rem; text-align: center; }
   .cases-more a { font-weight: 600; color: var(--c600); text-decoration: none; font-size: 1rem; }
   .cases-more a:hover { text-decoration: underline; }
@@ -398,15 +401,20 @@
     .nav-divider { display: none; }
     .herkent-grid { grid-template-columns: 1fr; gap: 2rem; }
   }
-  .cases-page { padding: 60px 6vw 90px; }
-  .cases-grid-1 { grid-template-columns: 1fr; max-width: 1100px; margin: 0 auto; gap: 2.5rem; }
-  .cases-grid-1 > .case-card:last-child:nth-child(odd) { width: 100%; }
-  .cases-grid-1 .case-top h3 { min-height: 0; }
-  .cases-grid-1 .case-body .case-block:first-child p { min-height: 0; }
-  .cases-grid-1 .case-result-row { margin-top: 0.2rem; min-height: 0; }
-  .case-more { margin-top: 0.4rem; }
-  .case-more a { font-weight: 600; color: var(--c600); text-decoration: none; font-size: 0.92rem; }
-  .case-more a:hover { text-decoration: underline; }
+  .cases-page { padding: 120px 6vw 90px; }
+  .cases-page .cases-hdr { max-width: 1100px; margin: 0 auto 2.5rem; }
+  .case-tiles { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+  @media (max-width: 960px) { .case-tiles { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .case-tiles { grid-template-columns: 1fr; } }
+  .case-tile { display: flex; gap: 1rem; align-items: flex-start; text-decoration: none; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
+  .case-tile:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(27,40,61,0.10); border-color: var(--c300); }
+  .case-tile-icon { flex: 0 0 44px; width: 44px; height: 44px; border-radius: 12px; background: var(--c900); display: flex; align-items: center; justify-content: center; color: var(--white); font-weight: 700; font-size: 1.3rem; }
+  .case-tile-body .case-sector { color: var(--c500); margin-bottom: 0.3rem; }
+  .case-tile-body h2 { font-size: 1.02rem; font-weight: 600; color: var(--c900); line-height: 1.3; margin-bottom: 0.5rem; }
+  .case-tile-body p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; margin-bottom: 0.8rem; }
+  .case-tile-cta { font-size: 0.85rem; font-weight: 600; color: var(--c600); }
+  .case-tile-next { border: 2px dashed var(--c300); background: var(--c50); }
+  .case-tile-next .case-tile-icon { background: var(--c600); }
 </style>
 <script>
   // Case-beelden: ontbreekt het voor-beeld, dan vult het na-beeld de volle breedte; ontbreken beide, dan verdwijnt het blok.
@@ -452,206 +460,92 @@
   </div>
 </nav>
 
-<section class="hero" style="padding-bottom: 3rem;">
-  <div class="hero-inner" style="grid-template-columns: 1fr;">
-    <div>
-    <p class="hero-tag">Cases</p>
-    <h1 class="hero-title">Acht keer <em>hetzelfde recept</em></h1>
-    <p class="hero-sub">Een frustratie, een gesprek met de mensen die het werk doen, en een werkende tool in hun eigen Microsoft-omgeving. Acht sectoren, één aanpak. De schermen zijn nagebouwd met fictieve gegevens waar echte klantdata in beeld kwam.</p>
-    </div>
-  </div>
-</section>
-
 <section id="cases" class="cases-page">
-  <div class="cases-grid cases-grid-1">
-    <div class="case-card reveal" id="mystery-shopper">
-      <div class="case-top">
-        <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3"/><path d="m9 13 2 2 4-4"/></svg></div>
-        <div><h3>Mystery shopper rapporteert live vanuit de winkel</h3><div class="case-sector">Retail</div></div>
+  <div class="cases-hdr">
+    <p class="s-tag">Cases</p>
+    <h1 class="s-title">Acht keer <em>hetzelfde recept</em></h1>
+    <p class="s-sub">Een frustratie, een gesprek met de mensen die het werk doen, en een werkende tool in hun eigen Microsoft-omgeving. Acht sectoren, één aanpak. Klik een case open voor het verhaal en de schermen.</p>
+  </div>
+  <div class="case-tiles">
+    <a class="case-tile reveal" href="/digitale-checklist-app.html">
+      <div class="case-tile-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3"/><path d="m9 13 2 2 4-4"/></svg></div>
+      <div class="case-tile-body">
+        <div class="case-sector">Retail</div>
+        <h2>Mystery shopper rapporteert live vanuit de winkel</h2>
+        <p>Rapport bij de klant nog voor de shopper de winkel uit is</p>
+        <span class="case-tile-cta">Bekijk de case en de schermen &rarr;</span>
       </div>
-      <!-- Voor/na: zet mystery-shopper-voor.webp en mystery-shopper-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
-      <div class="case-visual">
-        <figure class="voor"><img src="img/cases/mystery-shopper-voor.webp" alt="Mystery shopper vult de checklist in op zijn gsm, met foto's per vraag" loading="lazy" onerror="cvMissing(this)"><figcaption>App in de winkel</figcaption></figure>
-        <figure class="na"><img src="img/cases/mystery-shopper-na.webp" alt="Automatisch rapport met score, groen/rood per vraag en foto's" loading="lazy" onerror="cvMissing(this)"><figcaption>PDF, automatisch</figcaption></figure>
+    </a>
+    <a class="case-tile reveal" href="/productieopvolging-app.html">
+      <div class="case-tile-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l4-4 4 4 5-6 5 5"/></svg></div>
+      <div class="case-tile-body">
+        <div class="case-sector">Food, chocolade</div>
+        <h2>Productieopvolging op de lijn, pallet per pallet</h2>
+        <p>Productie weet meteen of ze goed bezig is, planning en kwaliteit kijken live mee</p>
+        <span class="case-tile-cta">Bekijk de case en de schermen &rarr;</span>
       </div>
-      <div class="case-body">
-        <div class="case-block">
-          <div class="case-label">Uitdaging</div>
-          <p><strong>Na elk winkelbezoek uren werk</strong>: foto&apos;s sorteren, alles in PowerPoint zetten, versturen.</p>
-        </div>
-        <div class="case-block">
-          <div class="case-label">Oplossing</div>
-          <p>In de winkel vult hij de checklist in op zijn gsm, met foto&apos;s. Eén druk op verzenden en <strong>de winkel heeft een nette PDF</strong>.</p>
-        </div>
-        <div class="case-result-row">Rapport bij de klant nog voor de shopper de winkel uit is</div>
-        <p class="case-more"><a href="/digitale-checklist-app.html">Meer over digitale checklists &rarr;</a></p>
+    </a>
+    <a class="case-tile reveal" href="/dagoverleg-app.html">
+      <div class="case-tile-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
+      <div class="case-tile-body">
+        <div class="case-sector">Industrie</div>
+        <h2>Eén scherm voor het dagoverleg, en iedereen ziet hetzelfde</h2>
+        <p>Het dagoverleg duurt korter, en de acties verdwijnen niet meer</p>
+        <span class="case-tile-cta">Bekijk de case en de schermen &rarr;</span>
       </div>
-    </div>
-    <div class="case-card reveal" id="productieopvolging">
-      <div class="case-top">
-        <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l4-4 4 4 5-6 5 5"/></svg></div>
-        <div><h3>Productieopvolging op de lijn, pallet per pallet</h3><div class="case-sector">Food, chocolade</div></div>
+    </a>
+    <a class="case-tile reveal" href="/projectopvolging-app.html">
+      <div class="case-tile-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></div>
+      <div class="case-tile-body">
+        <div class="case-sector">Industrie</div>
+        <h2>Centrale projectdatabank voor een internationale industriële groep</h2>
+        <p>Eén single source of truth voor het volledige team</p>
+        <span class="case-tile-cta">Bekijk de case en de schermen &rarr;</span>
       </div>
-      <!-- Beelden: productieopvolging-voor.webp (operatorscherm) en productieopvolging-na.webp (rapport), nagebouwd met fictieve gegevens -->
-      <div class="case-visual">
-        <figure class="voor"><img src="img/cases/productieopvolging-voor.webp" alt="Operatorscherm met order, product, voortgang per pallet, stilstand per machine en gewichtscontrole (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Aan de lijn</figcaption></figure>
-        <figure class="na"><img src="img/cases/productieopvolging-na.webp" alt="Productierapport per order met voortgang, stilstand en gewichtscontrole (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Rapport voor planning en kwaliteit</figcaption></figure>
+    </a>
+    <a class="case-tile reveal" href="/onderhoudsplanning-app.html">
+      <div class="case-tile-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+      <div class="case-tile-body">
+        <div class="case-sector">Productie</div>
+        <h2>Onderhoud gepland, uitgelegd en opgevolgd per machine</h2>
+        <p>Geen vergeten onderhoud meer, en elke technieker weet hoe het moet</p>
+        <span class="case-tile-cta">Bekijk de case en de schermen &rarr;</span>
       </div>
-      <div class="case-body">
-        <div class="case-block">
-          <div class="case-label">Uitdaging</div>
-          <p><strong>Planning en kwaliteit wisten pas achteraf</strong> hoe een order gelopen was: stilstanden, afwijkingen en voortgang zaten in hoofden en op papier.</p>
-        </div>
-        <div class="case-block">
-          <div class="case-label">Oplossing</div>
-          <p>De operator kiest het order, ziet het eindproduct en drukt bij elke pallet op <strong>"Pallet klaar"</strong>: een groen of rood bolletje zegt meteen of hij goed bezig is. Ingrediënten worden automatisch afgeboekt en het eindproduct opgeboekt; planning en kwaliteit zien alles live in het rapport.</p>
-        </div>
-        <div class="case-result-row">Productie weet meteen of ze goed bezig is, voorraad klopt de hele dag, planning en kwaliteit kijken live mee</div>
-        <p class="case-more"><a href="/productieopvolging-app.html">Meer over productieopvolging &rarr;</a></p>
+    </a>
+    <a class="case-tile reveal" href="/laadslotplanning-app.html">
+      <div class="case-tile-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 17V6a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h1"/><path d="M14 17h-4"/><path d="M18 17h1a1 1 0 0 0 1-1v-3.3a1 1 0 0 0-.2-.6l-2.9-3.6a1 1 0 0 0-.8-.4H14"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/></svg></div>
+      <div class="case-tile-body">
+        <div class="case-sector">Petrochemie & Logistiek</div>
+        <h2>Wachttijden en boetes terugdringen bij petrochemie</h2>
+        <p>Wachttijdkosten significant teruggedrongen</p>
+        <span class="case-tile-cta">Bekijk de case en de schermen &rarr;</span>
       </div>
-    </div>
-    <div class="case-card reveal" id="dagoverleg">
-      <div class="case-top">
-        <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
-        <div><h3>E&eacute;n scherm voor het dagoverleg, en iedereen ziet hetzelfde</h3><div class="case-sector">Industrie</div></div>
+    </a>
+    <a class="case-tile reveal" href="/boekingssysteem-app.html">
+      <div class="case-tile-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/><path d="M9 15l2 2 4-4"/></svg></div>
+      <div class="case-tile-body">
+        <div class="case-sector">Verhuur & Events</div>
+        <h2>Boekingen, voorschotten en facturen in één kalender</h2>
+        <p>Geen dubbele boekingen meer, elke boeking en factuur in één oogopslag</p>
+        <span class="case-tile-cta">Bekijk de case en de schermen &rarr;</span>
       </div>
-      <div class="case-visual full">
-        <figure class="voor"><img src="img/dagoverleg.webp" alt="Dagoverleg per afdeling en topic, rood of groen, met opmerking, actie en status (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Dagoverleg, per afdeling en topic</figcaption></figure>
+    </a>
+    <a class="case-tile reveal" href="/labelplanning-app.html">
+      <div class="case-tile-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.5" cy="7.5" r="1.3"/></svg></div>
+      <div class="case-tile-body">
+        <div class="case-sector">Food & Quality</div>
+        <h2>Labelplanning in sync met productie bij voedingsbedrijf</h2>
+        <p>Geen vertraagde labels meer door informatietekort</p>
+        <span class="case-tile-cta">Bekijk de case en de schermen &rarr;</span>
       </div>
-      <div class="case-body">
-        <div class="case-block">
-          <div class="case-label">Uitdaging</div>
-          <p><strong>Het dagoverleg liep op een whiteboard</strong>, met acties die telkens opnieuw opdoken en een nachtploeg die niets zag.</p>
-        </div>
-        <div class="case-block">
-          <div class="case-label">Oplossing</div>
-          <p>Per afdeling en topic één vakje: groen of rood. <strong>Rood vraagt een opmerking, een actie en een verantwoordelijke.</strong> Met een datumfilter bladert iedereen terug, ook de volgende ploeg.</p>
-        </div>
-        <div class="case-result-row">Het dagoverleg duurt korter, en de acties verdwijnen niet meer</div>
-        <p class="case-more"><a href="/dagoverleg-app.html">Meer over de dagoverleg app &rarr;</a></p>
-      </div>
-    </div>
-    <div class="case-card reveal" id="projectdatabank">
-      <div class="case-top">
-        <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></div>
-        <div><h3>Centrale projectdatabank voor een internationale industri&euml;le groep</h3><div class="case-sector">Industrie</div></div>
-      </div>
-      <!-- Voor/na: zet projectdatabank-voor.webp en projectdatabank-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
-      <div class="case-visual">
-        <figure class="voor"><img src="img/cases/projectdatabank-voor.webp" alt="Projectenlijst met filters op impact, resources en programma" loading="lazy" onerror="cvMissing(this)"><figcaption>Projectenlijst</figcaption></figure>
-        <figure class="na"><img src="img/cases/projectdatabank-na.webp" alt="Dashboard met signalen, KPI per project, planning en verdeling per area en lead (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Dashboard</figcaption></figure>
-      </div>
-      <div class="case-body">
-        <div class="case-block">
-          <div class="case-label">Uitdaging</div>
-          <p>Projectinfo <strong>verspreid over mails, bestanden en hoofden</strong>, zonder versiecontrole of overzicht.</p>
-        </div>
-        <div class="case-block">
-          <div class="case-label">Oplossing</div>
-          <p>Eén centrale tool waar <strong>het team zelf projecten en KPI&apos;s bijhoudt</strong>, elke wijziging op naam. Dashboard en overzicht per mail, met één klik.</p>
-        </div>
-        <div class="case-result-row">E&eacute;n single source of truth voor het volledige team</div>
-      </div>
-    </div>
-    <div class="case-card reveal" id="onderhoud">
-      <div class="case-top">
-        <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-        <div><h3>Onderhoud gepland, uitgelegd en opgevolgd per machine</h3><div class="case-sector">Productie</div></div>
-      </div>
-      <!-- Beelden: onderhoud-voor.webp (takenlijst) en onderhoud-na.webp (machinefiche), nagebouwd met fictieve gegevens -->
-      <div class="case-visual">
-        <figure class="voor"><img src="img/cases/onderhoud-voor.webp" alt="Takenlijst van de technische dienst per dag, met filmpje en stappen per taak (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Takenlijst per dag</figcaption></figure>
-        <figure class="na"><img src="img/cases/onderhoud-na.webp" alt="Machinefiche met parameters, onderhoudscycli en meldingen uit productie met foto (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Machinefiche en meldingen</figcaption></figure>
-      </div>
-      <div class="case-body">
-        <div class="case-block">
-          <div class="case-label">Uitdaging</div>
-          <p><strong>Onderhoud zat in een Excel en in het hoofd van één technieker</strong>: wat wanneer moest gebeuren, en hoe, wist niemand anders.</p>
-        </div>
-        <div class="case-block">
-          <div class="case-label">Oplossing</div>
-          <p>Per machine een fiche met serienummer, leverancier, type en onderhoudscyclus, <strong>met een filmpje van hoe het moet</strong>. De technische dienst krijgt elke dag zijn takenlijst; staat een taak op done, dan plant de tool de volgende in. Productie meldt een probleem met foto, en dat komt in dezelfde lijst.</p>
-        </div>
-        <div class="case-result-row">Geen vergeten onderhoud meer, en elke technieker weet hoe het moet, ook de nieuwe</div>
-        <p class="case-more"><a href="/onderhoudsplanning-app.html">Meer over onderhoudsplanning &rarr;</a></p>
-      </div>
-    </div>
-    <div class="case-card reveal" id="wachttijden">
-      <div class="case-top">
-        <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 17V6a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h1"/><path d="M14 17h-4"/><path d="M18 17h1a1 1 0 0 0 1-1v-3.3a1 1 0 0 0-.2-.6l-2.9-3.6a1 1 0 0 0-.8-.4H14"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/></svg></div>
-        <div><h3>Wachttijden en boetes terugdringen bij petrochemie</h3><div class="case-sector">Petrochemie &amp; Logistiek</div></div>
-      </div>
-      <!-- Voor/na: zet wachttijden-voor.webp en wachttijden-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
-      <div class="case-visual full">
-        <figure class="voor"><img src="img/cases/wachttijden-voor.webp" alt="Weekplanning laadslots met status per vrachtwagen (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Planning, live</figcaption></figure>
-        <figure class="na"><img src="img/cases/wachttijden-na.webp" alt="Maandrapport per transporteur: verdeling, percentage te laat en uren afwijking (nagebouwd met fictieve cijfers)" loading="lazy" onerror="cvMissing(this)"><figcaption>Maandrapport transporteurs</figcaption></figure>
-      </div>
-      <div class="case-body">
-        <div class="case-block">
-          <div class="case-label">Uitdaging</div>
-          <p><strong>Grote boetes voor wachttijden</strong>, en geen zicht op wie wanneer aankomt.</p>
-        </div>
-        <div class="case-block">
-          <div class="case-label">Oplossing</div>
-          <p>De receptie klikt een vrachtwagen aan, het magazijn ziet live of hij op tijd is. Transporteurs krijgen <strong>maandelijks een KPI-rapport</strong> met hun score.</p>
-        </div>
-        <div class="case-result-row">Wachttijdkosten significant teruggedrongen</div>
-        <p class="case-more"><a href="/power-bi-dashboard-kmo.html">Meer over dashboards en rapportering &rarr;</a></p>
-      </div>
-    </div>
-    <div class="case-card reveal" id="boekingen">
-      <div class="case-top">
-        <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/><path d="M9 15l2 2 4-4"/></svg></div>
-        <div><h3>Boekingen, voorschotten en facturen in &eacute;&eacute;n kalender</h3><div class="case-sector">Verhuur &amp; Events</div></div>
-      </div>
-      <!-- Voor/na: zet boekingen-voor.webp en boekingen-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
-      <div class="case-visual">
-        <figure class="voor"><img src="img/cases/boekingen-voor.webp" alt="Overzicht van alle boekingen per fase, van aanvraag tot afgewerkt" loading="lazy" onerror="cvMissing(this)"><figcaption>Overzicht per fase</figcaption></figure>
-        <figure class="na"><img src="img/cases/boekingen-na.webp" alt="Boeking met voorschotfactuur en voorbeeld van de factuur" loading="lazy" onerror="cvMissing(this)"><figcaption>Factuur vanuit de boeking</figcaption></figure>
-      </div>
-      <div class="case-body">
-        <div class="case-block">
-          <div class="case-label">Uitdaging</div>
-          <p><strong>Geen overzicht van wie bevestigd of betaald had</strong>, dubbele boekingen door een vergeten agenda, lege plekken door een vergeten annulatie.</p>
-        </div>
-        <div class="case-block">
-          <div class="case-label">Oplossing</div>
-          <p>&Eacute;&eacute;n kalender waarin <strong>elke boeking haar fase heeft</strong>, van aanvraag tot afgewerkt. Voorschot- en eindfactuur vertrekken vanuit de boeking zelf.</p>
-        </div>
-        <div class="case-result-row">Geen dubbele boekingen meer, en elke boeking en factuur in &eacute;&eacute;n oogopslag</div>
-        <p class="case-more"><a href="/boekingssysteem-app.html">Meer over boekingssystemen &rarr;</a></p>
-      </div>
-    </div>
-    <div class="case-card reveal" id="labelplanning">
-      <div class="case-top">
-        <div class="case-icon-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.5" cy="7.5" r="1.3"/></svg></div>
-        <div><h3>Labelplanning in sync met productie bij voedingsbedrijf</h3><div class="case-sector">Food &amp; Quality</div></div>
-      </div>
-      <!-- Voor/na: zet labelplanning-voor.webp en labelplanning-na.webp in /img/cases/ (ca. 800x600, onder 200 KB) -->
-      <div class="case-visual">
-        <figure class="voor"><img src="img/cases/labelplanning-voor.webp" alt="Labelplanning per PO, gekleurd per status, gesorteerd op productiedatum (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Planning</figcaption></figure>
-        <figure class="na"><img src="img/cases/labelplanning-na.webp" alt="Labelfiche met ingrediënten, THT, klantstatus en controles (nagebouwd met fictieve gegevens)" loading="lazy" onerror="cvMissing(this)"><figcaption>Labelfiche</figcaption></figure>
-      </div>
-      <div class="case-body">
-        <div class="case-block">
-          <div class="case-label">Uitdaging</div>
-          <p><strong>Labels te laat in productie</strong>: niemand wist wanneer een order verschoof of welke stap al gedaan was.</p>
-        </div>
-        <div class="case-block">
-          <div class="case-label">Oplossing</div>
-          <p>Labelplanning <strong>live gekoppeld aan de productieplanning</strong>: verschuift een order, dan ziet iedereen het. Elke stap en elke klantvraag staat op de fiche.</p>
-        </div>
-        <div class="case-result-row">Geen vertraagde labels meer door informatietekort</div>
-        <p class="case-more"><a href="/papieren-formulieren-digitaliseren.html">Meer over digitaliseren op de werkvloer &rarr;</a></p>
-      </div>
-    </div>
-
-    <a class="case-card case-next reveal" href="/#contact">
-      <div class="case-next-inner">
-        <div class="case-next-icon">?</div>
-        <h3>Uw probleem staat hier nog niet</h3>
-        <p>Elke case hierboven begon als een frustratie waar niemand een naam voor had. <strong>Vertel me de uwe.</strong> Welke sector of welk proces maakt niet uit.</p>
-        <span class="case-next-cta">Gratis intake, tot een uur &rarr;</span>
+    </a>
+    <a class="case-tile case-tile-next reveal" href="/#contact">
+      <div class="case-tile-icon">?</div>
+      <div class="case-tile-body">
+        <div class="case-sector">Uw sector</div>
+        <h2>Uw probleem staat hier nog niet</h2>
+        <p>Elke case hierboven begon als een frustratie waar niemand een naam voor had. Vertel me de uwe.</p>
+        <span class="case-tile-cta">Gratis intake, tot een uur &rarr;</span>
       </div>
     </a>
   </div>
@@ -680,7 +574,6 @@
   </div>
   <div class="footer-info" style="text-align:left">
     <span style="color:rgba(255,255,255,0.75);font-weight:600">Onderwerpen</span>
-    <span><a href="/cases.html">Alle cases</a></span>
     <span><a href="/excel-vervangen-door-app.html">Excel vervangen door een app</a></span>
     <span><a href="/papieren-formulieren-digitaliseren.html">Papieren formulieren digitaliseren</a></span>
     <span><a href="/power-platform-consultant-oost-vlaanderen.html">Power Platform consultant</a></span>
@@ -692,6 +585,9 @@
     <span><a href="/voorraadbeheer-app.html">Voorraadbeheer app</a></span>
     <span><a href="/power-bi-dashboard-kmo.html">Power BI dashboard voor KMO's</a></span>
     <span><a href="/excel-automatiseren.html">Excel automatiseren</a></span>
+    <span><a href="/projectopvolging-app.html">Projectopvolging tool</a></span>
+    <span><a href="/laadslotplanning-app.html">Laadslotplanning en wachttijden</a></span>
+    <span><a href="/labelplanning-app.html">Labelplanning app</a></span>
   </div>
   <div class="footer-info">
     <span>Flow4Q BV &middot; Lokeren</span>
