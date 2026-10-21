@@ -331,6 +331,14 @@
   .c-text span { font-size: 0.79rem; color: var(--muted); }
   .form-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.2rem; box-shadow: 0 4px 28px rgba(27,40,61,0.06); }
   .form-group { margin-bottom: 1.1rem; }
+  .mail-card h3 { font-size: 1.15rem; font-weight: 700; color: var(--c900); margin-bottom: 0.6rem; }
+  .mail-card p { font-size: 0.95rem; color: var(--muted); line-height: 1.65; margin-bottom: 1.2rem; }
+  .mail-card .btn-submit { display: inline-block; text-decoration: none; text-align: center; }
+  .mail-fallback { margin-top: 1rem; font-size: 0.88rem; }
+  .mail-fallback strong { color: var(--c900); }
+  .mail-fallback a { color: var(--c600); font-weight: 600; text-decoration: none; }
+  .mail-tips { list-style: none; margin-top: 1.4rem; padding-top: 1.2rem; border-top: 1px solid var(--border); font-size: 0.9rem; color: var(--muted); display: flex; flex-direction: column; gap: 0.5rem; }
+  .mail-tips li::before { content: "\2192  "; color: var(--c500); }
   .form-group label { display: block; font-size: 0.79rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
   .form-group input, .form-group textarea { width: 100%; border: 1.5px solid var(--border); border-radius: 8px; padding: 0.75rem 1rem; font-family: "Outfit", sans-serif; font-size: 0.9rem; color: var(--text); background: var(--white); transition: border-color 0.2s, box-shadow 0.2s; outline: none; }
   .form-group input:focus, .form-group textarea:focus { border-color: var(--c600); box-shadow: 0 0 0 3px rgba(58,96,149,0.1); }
@@ -862,28 +870,20 @@
         </a>
       </div>
     </div>
-    <div class="form-card">
-      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/bedankt">
-        <input type="hidden" name="form-name" value="contact">
-        <input type="hidden" name="bot-field" style="display:none">
-        <div class="form-group"><label>Naam</label><input type="text" name="naam" placeholder="Uw naam" required></div>
-        <div class="form-group"><label>Bedrijf</label><input type="text" name="bedrijf" placeholder="Naam van uw bedrijf"></div>
-        <div class="form-group"><label>E-mail</label><input type="email" name="email" placeholder="uw@email.com" required></div>
-        <div class="form-group"><label>Telefoonnummer <span style="font-weight:400;color:var(--muted)">(optioneel)</span></label><input type="tel" name="telefoon" placeholder="+32 ..."></div>
-        <div class="form-group"><label>Bericht</label><textarea name="bericht" placeholder="Vertel kort over uw uitdaging…" required></textarea></div>
-        <button type="submit" class="btn-submit">Verstuur bericht &rarr;</button>
-      </form>
+    <div class="form-card mail-card">
+      <h3>Mail me in één klik</h3>
+      <p>Uw mailprogramma opent met onderwerp en een paar vragen als houvast. Schrijf wat er wringt, de rest bespreken we tijdens de intake.</p>
+      <a href="#" id="mailBtn" class="btn-submit">Open een mail naar Flow4Q &rarr;</a>
+      <p class="mail-fallback">Opent er niets? Mail rechtstreeks naar <strong id="mailText2">info@flow4q.com</strong> of bel <a href="tel:+32474627187">+32 474 62 71 87</a>.</p>
+      <ul class="mail-tips">
+        <li>Wat loopt er vandaag mis, en wie heeft er last van?</li>
+        <li>Waar zit de info nu: Excel, mails, papier, hoofden?</li>
+        <li>Wanneer past een gesprek van maximaal een uur?</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<div id="bedankt" style="display:none; position:fixed; inset:0; background:rgba(27,40,61,0.92); z-index:999; align-items:center; justify-content:center;">
-  <div style="background:white; border-radius:16px; padding:3rem 2.5rem; max-width:420px; text-align:center; box-shadow:0 20px 60px rgba(0,0,0,0.2);">
-    <div style="width:60px;height:60px;background:var(--c100);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 1.2rem;">&#10003;</div>
-    <h3 style="font-weight:600;font-size:1.4rem;color:var(--c900);margin-bottom:0.7rem;letter-spacing:-0.02em;">Bericht ontvangen!</h3>
-    <p style="color:var(--muted);font-size:0.92rem;line-height:1.65;margin-bottom:1.5rem;">Bedankt voor uw bericht. Ik neem zo snel mogelijk contact op, normaal gezien binnen 24u.</p>
-    <button onclick="document.getElementById('bedankt').style.display='none'" style="background:var(--c600);color:white;border:none;padding:0.75rem 1.8rem;border-radius:8px;font-family:Outfit,sans-serif;font-size:0.9rem;font-weight:600;cursor:pointer;">Sluiten</button>
-  </div>
 </div>
 
 <script>
@@ -895,18 +895,14 @@
     var txt = document.getElementById("mailText");
     if (link) { link.href = "mailto:" + addr; }
     if (txt) { txt.textContent = addr; }
+    var txt2 = document.getElementById("mailText2"); if (txt2) { txt2.textContent = addr; }
+    var btn = document.getElementById("mailBtn");
+    if (btn) {
+      var subject = encodeURIComponent("Gratis intake: " );
+      var body = encodeURIComponent("Dag Sabine,\n\nWat er vandaag misloopt:\n\n\nWaar de info nu zit (Excel, mails, papier, hoofden):\n\n\nWanneer een gesprek past:\n\n\nBedrijf en naam:\n");
+      btn.href = "mailto:" + addr + "?subject=" + subject + "&body=" + body;
+    }
   })();
-  const form = document.querySelector("form[name=contact]");
-  if(form) {
-    form.addEventListener("submit", async function(e) {
-      e.preventDefault();
-      const data = new FormData(form);
-      await fetch("/", { method:"POST", headers:{"Content-Type":"application/x-www-form-urlencoded"}, body: new URLSearchParams(data).toString() });
-      form.reset();
-      const modal = document.getElementById("bedankt");
-      modal.style.display = "flex";
-    });
-  }
 </script>
 
 <footer>
