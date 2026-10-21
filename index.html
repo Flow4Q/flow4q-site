@@ -420,7 +420,7 @@
 <body>
 
 <nav>
-  <div class="nav-logo">
+  <a class="nav-logo" href="/">
     <svg height="38" viewBox="0 0 190 38" fill="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="navGrad" x1="0" y1="32" x2="34" y2="0" gradientUnits="userSpaceOnUse">
@@ -437,8 +437,7 @@
       <line x1="48" y1="4" x2="48" y2="34" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
       <text x="56" y="26" font-family="Outfit, sans-serif" font-weight="600" font-size="22" fill="white" letter-spacing="-0.5">Flow</text>
       <text x="104" y="26" font-family="Outfit, sans-serif" font-weight="300" font-size="22" fill="#7AAAD4" letter-spacing="-0.5">4Q</text>
-    </svg>
-  </div>
+    </svg></a>
   <div class="nav-right">
     <ul class="nav-links">
       <li><a href="#cases">Cases</a></li>
@@ -486,17 +485,6 @@
 <!-- OPDRACHTGEVERS: de meeste klanten delen hun logo niet, daarom omschrijvingen. 
      Logo's met toestemming: Stika, Exceleroo, Château Le Vert. Bestanden in /img/logos/ (stika.png, exceleroo.png, chateau-le-vert.png) (png of svg, max 150px breed).
      Ontbreekt een bestand, dan verdwijnt de slot vanzelf. -->
-<section class="logos" aria-label="Opdrachtgevers">
-  <div class="logos-wrap">
-    <p class="logos-title" style="text-align:left;">Voor wie ik al werkte</p>
-    <ul class="ref-list">
-      <li class="reveal"><span class="ref-sector">Recyclage &amp; afvalverwerking</span>Ondersteuning van de <strong>Power BI-migratie</strong> (van OBI naar Power BI) voor een Belgisch bedrijf met een vooraanstaande rol in recyclage en afvalverwerking in de regio Antwerpen.</li>
-      <li class="reveal"><span class="ref-sector">Industrie, internationaal</span><strong>Centrale projectdatabank</strong> en documentflows voor een internationale industri&euml;le groep.</li>
-      <li class="reveal"><span class="ref-sector">Vastgoed</span><strong>Projectopvolging</strong> met budget, offertes en facturen voor een Belgische vastgoedontwikkelaar.</li>
-      <li class="reveal"><span class="ref-sector">Vleesverwerking</span><strong>Onderhoudstool</strong> voor de opvolging van machineonderhoud bij een Belgisch vleesverwerkend bedrijf.</li>
-    </ul>
-  </div>
-</section>
 
 
 <section id="herkent">
@@ -523,7 +511,7 @@
   <div class="cases-hdr">
     <p class="s-tag">Resultaten in de praktijk</p>
     <h2 class="s-title">Zo ziet het eruit<br><em>in de echte wereld</em></h2>
-    <p class="s-sub">Vijf projecten uit vijf sectoren. <strong>De sector doet er niet toe, uw probleem wel.</strong> Telkens dezelfde aanpak: een oplossing die het werk echt lichter maakt, met een blik op het scherm zelf.</p>
+    <p class="s-sub">Vijf projecten. <strong>De sector doet er niet toe, het probleem wel.</strong> Telkens dezelfde aanpak: een oplossing die het werk echt lichter maakt, met een blik op het scherm zelf.</p>
   </div>
   <div class="cases-grid">
 
@@ -574,7 +562,6 @@
         <p class="case-more"><a href="/digitale-checklist-app.html">Lees de volledige case &rarr;</a></p>
       </div>
     </div>
-
 
     <div class="case-card reveal">
       <div class="case-top">
@@ -647,7 +634,6 @@
         <p class="case-more"><a href="/productieopvolging-app.html">Lees de volledige case &rarr;</a></p>
       </div>
     </div>
-
 
     <a class="case-card case-next reveal" href="#contact">
       <div class="case-next-inner">
@@ -751,7 +737,6 @@
   </div>
 </section>
 
-
 <section id="reacties">
   <div class="reacties-wrap">
     <p class="s-tag">Wat opdrachtgevers zeggen</p>
@@ -788,7 +773,14 @@
         <div class="quote-author"><strong>Learning &amp; Development Coordinator</strong><span>Industrie, interne opdracht</span></div>
       </div>
     </div>
-    <p class="logos-title" style="margin-top:2.5rem;">Ook aan de slag bij</p>
+    <p class="logos-title" style="margin-top:3rem;text-align:left;">Voor wie ik al werkte</p>
+    <ul class="ref-list">
+      <li class="reveal"><span class="ref-sector">Recyclage &amp; afvalverwerking</span>Ondersteuning van de <strong>Power BI-migratie</strong> (van OBI naar Power BI) voor een Belgisch bedrijf met een vooraanstaande rol in recyclage en afvalverwerking in de regio Antwerpen.</li>
+      <li class="reveal"><span class="ref-sector">Industrie, internationaal</span><strong>Centrale projectdatabank</strong> en documentflows voor een internationale industri&euml;le groep.</li>
+      <li class="reveal"><span class="ref-sector">Vastgoed</span><strong>Projectopvolging</strong> met budget, offertes en facturen voor een Belgische vastgoedontwikkelaar.</li>
+      <li class="reveal"><span class="ref-sector">Vleesverwerking</span><strong>Onderhoudstool</strong> voor de opvolging van machineonderhoud bij een Belgisch vleesverwerkend bedrijf.</li>
+    </ul>
+    <p class="logos-title" style="margin-top:2rem;">Ook aan de slag bij</p>
     <div class="logos-row">
       <a class="logo-slot" href="https://www.stikalabels.be/" target="_blank" rel="noopener"><img src="img/logos/stika.png" alt="Stika" loading="lazy" onerror="this.parentNode.style.display='none'"></a>
       <a class="logo-slot" href="https://www.exceleroo.be/" target="_blank" rel="noopener"><img src="img/logos/exceleroo.png" alt="Exceleroo" loading="lazy" onerror="this.parentNode.style.display='none'"></a>
@@ -872,10 +864,9 @@
     </div>
     <div class="form-card mail-card">
       <h3>Mail me in één klik</h3>
-      <p>Uw mailprogramma opent met onderwerp en een paar vragen als houvast. Schrijf wat er wringt, de rest bespreken we tijdens de intake.</p>
+      <p>Uw mailprogramma opent met het onderwerp en drie vragen als houvast. Opent er niets, gebruik dan het adres hiernaast.</p>
       <a href="#" id="mailBtn" class="btn-submit">Open een mail naar Flow4Q &rarr;</a>
-      <p class="mail-fallback">Opent er niets? Mail rechtstreeks naar <strong id="mailText2">info@flow4q.com</strong> of bel <a href="tel:+32474627187">+32 474 62 71 87</a>.</p>
-      <ul class="mail-tips">
+      <ul class="mail-tips" style="margin-top:1.2rem;padding-top:1rem">
         <li>Wat loopt er vandaag mis, en wie heeft er last van?</li>
         <li>Waar zit de info nu: Excel, mails, papier, hoofden?</li>
         <li>Wanneer past een gesprek van maximaal een uur?</li>
@@ -927,21 +918,15 @@
     <span class="footer-tagline">Kwaliteit begint bij een goed proces.</span>
   </div>
   <div class="footer-info" style="text-align:left">
-    <span style="color:rgba(255,255,255,0.75);font-weight:600">Onderwerpen</span>
-    <span><a href="/excel-vervangen-door-app.html">Excel vervangen door een app</a></span>
-    <span><a href="/papieren-formulieren-digitaliseren.html">Papieren formulieren digitaliseren</a></span>
-    <span><a href="/power-platform-consultant-oost-vlaanderen.html">Power Platform consultant</a></span>
-    <span><a href="/dagoverleg-app.html">Dagoverleg app</a></span>
-    <span><a href="/onderhoudsplanning-app.html">Onderhoudsplanning app</a></span>
-    <span><a href="/productieopvolging-app.html">Productieopvolging app</a></span>
-    <span><a href="/digitale-checklist-app.html">Digitale checklist app</a></span>
-    <span><a href="/boekingssysteem-app.html">Boekingssysteem op maat</a></span>
-    <span><a href="/voorraadbeheer-app.html">Voorraadbeheer app</a></span>
-    <span><a href="/power-bi-dashboard-kmo.html">Power BI dashboard voor KMO's</a></span>
-    <span><a href="/excel-automatiseren.html">Excel automatiseren</a></span>
-    <span><a href="/projectopvolging-app.html">Projectopvolging tool</a></span>
-    <span><a href="/laadslotplanning-app.html">Laadslotplanning en wachttijden</a></span>
-    <span><a href="/labelplanning-app.html">Labelplanning app</a></span>
+    <span style="color:rgba(255,255,255,0.75);font-weight:600">Apps op maat</span>
+    <span><a href="/dagoverleg-app.html">Dagoverleg</a> &middot; <a href="/productieopvolging-app.html">Productieopvolging</a> &middot; <a href="/onderhoudsplanning-app.html">Onderhoudsplanning</a></span>
+    <span><a href="/digitale-checklist-app.html">Digitale checklist</a> &middot; <a href="/boekingssysteem-app.html">Boekingssysteem</a> &middot; <a href="/voorraadbeheer-app.html">Voorraadbeheer</a></span>
+    <span><a href="/projectopvolging-app.html">Projectopvolging</a> &middot; <a href="/laadslotplanning-app.html">Laadslotplanning</a> &middot; <a href="/labelplanning-app.html">Labelplanning</a></span>
+    <span style="color:rgba(255,255,255,0.75);font-weight:600;margin-top:0.6rem">Excel en dashboards</span>
+    <span><a href="/excel-vervangen-door-app.html">Excel vervangen door een app</a> &middot; <a href="/excel-automatiseren.html">Excel automatiseren</a></span>
+    <span><a href="/power-bi-dashboard-kmo.html">Power BI dashboard</a> &middot; <a href="/papieren-formulieren-digitaliseren.html">Papieren formulieren digitaliseren</a></span>
+    <span style="color:rgba(255,255,255,0.75);font-weight:600;margin-top:0.6rem">Flow4Q</span>
+    <span><a href="/cases.html">Alle cases</a> &middot; <a href="/power-platform-consultant-oost-vlaanderen.html">Power Platform consultant in Oost-Vlaanderen</a></span>
   </div>
   <div class="footer-info">
     <span>Flow4Q BV &middot; Lokeren</span>

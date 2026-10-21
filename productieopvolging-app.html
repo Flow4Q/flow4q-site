@@ -74,6 +74,7 @@
   .case { background: var(--c900); color: var(--white); border-radius: var(--radius); padding: 2rem 2.2rem; margin-top: 2rem; }
   .case h3 { color: var(--c300); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.8rem; }
   .case p { color: rgba(255,255,255,0.8); }
+  .case p strong { color: var(--white); font-weight: 600; }
   .case .result { font-family: "Lora", serif; font-style: italic; color: var(--c300); font-size: 1.1rem; margin: 0; }
   .faq { margin-top: 2rem; }
   .faq details { border-bottom: 1px solid var(--border); padding: 1rem 0; max-width: 72ch; }
@@ -107,7 +108,7 @@
   .shot img { width: 100%; height: auto; display: block; }
   .shot figcaption { font-size: 0.82rem; color: var(--muted); padding: 0.6rem 1rem; border-top: 1px solid var(--border); }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is dit een MES?", "acceptedAnswer": {"@type": "Answer", "text": "Het doet wat de meeste bedrijven van een MES verwachten, zonder de prijs en zonder zes maanden implementatie. Groeit u later naar een volwaardig MES, dan zijn de gegevens en de gewoontes er al."}}, {"@type": "Question", "name": "Werkt dit met handschoenen en in een koude ruimte?", "acceptedAnswer": {"@type": "Answer", "text": "Grote knoppen, zo weinig mogelijk typwerk, en één handeling per pallet. Ik test met de operators zelf, op de tablet die ze effectief gebruiken."}}, {"@type": "Question", "name": "Kan dit koppelen met ons ERP voor orders en voorraad?", "acceptedAnswer": {"@type": "Answer", "text": "Orders inlezen via een export is altijd haalbaar. Een rechtstreekse koppeling hangt af van wat uw ERP toelaat en bekijk ik per geval, zonder beloftes vooraf."}}, {"@type": "Question", "name": "Hoe berekent u OEE?", "acceptedAnswer": {"@type": "Answer", "text": "Beschikbaarheid uit de stilstanden, prestatie uit paletten per uur tegenover de norm, kwaliteit uit de afgekeurde paletten. Alles komt uit wat de operator toch al ingeeft."}}, {"@type": "Question", "name": "Hoe snel kan dit draaien?", "acceptedAnswer": {"@type": "Answer", "text": "Een eerste werkende versie op één lijn staat er binnen enkele dagen. De uitrol naar andere lijnen volgt in uw tempo."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is dit een MES?", "acceptedAnswer": {"@type": "Answer", "text": "Het doet wat de meeste bedrijven van een MES verwachten, zonder de prijs en zonder zes maanden implementatie. Groeit u later naar een volwaardig MES, dan zijn de gegevens en de gewoontes er al."}}, {"@type": "Question", "name": "Werkt dit met handschoenen en in een koude ruimte?", "acceptedAnswer": {"@type": "Answer", "text": "Grote knoppen, zo weinig mogelijk typwerk, en één handeling per pallet. Ik test met de operators zelf, op de tablet die ze effectief gebruiken."}}, {"@type": "Question", "name": "Kan dit koppelen met ons ERP voor orders en voorraad?", "acceptedAnswer": {"@type": "Answer", "text": "Orders inlezen via een export is altijd haalbaar. Een rechtstreekse koppeling hangt af van wat uw ERP toelaat en bekijk ik per geval, zonder beloftes vooraf."}}, {"@type": "Question", "name": "Hoe snel kan dit draaien?", "acceptedAnswer": {"@type": "Answer", "text": "Een eerste werkende versie op één lijn staat er binnen enkele dagen. De uitrol naar andere lijnen volgt in uw tempo."}}]}</script>
 </head>
 <body>
 
@@ -146,12 +147,12 @@
 
 <header class="hero">
   <div class="inner">
-    <div class="eyebrow">Productieopvolging, shopfloor, OEE</div>
+    <div class="eyebrow">Productieopvolging, shopfloor, planning</div>
 <h1>Productieopvolging <em>pallet per pallet</em></h1>
 <p>Planning wil weten of een order op schema zit. Kwaliteit wil weten of de gewichten kloppen. Onderhoud wil weten welke machine stilstond en waarom. En de operator wil vooral weten of hij goed bezig is. Eén app aan de lijn beantwoordt alle vier, zonder dat iemand achteraf iets overtypt.</p>
     <div class="btns">
-      <a class="btn btn-p" href="/#contact">Gratis intake, tot een uur</a>
-      <a class="btn btn-s" href="/#cases">Bekijk cases</a>
+      <a class="btn btn-p" href="mailto:info@flow4q.com?subject=Gratis%20intake&body=Dag%20Sabine%2C%0A%0AWat%20er%20vandaag%20misloopt%3A%0A%0A%0AWaar%20de%20info%20nu%20zit%20(Excel%2C%20mails%2C%20papier%2C%20hoofden)%3A%0A%0A%0AWanneer%20een%20gesprek%20past%3A%0A%0A%0ABedrijf%20en%20naam%3A%0A">Mail me voor een gratis intake</a>
+      <a class="btn btn-s" href="/cases.html">Alle cases</a>
     </div>
   </div>
 </header>
@@ -166,7 +167,7 @@
       <li>Gewichtscontroles staan in een schrift dat kwaliteit zelden ziet</li>
       <li>Ingrediënten worden achteraf afgeboekt, de voorraad klopt nooit</li>
       <li>De operator hoort pas de dag erna dat het te traag ging</li>
-      <li>OEE berekenen is een maandelijkse Excel-oefening</li>
+      <li>Het dagrapport is een maandelijkse Excel-oefening</li>
     </ul>
   </div>
 </section>
@@ -183,7 +184,7 @@
       <div class="card"><h3>Stilstand per machine</h3><p>Minuten en reden per machine, ingegeven op het moment zelf. Onderhoud ziet welke machine het vaakst stilvalt.</p></div>
       <div class="card"><h3>Gewichtscontrole aan de lijn</h3><p>Metingen met tolerantie, meteen groen of rood. Kwaliteit grijpt in voor de pallet de deur uit is.</p></div>
       <div class="card"><h3>Voorraad die klopt</h3><p>Bij elke pallet worden ingrediënten afgeboekt en eindproduct opgeboekt. Niemand hoeft achteraf iets in te geven.</p></div>
-      <div class="card"><h3>Rapport voor planning en kwaliteit</h3><p>Dagverloop per lijn, gewichtsgrafiek per order en een lijst aandachtspunten. OEE is een bijproduct, geen maandwerk.</p></div>
+      <div class="card"><h3>Rapport voor planning en kwaliteit</h3><p>Dagverloop per lijn, gewichtsgrafiek per order en een lijst aandachtspunten. Elke ochtend klaar, zonder handwerk.</p></div>
     </div>
   </div>
 </section>
@@ -199,7 +200,7 @@
     </ol>
     <div class="case">
       <h3>Uit de praktijk</h3>
-      <p>Bij een chocoladeproducent wisten planning en kwaliteit pas achteraf hoe een order gelopen was. Nu kiest de operator het order, drukt per pallet op "Pallet klaar", ziet meteen groen of rood, en worden ingrediënten en eindproduct automatisch geboekt. Planning en kwaliteit kijken live mee.</p>
+      <p>Bij een chocoladeproducent wisten planning en kwaliteit <strong>pas achteraf</strong> hoe een order gelopen was. Nu kiest de operator het order, drukt <strong>per pallet op "Pallet klaar"</strong>, ziet meteen groen of rood, en worden ingrediënten en eindproduct <strong>automatisch geboekt</strong>. Planning en kwaliteit kijken live mee.</p>
       <p class="result">Productie weet meteen of ze goed bezig is, voorraad klopt de hele dag, planning en kwaliteit kijken live mee.</p>
     </div>
   </div>
@@ -212,7 +213,6 @@
       <details><summary>Is dit een MES?</summary><p>Het doet wat de meeste bedrijven van een MES verwachten, zonder de prijs en zonder zes maanden implementatie. Groeit u later naar een volwaardig MES, dan zijn de gegevens en de gewoontes er al.</p></details>
       <details><summary>Werkt dit met handschoenen en in een koude ruimte?</summary><p>Grote knoppen, zo weinig mogelijk typwerk, en één handeling per pallet. Ik test met de operators zelf, op de tablet die ze effectief gebruiken.</p></details>
       <details><summary>Kan dit koppelen met ons ERP voor orders en voorraad?</summary><p>Orders inlezen via een export is altijd haalbaar. Een rechtstreekse koppeling hangt af van wat uw ERP toelaat en bekijk ik per geval, zonder beloftes vooraf.</p></details>
-      <details><summary>Hoe berekent u OEE?</summary><p>Beschikbaarheid uit de stilstanden, prestatie uit paletten per uur tegenover de norm, kwaliteit uit de afgekeurde paletten. Alles komt uit wat de operator toch al ingeeft.</p></details>
       <details><summary>Hoe snel kan dit draaien?</summary><p>Een eerste werkende versie op één lijn staat er binnen enkele dagen. De uitrol naar andere lijnen volgt in uw tempo.</p></details>
     </div>
   </div>
@@ -230,7 +230,7 @@
     <h2>Benieuwd wat er in uw geval mogelijk is?</h2>
     <p>Start met een gratis intake van maximaal een uur. Samen kijken we waar de grootste winst zit, vrijblijvend en zonder verplichtingen.</p>
     <div class="btns">
-      <a class="btn btn-p" href="/#contact">Neem contact op</a>
+      <a class="btn btn-p" href="mailto:info@flow4q.com?subject=Gratis%20intake&body=Dag%20Sabine%2C%0A%0AWat%20er%20vandaag%20misloopt%3A%0A%0A%0AWaar%20de%20info%20nu%20zit%20(Excel%2C%20mails%2C%20papier%2C%20hoofden)%3A%0A%0A%0AWanneer%20een%20gesprek%20past%3A%0A%0A%0ABedrijf%20en%20naam%3A%0A">Open een mail naar Flow4Q</a>
       <a class="btn btn-s" href="tel:+32474627187">Bel +32 474 62 71 87</a>
     </div>
   </div>
@@ -258,22 +258,15 @@
     <span class="footer-tagline">Kwaliteit begint bij een goed proces.</span>
   </div>
   <div class="footer-info" style="text-align:left">
-    <span style="color:rgba(255,255,255,0.75);font-weight:600">Onderwerpen</span>
-    <span><a href="/cases.html">Alle cases</a></span>
-    <span><a href="/excel-vervangen-door-app.html">Excel vervangen door een app</a></span>
-    <span><a href="/papieren-formulieren-digitaliseren.html">Papieren formulieren digitaliseren</a></span>
-    <span><a href="/power-platform-consultant-oost-vlaanderen.html">Power Platform consultant</a></span>
-    <span><a href="/dagoverleg-app.html">Dagoverleg app</a></span>
-    <span><a href="/onderhoudsplanning-app.html">Onderhoudsplanning app</a></span>
-    <span><a href="/productieopvolging-app.html">Productieopvolging app</a></span>
-    <span><a href="/digitale-checklist-app.html">Digitale checklist app</a></span>
-    <span><a href="/boekingssysteem-app.html">Boekingssysteem op maat</a></span>
-    <span><a href="/voorraadbeheer-app.html">Voorraadbeheer app</a></span>
-    <span><a href="/power-bi-dashboard-kmo.html">Power BI dashboard voor KMO's</a></span>
-    <span><a href="/excel-automatiseren.html">Excel automatiseren</a></span>
-    <span><a href="/projectopvolging-app.html">Projectopvolging tool</a></span>
-    <span><a href="/laadslotplanning-app.html">Laadslotplanning en wachttijden</a></span>
-    <span><a href="/labelplanning-app.html">Labelplanning app</a></span>
+    <span style="color:rgba(255,255,255,0.75);font-weight:600">Apps op maat</span>
+    <span><a href="/dagoverleg-app.html">Dagoverleg</a> &middot; <a href="/productieopvolging-app.html">Productieopvolging</a> &middot; <a href="/onderhoudsplanning-app.html">Onderhoudsplanning</a></span>
+    <span><a href="/digitale-checklist-app.html">Digitale checklist</a> &middot; <a href="/boekingssysteem-app.html">Boekingssysteem</a> &middot; <a href="/voorraadbeheer-app.html">Voorraadbeheer</a></span>
+    <span><a href="/projectopvolging-app.html">Projectopvolging</a> &middot; <a href="/laadslotplanning-app.html">Laadslotplanning</a> &middot; <a href="/labelplanning-app.html">Labelplanning</a></span>
+    <span style="color:rgba(255,255,255,0.75);font-weight:600;margin-top:0.6rem">Excel en dashboards</span>
+    <span><a href="/excel-vervangen-door-app.html">Excel vervangen door een app</a> &middot; <a href="/excel-automatiseren.html">Excel automatiseren</a></span>
+    <span><a href="/power-bi-dashboard-kmo.html">Power BI dashboard</a> &middot; <a href="/papieren-formulieren-digitaliseren.html">Papieren formulieren digitaliseren</a></span>
+    <span style="color:rgba(255,255,255,0.75);font-weight:600;margin-top:0.6rem">Flow4Q</span>
+    <span><a href="/cases.html">Alle cases</a> &middot; <a href="/power-platform-consultant-oost-vlaanderen.html">Power Platform consultant in Oost-Vlaanderen</a></span>
   </div>
   <div class="footer-info">
     <span>Flow4Q BV &middot; Lokeren</span>
