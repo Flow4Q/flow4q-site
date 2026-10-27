@@ -16,32 +16,9 @@
 <meta property="og:url" content="https://www.flow4q.com/dagoverleg-app.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css?v=1">
 <style>
-  :root {
-    --c900: #1B283D; --c800: #243550; --c700: #2E4A72; --c600: #3A6095;
-    --c500: #5080B8; --c400: #7AAAD4; --c300: #A8C8E8; --c200: #CCDFF3;
-    --c100: #E4EFF8; --c50: #F2F7FC; --white: #FFFFFF;
-    --text: #1B283D; --muted: #56697D; --border: #D0E0EF; --radius: 14px;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; overflow-x: hidden; }
-  body { font-family: "Outfit", sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; line-height: 1.7; }
-
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 6vw; height: 66px;
-    background: rgba(27,40,61,0.97); backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
-  .nav-logo { display: flex; align-items: center; }
-  .nav-right { display: flex; align-items: center; gap: 1.8rem; }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--white); }
-  .nav-cta { background: var(--c500) !important; color: var(--white) !important; padding: 0.42rem 1.15rem; border-radius: 6px; font-weight: 600 !important; }
-  .nav-divider { width: 1px; height: 22px; background: rgba(255,255,255,0.15); }
-  .nav-slogan { font-family: "Lora", serif; font-style: italic; font-size: 0.88rem; color: var(--c300); }
+  /* Gedeelde stijl (variabelen, nav, footer) staat in /css/site.css */
 
   /* HERO */
   .hero { background: linear-gradient(160deg, var(--c900) 0%, var(--c700) 100%); color: var(--white); padding: 9rem 6vw 4.5rem; }
@@ -89,19 +66,8 @@
   .related a:hover { border-color: var(--c500); background: var(--c50); }
   .related span { display: block; font-weight: 400; color: var(--muted); font-size: 0.88rem; margin-top: 0.25rem; }
 
-  footer { background: var(--c900); color: rgba(255,255,255,0.5); padding: 2.5rem 6vw; font-size: 0.82rem; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem; }
-  .footer-brand { display: flex; flex-direction: column; gap: 0.5rem; }
-  .footer-tagline { font-family: "Lora", serif; font-style: italic; font-size: 0.82rem; color: var(--c300); }
-  .footer-info { display: flex; flex-direction: column; gap: 0.35rem; text-align: right; }
-  .footer-copy { width: 100%; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.3rem; font-size: 0.76rem; color: rgba(255,255,255,0.35); }
-  footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
-  footer a:hover { color: var(--white); }
-
-  @media (max-width: 860px) { .nav-links { gap: 1.1rem; } .nav-divider, .nav-slogan { display: none; } }
   @media (max-width: 640px) {
-    .nav-links li:not(:last-child) { display: none; }
     .hero { padding-top: 7rem; }
-    .footer-info { text-align: left; }
     section { padding: 3rem 6vw; }
   }
   .shot { margin: 2rem 0 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: 0 18px 50px rgba(27,40,61,0.12); background: var(--white); }
