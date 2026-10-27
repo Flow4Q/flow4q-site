@@ -39,6 +39,18 @@ footer { background: var(--c900); color: rgba(255,255,255,0.5); padding: 2.5rem 
 footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
 footer a:hover { color: var(--white); }
 
+/* FOOTER: zichtbare Flow4Q-links, overige oplossingen uitklapbaar */
+.footer-links { text-align: left; }
+.footer-head { color: rgba(255,255,255,0.75); font-weight: 600; }
+.footer-more { margin-top: 0.6rem; }
+.footer-more > summary { cursor: pointer; list-style: none; color: rgba(255,255,255,0.75); font-weight: 600; }
+.footer-more > summary::-webkit-details-marker { display: none; }
+.footer-more > summary::after { content: " \25BE"; }
+.footer-more[open] > summary::after { content: " \25B4"; }
+.footer-more > summary:hover { color: var(--white); }
+.footer-more > span { display: block; margin-top: 0.35rem; }
+.footer-more > .footer-head { margin-top: 0.6rem; }
+
 /* RESPONSIVE */
 @media (max-width: 860px) { .nav-links { gap: 1.1rem; } .nav-divider, .nav-slogan { display: none; } }
 @media (max-width: 640px) {
