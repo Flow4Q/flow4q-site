@@ -39,10 +39,10 @@ nav {
 }
 .nav-logo { display: flex; align-items: center; }
 .nav-right { display: flex; align-items: center; gap: 1.8rem; }
-.nav-slogan { font-family: "Lora", serif; font-style: italic; font-size: 0.88rem; color: var(--c300); }
+.nav-slogan { font-family: "Lora", serif; font-style: italic; font-size: 0.88rem; color: var(--c300); white-space: nowrap; }
 .nav-divider { width: 1px; height: 22px; background: rgba(255,255,255,0.15); }
-.nav-links { display: flex; gap: 2rem; list-style: none; }
-.nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.2s; }
+.nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+.nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.2s; white-space: nowrap; }
 .nav-links a:hover { color: var(--white); }
 .nav-cta { background: var(--c500) !important; color: var(--white) !important; padding: 0.42rem 1.15rem; border-radius: 6px; font-weight: 600 !important; transition: background 0.2s !important; }
 .nav-cta:hover { background: var(--c600) !important; }
@@ -69,8 +69,12 @@ footer a:hover { color: var(--white); }
 .footer-more > .footer-head { margin-top: 0.6rem; }
 
 /* RESPONSIVE */
-@media (max-width: 860px) { .nav-links { gap: 1.1rem; } .nav-divider, .nav-slogan { display: none; } }
+/* Menu: logo, zeven links en slogan hebben samen 1200px nodig.
+   Onder 1240px verdwijnt de slogan, onder 900px staan de links dichter,
+   onder 800px blijft alleen Contact over. Links breken nooit over twee regels. */
+@media (max-width: 1240px) { .nav-divider, .nav-slogan { display: none; } }
+@media (max-width: 900px) { .nav-links { gap: 1.1rem; } }
+@media (max-width: 800px) { .nav-links li:not(:last-child) { display: none; } }
 @media (max-width: 640px) {
-  .nav-links li:not(:last-child) { display: none; }
   .footer-info { text-align: left; }
 }
