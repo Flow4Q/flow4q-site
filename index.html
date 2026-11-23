@@ -109,6 +109,14 @@
   .stappen-note strong { color: var(--c900); font-weight: 600; }
   .stappen-note + .stappen-note { margin-top: 0.6rem; }
   .stappen-cta { display: inline-block; margin-top: 1.4rem; }
+  .nazorg { margin-top: 2.6rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+  .nazorg-title { font-size: 1.25rem; font-weight: 600; color: var(--c900); letter-spacing: -0.01em; }
+  .nazorg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; margin-top: 1.2rem; }
+  .nazorg-item { padding-left: 1rem; border-left: 2px solid var(--c300); }
+  .nazorg-item h4 { font-size: 0.98rem; font-weight: 600; color: var(--c900); margin-bottom: 0.35rem; }
+  .nazorg-item p { font-size: 0.9rem; line-height: 1.65; color: var(--muted); }
+  .nazorg-item p strong { color: var(--c900); font-weight: 600; }
+  @media (max-width: 800px) { .nazorg-grid { grid-template-columns: 1fr; gap: 1.1rem; } }
   .stap-duur { display: inline-block; margin-top: 0.9rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c500); }
   @media (max-width: 600px) { .stappen { grid-template-columns: 1fr; } }
 
@@ -682,7 +690,15 @@
         <span class="stap-duur">korte opvolging</span>
       </div>
     </div>
-    <p class="stappen-note">Liever doorlopende ondersteuning? <strong>Ik kan ook op vaste dagen per week in uw team meewerken.</strong></p>
+    <div class="nazorg">
+      <h3 class="nazorg-title">En na de oplevering?</h3>
+      <div class="nazorg-grid">
+        <div class="nazorg-item"><h4>Een aanpassing</h4><p>Een veld erbij, een rapport anders: u mailt, <strong>ik laat binnen &eacute;&eacute;n werkdag weten wanneer het kan</strong>.</p></div>
+        <div class="nazorg-item"><h4>Uitbreiden</h4><p>Een tweede afdeling of een extra scherm bekijken we als een klein nieuw project, <strong>met vooraf een raming</strong>.</p></div>
+        <div class="nazorg-item"><h4>Vaste dagen</h4><p>Liever doorlopende ondersteuning? <strong>Ik kan ook op vaste dagen per week in uw team meewerken.</strong></p></div>
+      </div>
+      <p class="stappen-note">Ik werk alleen en beloof dus geen wachtdienst. Verlof weet u vooraf, en uw tool draait gewoon door in uw eigen Microsoft-omgeving.</p>
+    </div>
     <a class="btn-primary stappen-cta" href="#contact">Plan uw gratis intake &rarr;</a>
   </div>
 </section>
